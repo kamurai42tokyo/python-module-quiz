@@ -353,7 +353,7 @@ html, body {
   padding-top: env(safe-area-inset-top, 0);
   flex-shrink: 0;
 }
-.results-header-inner { padding: 48px 20px 28px; text-align: center; }
+.results-header-inner { padding: 40px 20px 20px; text-align: center; }
 
 .score-circle {
   width: 110px;
@@ -443,42 +443,63 @@ html, body {
 .char-mini {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 14px;
-  padding: 8px 16px;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 10px 18px 10px 10px;
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 18px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
 .char-mini canvas {
-  width: 48px;
-  height: 48px;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  width: 120px;
+  height: 120px;
   flex-shrink: 0;
 }
-.char-mini-name { font-size: 13px; font-weight: 700; color: var(--primary-dark); }
-.char-mini-score { font-size: 11px; color: var(--gray); margin-top: 1px; }
+.char-mini-info { display: flex; flex-direction: column; gap: 2px; }
+.char-mini-name { font-size: 16px; font-weight: 900; color: var(--primary-dark); }
+.char-mini-stage { font-size: 10px; font-weight: 700; color: var(--primary); letter-spacing: 1.8px; text-transform: uppercase; margin-top: 1px; }
+.char-mini-score { font-size: 13px; color: var(--gray); margin-top: 8px; }
 
-/* ===== CHARACTER EVOLUTION ===== */
-.char-display { margin-bottom: 10px; }
-.char-display canvas {
-  width: 64px;
-  height: 64px;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  animation: charBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+/* ===== CHARACTER SHOWCASE (RESULTS) ===== */
+.char-showcase { display: flex; flex-direction: column; align-items: center; margin-bottom: 8px; }
+.char-showcase canvas {
+  width: 160px;
+  height: 160px;
+  animation: charReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.char-name { font-size: 16px; font-weight: 800; margin-top: 4px; }
-.char-level { font-size: 11px; opacity: 0.75; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
-@keyframes charBounce {
-  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
-  60%  { transform: scale(1.25) rotate(5deg); opacity: 1; }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+.char-showcase-name {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin-top: 12px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  letter-spacing: -0.3px;
 }
+.char-showcase-stage {
+  font-size: 11px;
+  opacity: 0.72;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+@keyframes charReveal {
+  0%   { transform: scale(0.2) translateY(30px); opacity: 0; }
+  55%  { transform: scale(1.12) translateY(-8px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.score-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  justify-content: center;
+  margin: 12px 0 4px;
+}
+.score-inline-num  { font-size: 46px; font-weight: 900; line-height: 1; }
+.score-inline-sep  { font-size: 22px; opacity: 0.65; }
+.score-inline-tot  { font-size: 22px; opacity: 0.75; }
+.score-inline-pct  { font-size: 26px; font-weight: 800; margin-left: 10px; opacity: 0.92; }
 
 /* ===== DESKTOP ===== */
 @media (min-width: 480px) {
@@ -775,14 +796,110 @@ const STAGE_DRAW = [
   },
 ];
 
-function drawChar(canvas, stageIdx) {
-  canvas.width = 64;
-  canvas.height = 64;
+function drawAura(ctx, stageIdx, size) {
+  if (stageIdx < 8) return;
+  const cx = size / 2, cy = size / 2, r = size / 2;
+
+  if (stageIdx === 8) {
+    // Teal energy glow + 2 rings
+    const g = ctx.createRadialGradient(cx, cy, r*0.15, cx, cy, r);
+    g.addColorStop(0, 'rgba(0,200,167,0.42)');
+    g.addColorStop(0.55, 'rgba(0,168,150,0.18)');
+    g.addColorStop(1, 'rgba(0,100,90,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
+    [0.60, 0.82].forEach((fr, i) => {
+      ctx.strokeStyle = `rgba(0,220,180,${0.40 - i*0.14})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(cx, cy, r*fr, 0, Math.PI*2); ctx.stroke();
+    });
+  }
+
+  if (stageIdx === 9) {
+    // Royal gold + purple: radial bg, 8 rays, 3 rings
+    const g = ctx.createRadialGradient(cx, cy, r*0.08, cx, cy, r);
+    g.addColorStop(0, 'rgba(240,192,64,0.72)');
+    g.addColorStop(0.30, 'rgba(200,140,40,0.46)');
+    g.addColorStop(0.62, 'rgba(120,48,176,0.32)');
+    g.addColorStop(1, 'rgba(24,32,80,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
+    for (let i = 0; i < 8; i++) {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(i / 8 * Math.PI * 2 - Math.PI / 2);
+      const rg = ctx.createLinearGradient(0, 0, 0, -r * 0.88);
+      rg.addColorStop(0, 'rgba(240,192,64,0.55)');
+      rg.addColorStop(1, 'rgba(240,192,64,0)');
+      ctx.fillStyle = rg;
+      ctx.beginPath();
+      ctx.moveTo(-r*0.07, 0); ctx.lineTo(r*0.07, 0); ctx.lineTo(0, -r*0.88);
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+    [0.42, 0.62, 0.80].forEach((fr, i) => {
+      ctx.strokeStyle = `rgba(240,192,64,${0.58 - i*0.12})`;
+      ctx.lineWidth = i === 0 ? 2.5 : 1.5;
+      ctx.beginPath(); ctx.arc(cx, cy, r*fr, 0, Math.PI*2); ctx.stroke();
+    });
+  }
+
+  if (stageIdx === 10) {
+    // Divine white-gold: radial bg, 16 rays, 4 rings, 8 sparkle stars
+    const g = ctx.createRadialGradient(cx, cy, r*0.04, cx, cy, r);
+    g.addColorStop(0,    'rgba(255,255,225,0.92)');
+    g.addColorStop(0.12, 'rgba(255,232,120,0.80)');
+    g.addColorStop(0.38, 'rgba(240,192,64,0.54)');
+    g.addColorStop(0.68, 'rgba(200,160,40,0.22)');
+    g.addColorStop(1,    'rgba(240,192,64,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, size, size);
+    for (let i = 0; i < 16; i++) {
+      const isLong = i % 2 === 0;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(i / 16 * Math.PI * 2 - Math.PI / 2);
+      const len = isLong ? r*0.96 : r*0.72;
+      const hw  = isLong ? r*0.078 : r*0.040;
+      const rg = ctx.createLinearGradient(0, 0, 0, -len);
+      rg.addColorStop(0, `rgba(255,248,180,${isLong ? 0.74 : 0.42})`);
+      rg.addColorStop(1, 'rgba(255,232,80,0)');
+      ctx.fillStyle = rg;
+      ctx.beginPath();
+      ctx.moveTo(-hw, 0); ctx.lineTo(hw, 0); ctx.lineTo(0, -len);
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+    [0.28, 0.46, 0.64, 0.82].forEach((fr, i) => {
+      ctx.strokeStyle = `rgba(255,220,60,${0.84 - i*0.14})`;
+      ctx.lineWidth = i === 0 ? 3 : 2;
+      ctx.beginPath(); ctx.arc(cx, cy, r*fr, 0, Math.PI*2); ctx.stroke();
+    });
+    [[0.16,0.10],[0.84,0.10],[0.06,0.50],[0.94,0.50],
+     [0.16,0.90],[0.84,0.90],[0.50,0.04],[0.50,0.96]].forEach(([sx,sy]) => {
+      const px = sx*size, py = sy*size, ss = size*0.030;
+      ctx.fillStyle = 'rgba(255,255,212,0.96)';
+      ctx.beginPath();
+      ctx.moveTo(px,py-ss*2); ctx.lineTo(px+ss*0.5,py-ss*0.5);
+      ctx.lineTo(px+ss*2,py); ctx.lineTo(px+ss*0.5,py+ss*0.5);
+      ctx.lineTo(px,py+ss*2); ctx.lineTo(px-ss*0.5,py+ss*0.5);
+      ctx.lineTo(px-ss*2,py); ctx.lineTo(px-ss*0.5,py-ss*0.5);
+      ctx.closePath(); ctx.fill();
+    });
+  }
+}
+
+function drawChar(canvas, stageIdx, canvasSize, S) {
+  canvasSize = canvasSize || 120;
+  S = S || 3;
+  canvas.width = canvasSize;
+  canvas.height = canvasSize;
   const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, 64, 64);
-  const S = 2;
+  ctx.clearRect(0, 0, canvasSize, canvasSize);
+  drawAura(ctx, stageIdx, canvasSize);
+  const offset = (canvasSize - 32 * S) / 2;
+  ctx.save();
+  ctx.translate(offset, offset);
   const fn = STAGE_DRAW[stageIdx] || STAGE_DRAW[0];
   fn(ctx, S);
+  ctx.restore();
 }
 
 function getStageIndex(pct) {
@@ -999,9 +1116,10 @@ function renderFeedback(q, userAnswer, isCorrect) {
       <div class="feedback-header">
         <div class="feedback-header-inner">
           <div class="char-mini">
-            <canvas id="fb-char" width="64" height="64"></canvas>
-            <div>
+            <canvas id="fb-char" width="120" height="120"></canvas>
+            <div class="char-mini-info">
               <div class="char-mini-name">${h(STAGE_NAMES[stageIdx])}</div>
+              <div class="char-mini-stage">STAGE ${stageIdx + 1}</div>
               <div class="char-mini-score">${quiz.score} / ${quiz.questions.length} 問正解</div>
             </div>
           </div>
@@ -1041,7 +1159,7 @@ function renderFeedback(q, userAnswer, isCorrect) {
     </div>
   `);
   const fbCanvas = document.getElementById('fb-char');
-  if (fbCanvas) drawChar(fbCanvas, stageIdx);
+  if (fbCanvas) drawChar(fbCanvas, stageIdx, 120, 3);
 }
 
 function nextQuestion() {
@@ -1079,16 +1197,17 @@ function renderResults() {
     <div class="screen active">
       <div class="results-header">
         <div class="results-header-inner">
-          <div class="char-display">
-            <canvas id="result-char" width="64" height="64"></canvas>
-            <div class="char-name">${h(STAGE_NAMES[stageIdx])}</div>
-            <div class="char-level">STAGE ${stageIdx + 1}</div>
+          <div class="char-showcase">
+            <canvas id="result-char" width="160" height="160"></canvas>
+            <div class="char-showcase-name">${h(STAGE_NAMES[stageIdx])}</div>
+            <div class="char-showcase-stage">STAGE ${stageIdx + 1}</div>
           </div>
-          <div class="score-circle">
-            <div class="score-num">${quiz.score}</div>
-            <div class="score-denom">/ ${total}</div>
+          <div class="score-inline">
+            <div class="score-inline-num">${quiz.score}</div>
+            <div class="score-inline-sep">/</div>
+            <div class="score-inline-tot">${total}</div>
+            <div class="score-inline-pct">${pct}%</div>
           </div>
-          <div class="score-pct">${pct}%</div>
           <div class="score-msg">${h(msg)}</div>
         </div>
       </div>
@@ -1110,7 +1229,7 @@ function renderResults() {
     </div>
   `);
   const resCanvas = document.getElementById('result-char');
-  if (resCanvas) drawChar(resCanvas, stageIdx);
+  if (resCanvas) drawChar(resCanvas, stageIdx, 160, 4);
 }
 
 // ===== HELPERS =====
