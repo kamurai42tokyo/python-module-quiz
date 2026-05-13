@@ -1159,7 +1159,7 @@ function renderFeedback(q, userAnswer, isCorrect) {
             <canvas id="fb-char" width="120" height="120"></canvas>
             <div class="char-mini-info">
               <div class="char-mini-name">${h(STAGE_NAMES[stageIdx])}</div>
-              <div class="char-mini-stage">STAGE ${stageIdx + 1}</div>
+              <div class="char-mini-stage">LEVEL ${stageIdx}</div>
               <div class="char-mini-score">${quiz.score} / ${quiz.questions.length} 問正解</div>
             </div>
           </div>
@@ -1240,7 +1240,7 @@ function renderResults() {
           <div class="char-showcase">
             <canvas id="result-char" width="160" height="160"></canvas>
             <div class="char-showcase-name">${h(STAGE_NAMES[stageIdx])}</div>
-            <div class="char-showcase-stage">STAGE ${stageIdx + 1}</div>
+            <div class="char-showcase-stage">LEVEL ${stageIdx}</div>
           </div>
           <div class="score-inline">
             <div class="score-inline-num">${quiz.score}</div>
