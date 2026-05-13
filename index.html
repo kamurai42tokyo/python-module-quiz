@@ -410,6 +410,50 @@ html, body {
 .error-title { font-size: 18px; font-weight: 700; color: var(--dark); }
 .error-msg { font-size: 14px; color: var(--gray); line-height: 1.6; }
 
+/* ===== CODE BLOCKS ===== */
+.question-body { margin-bottom: 0; }
+.question-body .qt {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.65;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+.code-block {
+  background: #1e2235;
+  color: #a0ede5;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--primary);
+  line-height: 1.7;
+  white-space: pre;
+}
+.question-sub {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+/* ===== CHARACTER EVOLUTION ===== */
+.char-display { margin-bottom: 10px; }
+.char-emoji {
+  font-size: 56px;
+  display: block;
+  animation: charBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.char-name { font-size: 16px; font-weight: 800; margin-top: 4px; }
+.char-level { font-size: 11px; opacity: 0.75; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+@keyframes charBounce {
+  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.25) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
 /* ===== DESKTOP ===== */
 @media (min-width: 480px) {
   html, body {
@@ -492,6 +536,41 @@ function parseTitle(title) {
   const m2 = title.match(/Module\s+(\d+)[:\s]+(.+)/);
   if (m2) return { num: m2[1], name: m2[2], desc: '' };
   return { num: '?', name: title, desc: '' };
+}
+
+// ===== CHARACTER EVOLUTION =====
+const CHARACTERS = [
+  { minPct:  0, emoji: '🥚', name: 'たまご',     level: 'LEVEL 1' },
+  { minPct: 20, emoji: '🐣', name: 'ひよこ',     level: 'LEVEL 2' },
+  { minPct: 40, emoji: '🐍', name: 'パイソン',   level: 'LEVEL 3' },
+  { minPct: 60, emoji: '💻', name: 'コーダー',   level: 'LEVEL 4' },
+  { minPct: 80, emoji: '⚡', name: 'ハッカー',   level: 'LEVEL 5' },
+  { minPct: 95, emoji: '🏆', name: 'Python師匠', level: 'LEVEL 6' },
+];
+
+function getCharacter(pct) {
+  let c = CHARACTERS[0];
+  for (const ch of CHARACTERS) { if (pct >= ch.minPct) c = ch; }
+  return c;
+}
+
+// ===== CODE BLOCK FORMATTING =====
+function looksLikeCode(text) {
+  const pat = /^\s*(def |class |for |while |if |else[:\s]|elif |try[:\s]|except|import |from |return |print\(|[a-z_]\w*\s*=\s*|[a-z_]\w*\()/;
+  return text.split('\n').some(line => pat.test(line));
+}
+
+function formatQuestionText(text) {
+  const parts = text.split(/\n\n+/);
+  if (parts.length === 1) return `<div class="qt">${h(text)}</div>`;
+  let html = `<div class="qt">${h(parts[0])}</div>`;
+  for (let i = 1; i < parts.length; i++) {
+    const part = parts[i];
+    html += looksLikeCode(part)
+      ? `<pre class="code-block">${h(part)}</pre>`
+      : `<div class="question-sub">${h(part)}</div>`;
+  }
+  return html;
 }
 
 // ===== INIT =====
@@ -631,7 +710,7 @@ function renderQuestion() {
         </div>
       </div>
       <div class="screen-body">
-        <div class="question-text">${h(q.question)}</div>
+        <div class="question-body">${formatQuestionText(q.question)}</div>
         ${options}
       </div>
       <div class="bottom-bar">
@@ -734,6 +813,7 @@ function renderResults() {
   const total = quiz.questions.length;
   const pct   = Math.round(quiz.score / total * 100);
   const summary = getSummary(pct);
+  const char = getCharacter(pct);
 
   let msg = '';
   if (pct >= 95)      msg = '完璧です！';
@@ -753,6 +833,11 @@ function renderResults() {
     <div class="screen active">
       <div class="results-header">
         <div class="results-header-inner">
+          <div class="char-display">
+            <span class="char-emoji">${char.emoji}</span>
+            <div class="char-name">${h(char.name)}</div>
+            <div class="char-level">${h(char.level)}</div>
+          </div>
           <div class="score-circle">
             <div class="score-num">${quiz.score}</div>
             <div class="score-denom">/ ${total}</div>
