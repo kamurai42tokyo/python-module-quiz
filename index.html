@@ -932,7 +932,9 @@ function startAuraPulse(canvas, stageIdx, canvasSize, S) {
   let t = 0;
   function frame() {
     t += speed;
-    const pulse = 0.75 + 0.25 * Math.sin(t); // 0.75〜1.0 で脈動
+    // 最大半径 r、最小半径 r-16 になるよう固定16px差で脈動
+    const r = canvasSize / 2;
+    const pulse = 1 - (8 / r) * (1 - Math.sin(t));
     _renderFrame(canvas, stageIdx, canvasSize, S, pulse);
     auraAnimId = requestAnimationFrame(frame);
   }
