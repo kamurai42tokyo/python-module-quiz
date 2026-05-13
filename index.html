@@ -439,6 +439,27 @@ html, body {
   margin-bottom: 16px;
 }
 
+/* ===== CHARACTER MINI (FEEDBACK) ===== */
+.char-mini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 8px 16px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.char-mini-emoji {
+  font-size: 30px;
+  animation: charBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.char-mini-name { font-size: 13px; font-weight: 700; color: var(--primary-dark); }
+.char-mini-score { font-size: 11px; color: var(--gray); margin-top: 1px; }
+
 /* ===== CHARACTER EVOLUTION ===== */
 .char-display { margin-bottom: 10px; }
 .char-emoji {
@@ -749,6 +770,8 @@ function submitAnswer() {
 
 // ===== FEEDBACK =====
 function renderFeedback(q, userAnswer, isCorrect) {
+  const currentPct = Math.round(quiz.score / quiz.questions.length * 100);
+  const char = getCharacter(currentPct);
   const correctOpt = q.options.find(o => o.startsWith(q.answer + '.'));
   const userOpt    = q.options.find(o => o.startsWith(userAnswer + '.'));
   const explanation = getFeedback(q.moduleId, q.id);
@@ -761,6 +784,13 @@ function renderFeedback(q, userAnswer, isCorrect) {
     <div class="screen active">
       <div class="feedback-header">
         <div class="feedback-header-inner">
+          <div class="char-mini">
+            <span class="char-mini-emoji">${char.emoji}</span>
+            <div>
+              <div class="char-mini-name">${h(char.name)}</div>
+              <div class="char-mini-score">${quiz.score} / ${quiz.questions.length} 問正解</div>
+            </div>
+          </div>
           <div class="result-icon ${isCorrect ? 'correct' : 'wrong'}">
             ${isCorrect ? '✓' : '✗'}
           </div>
