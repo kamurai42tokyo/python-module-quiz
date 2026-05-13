@@ -6,6 +6,20 @@
       {
         "id": 1,
         "type": "multiple_choice",
+        "question": "ft_garden_intro.py を直接実行したとき、`if __name__ == '__main__':` ブロックが実行される条件はどれか？",
+        "options": [
+          "A. 別のファイルからインポートされたとき",
+          "B. クラス内に定義されているとき",
+          "C. ファイルを直接実行したとき",
+          "D. 常に実行される"
+        ],
+        "answer": "C",
+        "concept": "モジュール実行",
+        "topic": "if __name__ == '__main__'"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
         "question": "Python でユーザーからキーボード入力を受け取る組み込み関数はどれか？",
         "options": [
           "A. read()",
@@ -18,332 +32,542 @@
         "topic": "input()"
       },
       {
-        "id": 2,
+        "id": 3,
         "type": "multiple_choice",
         "question": "input() が返す値の型はどれか？",
         "options": [
           "A. int",
           "B. float",
-          "C. str",
-          "D. 入力内容によって変わる"
+          "C. 入力内容によって変わる",
+          "D. str"
         ],
-        "answer": "C",
+        "answer": "D",
         "concept": "データ型",
         "topic": "input() の戻り値"
       },
       {
-        "id": 3,
-        "type": "multiple_choice",
-        "question": "次のコードの出力はどれか？\n\nx = 5\ny = 3\nprint(x * y)",
-        "options": [
-          "A. 53",
-          "B. 8",
-          "C. 15",
-          "D. '5 * 3'"
-        ],
-        "answer": "C",
-        "concept": "演算子",
-        "topic": "乗算"
-      },
-      {
         "id": 4,
         "type": "multiple_choice",
-        "question": "for ループで 1 から 5 まで（5を含む）繰り返すための正しいコードはどれか？",
+        "question": "ft_plot_area.py で入力値 \"5\" を整数に変換するコードはどれか？",
         "options": [
-          "A. for i in range(1, 5):",
-          "B. for i in range(1, 6):",
-          "C. for i in range(5):",
-          "D. for i in range(0, 5):"
+          "A. int(\"5\")",
+          "B. float(\"5\")",
+          "C. str(5)",
+          "D. convert(\"5\")"
         ],
-        "answer": "B",
-        "concept": "制御フロー",
-        "topic": "range()"
+        "answer": "A",
+        "concept": "型変換",
+        "topic": "int()"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "次のコードで age が 20 のとき、出力される文字列はどれか？\n\nage = 20\nif age >= 18:\n    print('adult')\nelse:\n    print('minor')",
+        "question": "ft_plant_age.py において、age が 60 より大きい場合の出力メッセージはどれか？",
         "options": [
-          "A. minor",
-          "B. adult",
-          "C. 20",
-          "D. エラーになる"
+          "A. \"Plant needs more time to grow.\"",
+          "B. \"Plant is too old.\"",
+          "C. \"Plant is ready to harvest!\"",
+          "D. \"Harvest complete!\""
         ],
-        "answer": "B",
-        "concept": "制御フロー",
+        "answer": "C",
+        "concept": "条件分岐",
         "topic": "if-else"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "Python で関数を定義するキーワードはどれか？",
+        "question": "ft_water_reminder.py において、days が 2 以下のとき出力される文字列はどれか？",
         "options": [
-          "A. function",
-          "B. func",
-          "C. define",
-          "D. def"
+          "A. \"Water the plants!\"",
+          "B. \"Too much water!\"",
+          "C. \"Watering complete!\"",
+          "D. \"Plants are fine\""
         ],
         "answer": "D",
-        "concept": "関数",
-        "topic": "def"
+        "concept": "条件分岐",
+        "topic": "if-else"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "f-string を使った正しい文字列フォーマットはどれか？\n\nname = 'Alice'\n（nameを埋め込んで 'Hello, Alice!' と出力したい）",
+        "question": "for ループで 1 から 5 まで（5を含む）繰り返すための正しいコードはどれか？",
         "options": [
-          "A. print('Hello, ' + {name} + '!')",
-          "B. print(f'Hello, {name}!')",
-          "C. print('Hello, %s!' % name)",
-          "D. BとCは両方正しい"
+          "A. for i in range(1, 5):",
+          "B. for i in range(5):",
+          "C. for i in range(0, 5):",
+          "D. for i in range(1, 6):"
         ],
         "answer": "D",
-        "concept": "文字列操作",
-        "topic": "文字列フォーマット"
+        "concept": "ループ",
+        "topic": "range()"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "再帰関数に必ずが必要な条件はどれか？",
+        "question": "ft_count_harvest_iterative.py でカウントが終了した後に表示されるメッセージはどれか？",
         "options": [
-          "A. グローバル変数の宣言",
-          "B. 再帰を終了させる基底ケース（base case）",
-          "C. return 文を省略すること",
-          "D. ループとの組み合わせ"
+          "A. \"Harvest time!\"",
+          "B. \"Done!\"",
+          "C. \"Count complete!\"",
+          "D. \"Day 0\""
         ],
-        "answer": "B",
-        "concept": "再帰",
-        "topic": "基底ケース"
+        "answer": "A",
+        "concept": "ループ",
+        "topic": "反復処理の終了メッセージ"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの出力はどれか？\n\ndef greet(name: str) -> None:\n    print(f'Hi, {name}!')\n\ngreet('Bob')",
+        "question": "再帰関数が無限ループに陥らないために必要な条件はどれか？",
         "options": [
-          "A. greet('Bob')",
-          "B. name",
-          "C. Hi, Bob!",
-          "D. None"
+          "A. グローバル変数を使うこと",
+          "B. 基底条件（base case）を持つこと",
+          "C. while ループを内部で使うこと",
+          "D. クラスのメソッドとして定義すること"
         ],
-        "answer": "C",
-        "concept": "関数",
-        "topic": "関数呼び出し"
+        "answer": "B",
+        "concept": "再帰",
+        "topic": "再帰関数の基底条件"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "型ヒント `def func(x: int) -> str:` の意味はどれか？",
+        "question": "ft_seed_inventory.py のシグネチャで `-> None` が意味することはどれか？",
         "options": [
-          "A. x は str 型で、戻り値は int 型",
-          "B. x は int 型で、戻り値は str 型",
-          "C. x と戻り値の両方が int 型",
-          "D. 型チェックを無効化する"
+          "A. 関数が None を引数として受け取る",
+          "B. 関数が何も返さない（戻り値なし）",
+          "C. 関数が None を出力する",
+          "D. 関数がオプション引数を持つ"
         ],
         "answer": "B",
         "concept": "型ヒント",
-        "topic": "関数シグネチャ"
+        "topic": "-> None 戻り値型"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "int('42') の結果はどれか？",
+        "question": "ft_seed_inventory.py で unit が \"packets\"/\"grams\"/\"area\" 以外の場合、出力される文字列はどれか？",
         "options": [
-          "A. 文字列 '42'",
-          "B. 整数 42",
-          "C. 浮動小数点 42.0",
-          "D. TypeError が発生する"
+          "A. \"Invalid unit\"",
+          "B. \"Error: wrong unit\"",
+          "C. \"Unit not found\"",
+          "D. \"Unknown unit type\""
         ],
-        "answer": "B",
-        "concept": "型変換",
-        "topic": "int() キャスト"
+        "answer": "D",
+        "concept": "型ヒント",
+        "topic": "unit の検証"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "次のコードで合計値はいくつになるか？\n\ntotal = 0\nfor i in range(1, 4):\n    total += i\nprint(total)",
+        "question": "次のコードの出力はどれか？\n\nx = 10\ny = 3\nprint(x // y)",
         "options": [
-          "A. 3",
-          "B. 6",
-          "C. 10",
-          "D. 4"
+          "A. 3.33",
+          "B. 3",
+          "C. 4",
+          "D. 30"
         ],
         "answer": "B",
-        "concept": "ループ",
-        "topic": "累積計算"
+        "concept": "演算子",
+        "topic": "整数除算"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "Python のシェバン行（shebang line）として正しいものはどれか？",
+        "options": [
+          "A. # python3",
+          "B. #!/usr/bin/env python3",
+          "C. // python3",
+          "D. @python3"
+        ],
+        "answer": "B",
+        "concept": "スクリプト実行",
+        "topic": "shebang"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "次のコードで days = 3 のとき、出力はどれか？\n\nif days > 2:\n    print('Water the plants!')\nelse:\n    print('Plants are fine')",
+        "options": [
+          "A. Plants are fine",
+          "B. Water the plants!",
+          "C. 3",
+          "D. エラーになる"
+        ],
+        "answer": "B",
+        "concept": "条件分岐",
+        "topic": "if-else 評価"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_harvest_total.py で3つの収穫量を合計する関数の正しい実装はどれか？",
+        "options": [
+          "A. def total(a, b, c): return a - b - c",
+          "B. def total(a, b, c): return a * b * c",
+          "C. def total(a, b, c): return max(a, b, c)",
+          "D. def total(a, b, c): return a + b + c"
+        ],
+        "answer": "D",
+        "concept": "関数",
+        "topic": "引数と戻り値"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "Python で型ヒントを確認するツールはどれか？",
+        "options": [
+          "A. mypy",
+          "B. pylint",
+          "C. black",
+          "D. pytest"
+        ],
+        "answer": "A",
+        "concept": "型ヒント",
+        "topic": "mypy"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "ft_count_harvest_recursive.py において、N=3 のとき最初に出力される文字列はどれか？",
+        "options": [
+          "A. \"Harvest time!\"",
+          "B. \"Day 3\"",
+          "C. \"Day 0\"",
+          "D. \"Day 1\""
+        ],
+        "answer": "D",
+        "concept": "再帰",
+        "topic": "再帰の出力順序"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "次のコードでコーディング規約（flake8）違反になるのはどれか？",
+        "options": [
+          "A. x = 1 + 2",
+          "B. name = 'Alice'",
+          "C. def func():pass",
+          "D. print(name)"
+        ],
+        "answer": "C",
+        "concept": "コーディング規約",
+        "topic": "flake8"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "次のコードを実行すると何が起きるか？\n\nprint(\"Age: \" + 25)",
+        "options": [
+          "A. \"Age: 25\" が出力される",
+          "B. TypeError が発生する",
+          "C. \"Age: \" が出力される",
+          "D. 25 が出力される"
+        ],
+        "answer": "B",
+        "concept": "データ型",
+        "topic": "型エラー"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "ft_seed_inventory.py の `seed_type: str` において `: str` が示すものはどれか？",
+        "options": [
+          "A. 変数を str 型に強制変換する",
+          "B. デフォルト値が str であること",
+          "C. str クラスを継承していること",
+          "D. 引数 seed_type の型ヒント（アノテーション）"
+        ],
+        "answer": "D",
+        "concept": "型ヒント",
+        "topic": "引数アノテーション"
       }
     ]
   },
   {
     "module": "01",
-    "title": "Module 01: Code Cultivation - オブジェクト指向プログラミング",
+    "title": "Module 01: Code Cultivation - オブジェクト指向ガーデンシステム",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Python でクラスを定義するキーワードはどれか？",
+        "question": "Python のクラスでインスタンス生成時に自動的に呼び出される特殊メソッドはどれか？",
         "options": [
-          "A. struct",
-          "B. object",
-          "C. class",
-          "D. type"
+          "A. __start__()",
+          "B. __create__()",
+          "C. __init__()",
+          "D. __build__()"
         ],
         "answer": "C",
-        "concept": "OOP",
-        "topic": "クラス定義"
+        "concept": "OOP基礎",
+        "topic": "__init__() コンストラクタ"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "クラスのコンストラクタ（初期化メソッド）として定義する特殊メソッドはどれか？",
+        "question": "ft_garden_data.py の Plant クラスで show() メソッドの出力フォーマットはどれか？",
         "options": [
-          "A. def constructor(self):",
-          "B. def __init__(self):",
-          "C. def init(self):",
-          "D. def new(self):"
+          "A. \"Plant(Rose, 25, 30)\"",
+          "B. \"Rose: 25cm, 30 days old\"",
+          "C. \"Rose, 25, 30\"",
+          "D. \"name=Rose height=25 age=30\""
         ],
         "answer": "B",
-        "concept": "OOP",
-        "topic": "__init__"
+        "concept": "クラスメソッド",
+        "topic": "show() フォーマット"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "インスタンスメソッドの第1引数として慣習的に使われる名前はどれか？",
+        "question": "ft_plant_factory.py で Plant インスタンスを生成したとき、コンストラクタが出力するメッセージの形式はどれか？",
         "options": [
-          "A. this",
-          "B. cls",
-          "C. me",
-          "D. self"
+          "A. \"Plant created\"",
+          "B. \"New: Rose\"",
+          "C. \"Created: Rose: 25.0cm, 30 days old\"",
+          "D. \"Rose initialized\""
         ],
-        "answer": "D",
-        "concept": "OOP",
-        "topic": "self"
+        "answer": "C",
+        "concept": "コンストラクタ",
+        "topic": "__init__() の出力"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "次のコードで dog.name の値はどれか？\n\nclass Dog:\n    def __init__(self, name: str) -> None:\n        self.name = name\n\ndog = Dog('Rex')\nprint(dog.name)",
+        "question": "ft_garden_security.py でカプセル化に使われる Python の慣例はどれか？",
         "options": [
-          "A. Dog",
-          "B. name",
-          "C. Rex",
-          "D. None"
+          "A. 属性名に __ を付けてマングリングする",
+          "B. 属性名に _ を付けて保護された属性を示す",
+          "C. @private デコレータを使う",
+          "D. private キーワードを使う"
         ],
-        "answer": "C",
-        "concept": "OOP",
-        "topic": "インスタンス属性"
+        "answer": "B",
+        "concept": "カプセル化",
+        "topic": "_protected 慣例"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "子クラスが親クラスを継承する正しい構文はどれか？",
+        "question": "ft_garden_security.py で set_height() に負の値を渡したとき、出力されるエラーメッセージの形式はどれか？",
         "options": [
-          "A. class Child extends Parent:",
-          "B. class Child inherits Parent:",
-          "C. class Child(Parent):",
-          "D. class Child -> Parent:"
+          "A. \"ValueError: negative height\"",
+          "B. \"Error: must be positive\"",
+          "C. \"Rose: Error, height can't be negative\"",
+          "D. \"Invalid input\""
         ],
         "answer": "C",
-        "concept": "継承",
-        "topic": "継承の構文"
+        "concept": "カプセル化",
+        "topic": "バリデーションエラーメッセージ"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "子クラスのコンストラクタで親クラスの __init__ を呼び出す正しい方法はどれか？",
+        "question": "ft_plant_types.py の Flower クラスが Plant クラスを継承するとき、親クラスのコンストラクタを呼び出す正しい方法はどれか？",
         "options": [
-          "A. Parent.__init__()",
-          "B. super().__init__()",
-          "C. self.parent.__init__()",
-          "D. base.__init__()"
+          "A. Plant.__init__(self)",
+          "B. self.parent.__init__()",
+          "C. parent().__init__()",
+          "D. super().__init__()"
         ],
-        "answer": "B",
+        "answer": "D",
         "concept": "継承",
         "topic": "super()"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "__str__ メソッドはいつ呼び出されるか？",
+        "question": "ft_plant_types.py において Tree クラスの固有メソッドはどれか？",
         "options": [
-          "A. オブジェクトを削除するとき",
-          "B. print() でオブジェクトを表示するとき",
-          "C. オブジェクトをコピーするとき",
-          "D. isinstance() を呼ぶとき"
+          "A. bloom()",
+          "B. produce_shade()",
+          "C. harvest()",
+          "D. grow()"
         ],
         "answer": "B",
-        "concept": "特殊メソッド",
-        "topic": "__str__"
+        "concept": "継承",
+        "topic": "Tree のメソッド"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "@staticmethod デコレータで定義したメソッドの特徴はどれか？",
+        "question": "ft_plant_types.py の Vegetable クラスの nutritional_value の初期値はどれか？",
         "options": [
-          "A. self も cls も受け取らず、クラスやインスタンスに依存しない",
-          "B. self を受け取り、インスタンスにアクセスできる",
-          "C. cls を受け取り、クラス属性を変更できる",
-          "D. 継承時に自動的にオーバーライドされる"
+          "A. None",
+          "B. 1",
+          "C. 100",
+          "D. 0"
         ],
-        "answer": "A",
-        "concept": "特殊メソッド",
-        "topic": "@staticmethod"
+        "answer": "D",
+        "concept": "継承",
+        "topic": "Vegetable の属性初期値"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "@classmethod デコレータで定義したメソッドの第1引数として慣習的に使われる名前はどれか？",
+        "question": "ft_garden_analytics.py の Plant.is_older_than_year(age) はどの種類のメソッドか？",
         "options": [
-          "A. self",
-          "B. this",
-          "C. cls",
-          "D. klass"
+          "A. インスタンスメソッド",
+          "B. プロパティ",
+          "C. クラスメソッド",
+          "D. スタティックメソッド"
         ],
-        "answer": "C",
-        "concept": "特殊メソッド",
-        "topic": "@classmethod"
+        "answer": "D",
+        "concept": "スタティックメソッド",
+        "topic": "@staticmethod"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "属性名の前に _ を1つつける（例：_name）慣習の意味はどれか？",
+        "question": "クラスメソッドを定義するデコレータはどれか？",
         "options": [
-          "A. 完全なプライベート属性で外からアクセスできない",
-          "B. クラスメソッドであることを示す",
-          "C. 「内部利用を想定」という慣習的な目印（外部アクセスは技術的には可能）",
-          "D. 静的属性であることを示す"
+          "A. @staticmethod",
+          "B. @property",
+          "C. @classmethod",
+          "D. @method"
         ],
         "answer": "C",
-        "concept": "カプセル化",
-        "topic": "_protected 慣習"
+        "concept": "クラスメソッド",
+        "topic": "@classmethod デコレータ"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "ネストされたクラス（クラスの中にクラスを定義する）の主な用途はどれか？",
+        "question": "ft_garden_analytics.py においてクラスメソッドの第一引数として慣例的に使われる名前はどれか？",
         "options": [
-          "A. 継承を代替するため",
-          "B. 外側のクラスと密接に関連する補助クラスをまとめるため",
-          "C. 処理を高速化するため",
-          "D. クラスメソッドを定義するため"
+          "A. self",
+          "B. this",
+          "C. klass",
+          "D. cls"
         ],
-        "answer": "B",
-        "concept": "OOP",
-        "topic": "ネストされたクラス"
+        "answer": "D",
+        "concept": "クラスメソッド",
+        "topic": "cls 引数"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "if __name__ == '__main__': というブロックを書く目的はどれか？",
+        "question": "ft_garden_analytics.py の Stats ネストクラスが追跡するものはどれか？",
         "options": [
-          "A. クラスの外でコードを実行できなくする",
-          "B. スクリプトとして直接実行したときのみコードを実行し、インポート時は実行しない",
-          "C. モジュール名を変更する",
-          "D. デバッグモードを有効にする"
+          "A. 植物の高さと年齢の変化",
+          "B. grow/age/show/shade の呼び出し回数",
+          "C. 植物の種類と総数",
+          "D. 水やりの回数と間隔"
         ],
         "answer": "B",
-        "concept": "モジュール実行",
-        "topic": "__name__ == '__main__'"
+        "concept": "ネストクラス",
+        "topic": "Stats クラスの役割"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "ft_garden_analytics.py で Seed クラスが継承しているクラスはどれか？",
+        "options": [
+          "A. Plant",
+          "B. Tree",
+          "C. Vegetable",
+          "D. Flower"
+        ],
+        "answer": "D",
+        "concept": "継承",
+        "topic": "Seed(Flower) の継承"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "Python でインスタンス変数にアクセスするとき必須のキーワードはどれか？",
+        "options": [
+          "A. this",
+          "B. instance",
+          "C. object",
+          "D. self"
+        ],
+        "answer": "D",
+        "concept": "OOP基礎",
+        "topic": "self キーワード"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_plant_types.py で Flower クラスが持つ固有属性はどれか？",
+        "options": [
+          "A. trunk_diameter",
+          "B. harvest_season",
+          "C. nutritional_value",
+          "D. color"
+        ],
+        "answer": "D",
+        "concept": "継承",
+        "topic": "Flower の固有属性"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "`class Flower(Plant):` という宣言が示すことはどれか？",
+        "options": [
+          "A. Flower が Plant のインスタンスを保持する",
+          "B. Flower が Plant を継承する",
+          "C. Flower が Plant を引数として取る",
+          "D. Flower と Plant は同じクラス"
+        ],
+        "answer": "B",
+        "concept": "継承",
+        "topic": "継承の宣言"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "ft_plant_growth.py で 7 日間シミュレートするのに使われる関数の組み合わせはどれか？",
+        "options": [
+          "A. grow() と age() のみ",
+          "B. show() と grow() のみ",
+          "C. age() と show() のみ",
+          "D. init() と grow() のみ"
+        ],
+        "answer": "A",
+        "concept": "クラスメソッド",
+        "topic": "grow() と age() の使用"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "Python においてサブクラスが親クラスのメソッドを再定義することを何というか？",
+        "options": [
+          "A. オーバーロード",
+          "B. カプセル化",
+          "C. オーバーライド",
+          "D. 多重継承"
+        ],
+        "answer": "C",
+        "concept": "継承",
+        "topic": "メソッドオーバーライド"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "ft_garden_security.py で get_height() と set_height() を提供する目的はどれか？",
+        "options": [
+          "A. コードを長くするため",
+          "B. 継承を実現するため",
+          "C. 属性への制御されたアクセスを提供するため",
+          "D. クラスメソッドを定義するため"
+        ],
+        "answer": "C",
+        "concept": "カプセル化",
+        "topic": "getter/setter の目的"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "ft_garden_analytics.py で匿名の植物を生成するための手段として使われるメソッドの種類はどれか？",
+        "options": [
+          "A. スタティックメソッド",
+          "B. インスタンスメソッド",
+          "C. プロパティ",
+          "D. クラスメソッド"
+        ],
+        "answer": "D",
+        "concept": "クラスメソッド",
+        "topic": "匿名インスタンス生成"
       }
     ]
   },
@@ -354,170 +578,282 @@
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "try ブロック内で例外が発生したとき、実行が移る場所はどれか？",
+        "question": "ft_first_exception.py の input_temperature() 関数で \"abc\" を渡したとき何が起きるか？",
         "options": [
-          "A. finally ブロック",
-          "B. else ブロック",
-          "C. 対応する except ブロック",
-          "D. プログラムが終了する"
+          "A. None が返される",
+          "B. int() が ValueError を発生させる",
+          "C. \"abc\" がそのまま返される",
+          "D. 0 が返される"
         ],
-        "answer": "C",
+        "answer": "B",
         "concept": "例外処理",
-        "topic": "try-except の基本"
+        "topic": "int() と ValueError"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "int('abc') を実行したとき発生する例外はどれか？",
+        "question": "例外を捕捉するための Python の構文はどれか？",
         "options": [
-          "A. TypeError",
-          "B. ValueError",
-          "C. AttributeError",
-          "D. RuntimeError"
+          "A. catch Exception:",
+          "B. handle Exception:",
+          "C. except Exception:",
+          "D. rescue Exception:"
         ],
-        "answer": "B",
-        "concept": "組み込み例外",
-        "topic": "ValueError"
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "try/except 構文"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "1 / 0 を実行したとき発生する例外はどれか？",
+        "question": "ft_raise_exception.py で温度が 100°C のとき raise する ValueError のメッセージはどれか？",
         "options": [
-          "A. ValueError",
-          "B. ArithmeticError",
-          "C. ZeroDivisionError",
-          "D. OverflowError"
+          "A. \"Too hot!\"",
+          "B. \"Temperature out of range\"",
+          "C. \"100°C is too hot for plants (max 40°C)\"",
+          "D. \"ValueError: 100\""
         ],
         "answer": "C",
-        "concept": "組み込み例外",
-        "topic": "ZeroDivisionError"
+        "concept": "例外送出",
+        "topic": "raise ValueError"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "finally ブロックが実行されるタイミングはどれか？",
+        "question": "ft_raise_exception.py で有効な温度範囲はどれか？",
         "options": [
-          "A. 例外が発生しなかったときのみ",
-          "B. 例外が発生したときのみ",
-          "C. 例外の有無にかかわらず必ず実行される",
-          "D. return 文の後に実行される"
+          "A. -10°C から 50°C",
+          "B. 0°C から 40°C",
+          "C. 1°C から 100°C",
+          "D. 0°C から 100°C"
         ],
-        "answer": "C",
-        "concept": "例外処理",
-        "topic": "finally"
+        "answer": "B",
+        "concept": "例外送出",
+        "topic": "温度の有効範囲"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "意図的に例外を発生させるキーワードはどれか？",
+        "question": "ft_different_errors.py の garden_operations() で operation_number=1 のとき発生する例外はどれか？",
         "options": [
-          "A. throw",
-          "B. raise",
-          "C. error",
-          "D. exception"
+          "A. ValueError",
+          "B. ZeroDivisionError",
+          "C. FileNotFoundError",
+          "D. TypeError"
         ],
         "answer": "B",
-        "concept": "例外処理",
-        "topic": "raise"
+        "concept": "例外の種類",
+        "topic": "ZeroDivisionError"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "カスタム例外クラスを定義するとき、通常どのクラスを継承するか？",
+        "question": "ft_different_errors.py の garden_operations() で operation_number=2 のとき発生する例外はどれか？",
         "options": [
-          "A. Error",
-          "B. BaseException",
+          "A. ValueError",
+          "B. TypeError",
+          "C. ZeroDivisionError",
+          "D. FileNotFoundError"
+        ],
+        "answer": "D",
+        "concept": "例外の種類",
+        "topic": "FileNotFoundError"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "ft_custom_errors.py で GardenError の継承関係として正しいものはどれか？",
+        "options": [
+          "A. GardenError → Exception → PlantError → WaterError",
+          "B. Exception → GardenError → PlantError と WaterError",
+          "C. PlantError → WaterError → GardenError",
+          "D. Exception → PlantError → GardenError → WaterError"
+        ],
+        "answer": "B",
+        "concept": "カスタム例外",
+        "topic": "例外継承階層"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "ft_custom_errors.py で PlantError を `except GardenError:` で捕捉できるのはなぜか？",
+        "options": [
+          "A. PlantError は GardenError の別名だから",
+          "B. except は全ての例外を捕捉するから",
+          "C. PlantError が GardenError を継承しているから",
+          "D. GardenError と PlantError は同じクラスだから"
+        ],
+        "answer": "C",
+        "concept": "カスタム例外",
+        "topic": "例外の継承と捕捉"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "ft_finally_block.py の water_plant() 関数で、プラント名が小文字の場合に発生する例外はどれか？",
+        "options": [
+          "A. ValueError",
+          "B. TypeError",
+          "C. PlantError",
+          "D. WaterError"
+        ],
+        "answer": "C",
+        "concept": "finally",
+        "topic": "PlantError の条件"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "try/except/finally において、finally ブロックが実行されるタイミングはどれか？",
+        "options": [
+          "A. 例外が発生した場合のみ",
+          "B. 例外が発生しなかった場合のみ",
+          "C. try ブロックが成功した場合のみ",
+          "D. 例外の有無に関わらず常に実行される"
+        ],
+        "answer": "D",
+        "concept": "finally",
+        "topic": "finally の実行タイミング"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "ft_finally_block.py の test_watering_system() で、finally ブロックには何が書かれているか？",
+        "options": [
+          "A. 植物の情報を表示する",
+          "B. 水やりシステムを閉じる（クローズ）処理",
+          "C. 例外を再度 raise する",
+          "D. ログを書き込む"
+        ],
+        "answer": "B",
+        "concept": "finally",
+        "topic": "finally の用途"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "Python で例外を手動で発生させる構文はどれか？",
+        "options": [
+          "A. throw Exception()",
+          "B. raise Exception()",
+          "C. error Exception()",
+          "D. trigger Exception()"
+        ],
+        "answer": "B",
+        "concept": "例外送出",
+        "topic": "raise 構文"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "カスタム例外クラスを作成するとき、継承すべき基底クラスはどれか？",
+        "options": [
+          "A. BaseError",
+          "B. RuntimeError",
           "C. Exception",
-          "D. RuntimeError"
+          "D. Error"
         ],
         "answer": "C",
         "concept": "カスタム例外",
         "topic": "Exception の継承"
       },
       {
-        "id": 7,
+        "id": 14,
         "type": "multiple_choice",
-        "question": "else ブロックが実行されるのはいつか？\n\ntry:\n    ...\nexcept SomeError:\n    ...\nelse:\n    ...",
+        "question": "ft_different_errors.py で operation_number=0 のとき発生する例外はどれか？",
         "options": [
-          "A. 常に実行される",
-          "B. try ブロックで例外が発生しなかったとき",
-          "C. try ブロックで例外が発生したとき",
-          "D. finally の前に必ず実行される"
+          "A. TypeError",
+          "B. FileNotFoundError",
+          "C. ZeroDivisionError",
+          "D. ValueError"
+        ],
+        "answer": "D",
+        "concept": "例外の種類",
+        "topic": "ValueError"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_different_errors.py で operation_number=3 のとき発生する例外はどれか？",
+        "options": [
+          "A. TypeError",
+          "B. AttributeError",
+          "C. ValueError",
+          "D. IndexError"
+        ],
+        "answer": "A",
+        "concept": "例外の種類",
+        "topic": "TypeError"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "次の try/except 構造で、except ブロックには何が入るか？\n\ntry:\n    x = int(\"abc\")\n___:\n    print(\"変換失敗\")",
+        "options": [
+          "A. catch ValueError",
+          "B. except ValueError:",
+          "C. handle ValueError:",
+          "D. on ValueError:"
         ],
         "answer": "B",
         "concept": "例外処理",
-        "topic": "else ブロック"
+        "topic": "except の構文"
       },
       {
-        "id": 8,
+        "id": 17,
         "type": "multiple_choice",
-        "question": "except 句で例外オブジェクト自体を変数に受け取る構文はどれか？",
+        "question": "ft_raise_exception.py で温度が -50°C のとき raise される ValueError のメッセージはどれか？",
         "options": [
-          "A. except ValueError(e):",
-          "B. except ValueError, e:",
-          "C. except ValueError as e:",
-          "D. except(ValueError) -> e:"
+          "A. \"-50°C is out of range\"",
+          "B. \"Too cold!\"",
+          "C. \"Temperature below 0\"",
+          "D. \"-50°C is too cold for plants (min 0°C)\""
         ],
-        "answer": "C",
-        "concept": "例外処理",
-        "topic": "except ... as e"
+        "answer": "D",
+        "concept": "例外送出",
+        "topic": "最小温度エラーメッセージ"
       },
       {
-        "id": 9,
+        "id": 18,
         "type": "multiple_choice",
-        "question": "次のコードで出力される文字列はどれか？\n\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('zero')\nfinally:\n    print('done')",
+        "question": "複数の例外を一つの except ブロックで捕捉するための正しい構文はどれか？",
         "options": [
-          "A. zero のみ",
-          "B. done のみ",
-          "C. zero\\ndone",
-          "D. エラーで終了"
+          "A. except ValueError or TypeError:",
+          "B. except (ValueError, TypeError):",
+          "C. except ValueError + TypeError:",
+          "D. except ValueError | TypeError:"
         ],
-        "answer": "C",
+        "answer": "B",
         "concept": "例外処理",
-        "topic": "finally の動作"
+        "topic": "複数例外の捕捉"
       },
       {
-        "id": 10,
+        "id": 19,
         "type": "multiple_choice",
-        "question": "GardenError(Exception) を定義し、PlantError(GardenError) を定義したとき、except GardenError でキャッチできるのはどれか？",
+        "question": "ft_custom_errors.py で WaterError が継承しているクラスはどれか？",
         "options": [
-          "A. GardenError のみ",
-          "B. PlantError のみ",
-          "C. GardenError と PlantError の両方",
-          "D. Exception 全体"
+          "A. Exception",
+          "B. PlantError",
+          "C. GardenError",
+          "D. ValueError"
         ],
         "answer": "C",
         "concept": "カスタム例外",
-        "topic": "例外の継承チェーン"
+        "topic": "WaterError の継承元"
       },
       {
-        "id": 11,
+        "id": 20,
         "type": "multiple_choice",
-        "question": "存在しないリストのインデックスにアクセスしたとき（例：my_list[100]）発生する例外はどれか？",
+        "question": "ft_finally_block.py で water_plant('rose')（小文字）を呼び出したとき、finally ブロックは実行されるか？",
         "options": [
-          "A. KeyError",
-          "B. IndexError",
-          "C. ValueError",
-          "D. OutOfBoundsError"
+          "A. PlantError が発生するので実行されない",
+          "B. 例外が発生した場合のみ実行される",
+          "C. 例外の有無に関わらず必ず実行される",
+          "D. 関数が PlantError を raise するので飛ばされる"
         ],
-        "answer": "B",
-        "concept": "組み込み例外",
-        "topic": "IndexError"
-      },
-      {
-        "id": 12,
-        "type": "multiple_choice",
-        "question": "with open('file.txt') as f: という構文を使うと、例外が発生した場合にファイルはどうなるか？",
-        "options": [
-          "A. ファイルが削除される",
-          "B. 自動的にクローズされる",
-          "C. 開いたままになる",
-          "D. 再度オープンされる"
-        ],
-        "answer": "B",
-        "concept": "コンテキストマネージャ",
-        "topic": "with 文とリソース管理"
+        "answer": "C",
+        "concept": "finally",
+        "topic": "finally の保証"
       }
     ]
   },
@@ -528,1040 +864,1712 @@
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Python の list、tuple、set、dict の説明として正しいのはどれか？",
+        "question": "ft_command_quest.py でコマンドライン引数を取得するために使用するモジュールはどれか？",
         "options": [
-          "A. list は不変、tuple は可変",
-          "B. set は重複要素を許可する",
-          "C. tuple は不変（イミュータブル）なシーケンス",
-          "D. dict は順序を保持しない（Python 3.7 以降でも）"
+          "A. os",
+          "B. sys",
+          "C. argparse",
+          "D. input"
         ],
-        "answer": "C",
-        "concept": "コレクション",
-        "topic": "tuple の特性"
+        "answer": "B",
+        "concept": "コマンドライン引数",
+        "topic": "sys モジュール"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "次のコードの出力はどれか？\n\nmy_set = {1, 2, 2, 3, 3, 3}\nprint(len(my_set))",
+        "question": "ft_command_quest.py で `sys.argv[0]` が示すものはどれか？",
         "options": [
-          "A. 6",
-          "B. 3",
-          "C. 2",
-          "D. エラーになる"
+          "A. 最初のコマンドライン引数",
+          "B. 引数の総数",
+          "C. プログラム名（スクリプト名）",
+          "D. 最後の引数"
         ],
-        "answer": "B",
-        "concept": "コレクション",
-        "topic": "set の重複排除"
+        "answer": "C",
+        "concept": "コマンドライン引数",
+        "topic": "sys.argv[0]"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "辞書から存在しないキーにアクセスするとき、KeyError を発生させない安全な方法はどれか？",
+        "question": "ft_score_analytics.py でスコアリストの平均を計算するときに使う組み合わせはどれか？",
         "options": [
-          "A. dict[key]",
-          "B. dict.get(key)",
-          "C. dict.find(key)",
-          "D. dict.fetch(key)"
+          "A. average() 関数",
+          "B. mean() 関数",
+          "C. sum() / len()",
+          "D. sum() / count()"
         ],
-        "answer": "B",
-        "concept": "コレクション",
-        "topic": "dict.get()"
+        "answer": "C",
+        "concept": "リスト操作",
+        "topic": "sum() と len()"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "リスト内包表記 [x for x in range(10) if x % 2 == 0] の結果はどれか？",
+        "question": "ft_coordinate_system.py でタプルが「石に刻まれたデータ」と表現される理由はどれか？",
         "options": [
-          "A. [1, 3, 5, 7, 9]",
-          "B. [0, 2, 4, 6, 8]",
-          "C. [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",
-          "D. [2, 4, 6, 8, 10]"
+          "A. タプルはファイルに書き込めるから",
+          "B. タプルはメモリ効率が良いから",
+          "C. タプルはソート可能だから",
+          "D. タプルの要素は変更できない（イミュータブル）から"
         ],
-        "answer": "B",
-        "concept": "内包表記",
-        "topic": "リスト内包表記"
+        "answer": "D",
+        "concept": "タプル",
+        "topic": "タプルのイミュータビリティ"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "ジェネレータ関数を通常の関数と区別する特徴はどれか？",
+        "question": "ft_coordinate_system.py でユークリッド距離を計算するために使うモジュールはどれか？",
         "options": [
-          "A. return の代わりに yield を使う",
-          "B. def の代わりに gen を使う",
-          "C. クラスを継承する必要がある",
-          "D. 非同期関数である"
+          "A. random",
+          "B. statistics",
+          "C. numpy",
+          "D. math"
         ],
-        "answer": "A",
-        "concept": "ジェネレータ",
-        "topic": "yield"
+        "answer": "D",
+        "concept": "タプル",
+        "topic": "math.sqrt() によるユークリッド距離"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "ジェネレータの主な利点はどれか？",
+        "question": "ft_achievement_tracker.py で2つのプレイヤーが共通して持つ実績を求める集合演算はどれか？",
         "options": [
-          "A. 実行速度が2倍になる",
-          "B. 全要素を一度にメモリに保持しないため、メモリ効率が良い",
-          "C. 型チェックが不要になる",
-          "D. マルチスレッドで実行できる"
+          "A. set.union()",
+          "B. set.difference()",
+          "C. set.intersection()",
+          "D. set.symmetric_difference()"
         ],
-        "answer": "B",
-        "concept": "ジェネレータ",
-        "topic": "遅延評価（lazy evaluation）"
+        "answer": "C",
+        "concept": "集合",
+        "topic": "set.intersection()"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "set の .intersection() メソッドが返すものはどれか？\n\na = {1, 2, 3}\nb = {2, 3, 4}\na.intersection(b)",
+        "question": "ft_achievement_tracker.py で全プレイヤーの実績を重複なくすべて集めるための集合演算はどれか？",
         "options": [
-          "A. {1, 2, 3, 4}",
-          "B. {2, 3}",
-          "C. {1, 4}",
-          "D. {1, 2, 3, 2, 3, 4}"
+          "A. set.union()",
+          "B. set.intersection()",
+          "C. set.difference()",
+          "D. set.append()"
         ],
-        "answer": "B",
-        "concept": "コレクション",
-        "topic": "set.intersection()"
+        "answer": "A",
+        "concept": "集合",
+        "topic": "set.union()"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "辞書内包表記で {k: v*2 for k, v in {'a': 1, 'b': 2}.items()} の結果はどれか？",
+        "question": "Python で空の集合を作る正しい方法はどれか？",
         "options": [
-          "A. {'a': 1, 'b': 2}",
-          "B. {'a': 2, 'b': 4}",
-          "C. {1: 'a', 2: 'b'}",
-          "D. ['a', 'b']"
+          "A. {}",
+          "B. set()",
+          "C. []",
+          "D. ()"
+        ],
+        "answer": "B",
+        "concept": "集合",
+        "topic": "空集合の作り方"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "ft_inventory_system.py でアイテムの入力フォーマットはどれか？",
+        "options": [
+          "A. \"item_name quantity\"",
+          "B. \"item_name=quantity\"",
+          "C. \"item_name:quantity\"",
+          "D. \"item_name,quantity\""
+        ],
+        "answer": "C",
+        "concept": "辞書",
+        "topic": "インベントリ入力フォーマット"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "ft_inventory_system.py で辞書の全キーを取得するメソッドはどれか？",
+        "options": [
+          "A. dict.items()",
+          "B. dict.values()",
+          "C. dict.get()",
+          "D. dict.keys()"
+        ],
+        "answer": "D",
+        "concept": "辞書",
+        "topic": "dict.keys()"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "ft_data_stream.py のジェネレータ関数で値を生成するキーワードはどれか？",
+        "options": [
+          "A. return",
+          "B. generate",
+          "C. send",
+          "D. yield"
+        ],
+        "answer": "D",
+        "concept": "ジェネレータ",
+        "topic": "yield キーワード"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "ft_data_stream.py の gen_event() ジェネレータが返すデータの型はどれか？",
+        "options": [
+          "A. リスト [name, action]",
+          "B. 辞書 {name: action}",
+          "C. タプル (name, action)",
+          "D. 文字列 \"name:action\""
+        ],
+        "answer": "C",
+        "concept": "ジェネレータ",
+        "topic": "gen_event() の戻り値"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "ジェネレータから次の値を取得する関数はどれか？",
+        "options": [
+          "A. next(gen)",
+          "B. get(gen)",
+          "C. fetch(gen)",
+          "D. pop(gen)"
+        ],
+        "answer": "A",
+        "concept": "ジェネレータ",
+        "topic": "next() 関数"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "ft_data_alchemist.py でリスト内包表記を使って全要素を大文字にするコードはどれか？",
+        "options": [
+          "A. [s.upper for s in lst]",
+          "B. map(upper, lst)",
+          "C. [s.upper() for s in lst]",
+          "D. {s.upper() for s in lst}"
+        ],
+        "answer": "C",
+        "concept": "内包表記",
+        "topic": "リスト内包表記"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_data_alchemist.py で辞書内包表記を使って名前とスコアのマッピングを作る構文はどれか？",
+        "options": [
+          "A. [name: score for name, score in data]",
+          "B. {name: score for name, score in data}",
+          "C. dict(name=score for name, score in data)",
+          "D. (name, score for name, score in data)"
         ],
         "answer": "B",
         "concept": "内包表記",
         "topic": "辞書内包表記"
       },
       {
-        "id": 9,
+        "id": 16,
         "type": "multiple_choice",
-        "question": "sys.argv[0] には何が入るか？",
+        "question": "ft_score_analytics.py でコマンドライン引数に無効な値（\"abc\" など）が含まれる場合の対応はどれか？",
         "options": [
-          "A. 最初のコマンドライン引数",
-          "B. 実行したスクリプトのファイル名",
-          "C. Python のバージョン",
-          "D. None"
+          "A. プログラムがクラッシュする",
+          "B. 無効な値を 0 として処理する",
+          "C. 無効な値を除外して処理を続ける",
+          "D. エラーメッセージを表示して終了する"
+        ],
+        "answer": "C",
+        "concept": "リスト操作",
+        "topic": "無効値の除外"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "ft_achievement_tracker.py でプレイヤー A にあってプレイヤー B にない実績を求める演算はどれか？",
+        "options": [
+          "A. set_a.intersection(set_b)",
+          "B. set_a.union(set_b)",
+          "C. set_a.difference(set_b)",
+          "D. set_a.symmetric_difference(set_b)"
+        ],
+        "answer": "C",
+        "concept": "集合",
+        "topic": "set.difference()"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "ft_data_stream.py のジェネレータの型ヒントに使うモジュールはどれか？",
+        "options": [
+          "A. collections",
+          "B. abc",
+          "C. itertools",
+          "D. typing"
+        ],
+        "answer": "D",
+        "concept": "ジェネレータ",
+        "topic": "typing.Generator"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "辞書の全キーと値のペアを取得するメソッドはどれか？",
+        "options": [
+          "A. dict.keys()",
+          "B. dict.values()",
+          "C. dict.pairs()",
+          "D. dict.items()"
+        ],
+        "answer": "D",
+        "concept": "辞書",
+        "topic": "dict.items()"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "ft_coordinate_system.py で2点間のユークリッド距離の計算式はどれか？",
+        "options": [
+          "A. abs(x2-x1) + abs(y2-y1) + abs(z2-z1)",
+          "B. math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2)",
+          "C. (x2-x1 + y2-y1 + z2-z1) / 3",
+          "D. max(x2-x1, y2-y1, z2-z1)"
         ],
         "answer": "B",
-        "concept": "コマンドライン",
-        "topic": "sys.argv"
-      },
-      {
-        "id": 10,
-        "type": "multiple_choice",
-        "question": "次のジェネレータ関数を呼び出した後、gen = counter() として next(gen) を3回呼んだときの出力はどれか？\n\ndef counter():\n    i = 0\n    while True:\n        yield i\n        i += 1",
-        "options": [
-          "A. 0, 1, 2",
-          "B. 1, 2, 3",
-          "C. 0, 0, 0",
-          "D. StopIteration が発生する"
-        ],
-        "answer": "A",
-        "concept": "ジェネレータ",
-        "topic": "next() の動作"
-      },
-      {
-        "id": 11,
-        "type": "multiple_choice",
-        "question": "enumerate(['a', 'b', 'c']) を for ループで使うと何が取得できるか？",
-        "options": [
-          "A. 要素のみ（'a', 'b', 'c'）",
-          "B. インデックスのみ（0, 1, 2）",
-          "C. (インデックス, 要素) のタプル（(0,'a'), (1,'b'), (2,'c')）",
-          "D. 要素の長さ"
-        ],
-        "answer": "C",
-        "concept": "組み込み関数",
-        "topic": "enumerate()"
-      },
-      {
-        "id": 12,
-        "type": "multiple_choice",
-        "question": "set の .difference() メソッドで a.difference(b) が返すものはどれか？\n\na = {1, 2, 3}\nb = {2, 3, 4}",
-        "options": [
-          "A. {2, 3}（共通部分）",
-          "B. {1, 4}（両方に含まれない要素）",
-          "C. {1}（a にあって b にない要素）",
-          "D. {1, 2, 3, 4}（和集合）"
-        ],
-        "answer": "C",
-        "concept": "コレクション",
-        "topic": "set.difference()"
+        "concept": "タプル",
+        "topic": "ユークリッド距離の公式"
       }
     ]
   },
   {
     "module": "04",
-    "title": "Module 04: Data Archivist - ファイルI/O・例外処理",
+    "title": "Module 04: Data Archivist - ファイルI/O・ストリーム管理",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "存在しないファイルを open() で開こうとしたとき、発生する例外はどれか？",
+        "question": "ft_ancient_text.py でファイルを読み取り専用で開く open() の正しい呼び出しはどれか？",
         "options": [
-          "A. IOError",
-          "B. FileNotFoundError",
-          "C. FileError",
-          "D. PathError"
-        ],
-        "answer": "B",
-        "concept": "例外処理",
-        "topic": "FileNotFoundError"
-      },
-      {
-        "id": 2,
-        "type": "multiple_choice",
-        "question": "ファイルを読み取り専用で開く正しい open() の呼び出しはどれか？",
-        "options": [
-          "A. open('file.txt', 'w')",
-          "B. open('file.txt', 'a')",
-          "C. open('file.txt', 'r')",
-          "D. open('file.txt', 'x')"
+          "A. open(filename, 'w')",
+          "B. open(filename, 'a')",
+          "C. open(filename, 'r')",
+          "D. open(filename, 'x')"
         ],
         "answer": "C",
         "concept": "ファイル操作",
         "topic": "open() モード"
       },
       {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "ft_ancient_text.py で `with` 文を使わずにファイルを閉じる方法はどれか？",
+        "options": [
+          "A. file.end()",
+          "B. file.terminate()",
+          "C. file.destroy()",
+          "D. file.close()"
+        ],
+        "answer": "D",
+        "concept": "ファイル操作",
+        "topic": "close() の呼び出し"
+      },
+      {
         "id": 3,
         "type": "multiple_choice",
-        "question": "with 文を使ってファイルを開く主な利点はどれか？",
+        "question": "ft_ancient_text.py でファイルが存在しない場合に発生する例外はどれか？",
         "options": [
-          "A. ファイルを高速に読み込める",
-          "B. 例外が発生しても自動でファイルが閉じられる",
-          "C. バイナリファイルのみ扱える",
-          "D. ファイルサイズを取得できる"
+          "A. ValueError",
+          "B. FileNotFoundError",
+          "C. IOError",
+          "D. OSError"
         ],
         "answer": "B",
-        "concept": "コンテキストマネージャ",
-        "topic": "with 文"
+        "concept": "ファイル操作",
+        "topic": "FileNotFoundError"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "コマンドライン引数を取得するために使うモジュールと属性の組み合わせとして正しいのはどれか？",
+        "question": "ft_archive_creation.py で各行の末尾に '#' を追加してファイルに書き込むメソッドはどれか？",
         "options": [
-          "A. os.args",
-          "B. sys.argv",
-          "C. argparse.args",
-          "D. sys.arguments"
+          "A. file.append()",
+          "B. file.print()",
+          "C. file.write()",
+          "D. file.put()"
         ],
-        "answer": "B",
-        "concept": "コマンドライン引数",
-        "topic": "sys.argv"
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "file.write()"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "次のコードの出力として正しいものはどれか？\n\ntry:\n    x = int('abc')\nexcept ValueError as e:\n    print('ValueError:', e)\nexcept Exception as e:\n    print('Exception:', e)",
+        "question": "ft_stream_management.py で標準入力（キーボード）の代わりに使うオブジェクトはどれか？",
         "options": [
-          "A. Exception: invalid literal for int() with base 10: 'abc'",
-          "B. ValueError: invalid literal for int() with base 10: 'abc'",
-          "C. エラーなし、xにNoneが入る",
-          "D. TypeError が発生する"
+          "A. sys.input",
+          "B. os.stdin",
+          "C. sys.stdin",
+          "D. io.stdin"
         ],
-        "answer": "B",
-        "concept": "例外処理",
-        "topic": "except の優先順位"
+        "answer": "C",
+        "concept": "ストリーム",
+        "topic": "sys.stdin"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "ファイルの全行をリストとして取得するメソッドはどれか？",
+        "question": "ft_stream_management.py でエラーメッセージを標準エラーに出力する方法はどれか？",
         "options": [
-          "A. file.read()",
-          "B. file.readline()",
-          "C. file.readlines()",
-          "D. file.lines()"
+          "A. print(msg, file=sys.stderr)",
+          "B. print(msg, file=sys.error)",
+          "C. sys.stderr(msg)",
+          "D. error.write(msg)"
         ],
-        "answer": "C",
-        "concept": "ファイル操作",
-        "topic": "readlines()"
+        "answer": "A",
+        "concept": "ストリーム",
+        "topic": "sys.stderr への出力"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "try-except-else-finally の組み合わせで、例外が発生しなかった場合のみ実行されるブロックはどれか？",
+        "question": "ft_stream_management.py でエラーメッセージに付けるプレフィックスはどれか？",
         "options": [
-          "A. try",
-          "B. except",
-          "C. else",
-          "D. finally"
+          "A. \"[ERROR]\"",
+          "B. \"[STDERR]\"",
+          "C. \"ERROR:\"",
+          "D. \">> \""
         ],
-        "answer": "C",
-        "concept": "例外処理",
-        "topic": "else ブロック"
+        "answer": "B",
+        "concept": "ストリーム",
+        "topic": "[STDERR] プレフィックス"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "Python の型ヒントで、文字列または None を受け取る引数の型注釈として正しいのはどれか？",
+        "question": "ft_vault_security.py の `with` 文（コンテキストマネージャ）を使う主な利点はどれか？",
         "options": [
-          "A. str | None",
-          "B. str or None",
-          "C. Optional[str] のみ正しい",
-          "D. AとCは両方正しい（Python 3.10以降）"
+          "A. ファイルを高速に読み込める",
+          "B. 例外が発生してもファイルが自動的に閉じられる",
+          "C. ファイルをメモリに完全に展開できる",
+          "D. バイナリファイルも読めるようになる"
         ],
-        "answer": "D",
-        "concept": "型ヒント",
-        "topic": "Optional 型"
+        "answer": "B",
+        "concept": "コンテキストマネージャ",
+        "topic": "with 文の利点"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "ファイルに書き込む際、既存内容を消さずに末尾に追記するモードはどれか？",
+        "question": "ft_vault_security.py の secure_archive() の戻り値の型はどれか？",
         "options": [
-          "A. 'w'",
-          "B. 'r+'",
-          "C. 'a'",
-          "D. 'x'"
+          "A. str",
+          "B. bool",
+          "C. None",
+          "D. (bool, str) のタプル"
         ],
-        "answer": "C",
-        "concept": "ファイル操作",
-        "topic": "append モード"
+        "answer": "D",
+        "concept": "コンテキストマネージャ",
+        "topic": "secure_archive() の戻り値"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "PermissionError はどの基底例外クラスを継承しているか？",
+        "question": "Python の `with open(filename) as f:` 構文でファイルを閉じるタイミングはどれか？",
         "options": [
-          "A. ValueError",
-          "B. RuntimeError",
-          "C. OSError",
-          "D. IOError（OSError とは別物）"
+          "A. スクリプト終了時",
+          "B. f.close() を呼び出したとき",
+          "C. with ブロックを抜けたとき",
+          "D. ガベージコレクション時"
         ],
         "answer": "C",
-        "concept": "例外階層",
-        "topic": "OSError サブクラス"
+        "concept": "コンテキストマネージャ",
+        "topic": "with ブロックの終了"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のうち、mypy で型チェックを行う際に正しい実行コマンドはどれか？",
+        "question": "ft_ancient_text.py でファイルの全内容を一度に読む方法はどれか？",
         "options": [
-          "A. python --type-check script.py",
-          "B. mypy script.py",
-          "C. python -m typecheck script.py",
-          "D. typehint script.py"
+          "A. file.readlines()",
+          "B. file.read()",
+          "C. file.readline()",
+          "D. file.readall()"
         ],
         "answer": "B",
-        "concept": "型チェック",
-        "topic": "mypy"
+        "concept": "ファイル操作",
+        "topic": "file.read()"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "io モジュールの StringIO クラスは何に使うか？",
+        "question": "ft_ancient_text.py で読み取り時に PermissionError が発生した場合はどう対処すべきか？",
         "options": [
-          "A. ファイルを圧縮する",
-          "B. 文字列をファイルオブジェクトのように扱う",
-          "C. バイナリデータを文字列に変換する",
-          "D. ファイルのエンコーディングを変換する"
+          "A. プログラムをクラッシュさせる",
+          "B. ファイルを強制的に開く",
+          "C. 例外を捕捉してエラーを表示する",
+          "D. ファイルのパーミッションを変更する"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "PermissionError の対処"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "ft_archive_creation.py で保存先のファイル名をユーザーに入力させる関数はどれか？",
+        "options": [
+          "A. sys.stdin.read()",
+          "B. os.getinput()",
+          "C. input()",
+          "D. raw_input()"
+        ],
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "input() でファイル名取得"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "ファイルを書き込みモードで開く open() のモード指定はどれか？",
+        "options": [
+          "A. 'r'",
+          "B. 'a'",
+          "C. 'w'",
+          "D. 'rb'"
+        ],
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "'w' モード"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_stream_management.py で標準出力に書き込む方法として、sys モジュールを使う場合はどれか？",
+        "options": [
+          "A. sys.out.write(msg)",
+          "B. sys.stdout.write(msg)",
+          "C. sys.print(msg)",
+          "D. stdout.write(msg)"
         ],
         "answer": "B",
-        "concept": "ストリーム操作",
-        "topic": "io.StringIO"
+        "concept": "ストリーム",
+        "topic": "sys.stdout"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "ft_archive_creation.py でファイルの各行に '#' を追加するとき、行末の改行 '\\n' との順序として正しいのはどれか？",
+        "options": [
+          "A. '\\n' の後に '#' を追加する",
+          "B. '#' の後に '\\n' を追加する（行末が # になる）",
+          "C. '\\n' と '#' は同時に削除される",
+          "D. '#' のみを追加して '\\n' は削除する"
+        ],
+        "answer": "B",
+        "concept": "ファイル操作",
+        "topic": "行末への文字追加"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "ft_ancient_text.py でコマンドライン引数からファイル名を取得するコードはどれか？",
+        "options": [
+          "A. sys.argv[0]",
+          "B. sys.argv[1]",
+          "C. input()",
+          "D. os.argv[1]"
+        ],
+        "answer": "B",
+        "concept": "ファイル操作",
+        "topic": "sys.argv でファイル名取得"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "ft_vault_security.py の secure_archive() が読み込みに成功した場合の戻り値はどれか？",
+        "options": [
+          "A. (False, \"Error\")",
+          "B. None",
+          "C. (True, ファイルの内容)",
+          "D. (True, None)"
+        ],
+        "answer": "C",
+        "concept": "コンテキストマネージャ",
+        "topic": "成功時の戻り値"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "Python の `with` 文が実装しているプロトコルはどれか？",
+        "options": [
+          "A. Iterator プロトコル",
+          "B. Context Manager プロトコル（__enter__ / __exit__）",
+          "C. Descriptor プロトコル",
+          "D. Comparable プロトコル"
+        ],
+        "answer": "B",
+        "concept": "コンテキストマネージャ",
+        "topic": "__enter__ と __exit__"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "ファイルを追記モード（既存の内容を保持しつつ末尾に追加）で開くモードはどれか？",
+        "options": [
+          "A. 'w'",
+          "B. 'r'",
+          "C. 'x'",
+          "D. 'a'"
+        ],
+        "answer": "D",
+        "concept": "ファイル操作",
+        "topic": "'a' 追記モード"
       }
     ]
   },
   {
     "module": "05",
-    "title": "Module 05: Code Nexus - 抽象クラス・ポリモーフィズム",
+    "title": "Module 05: Code Nexus - 抽象クラス・ポリモーフィズム・Protocol",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Python で抽象基底クラスを作成するために使うモジュールはどれか？",
+        "question": "data_processor.py の DataProcessor 抽象クラスを定義するとき使うモジュールはどれか？",
         "options": [
           "A. abstract",
-          "B. abc",
-          "C. interface",
-          "D. base"
+          "B. interface",
+          "C. abc",
+          "D. typing"
         ],
-        "answer": "B",
+        "answer": "C",
         "concept": "抽象クラス",
         "topic": "abc モジュール"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "抽象メソッドを定義するデコレータはどれか？",
+        "question": "DataProcessor の抽象メソッドを宣言するデコレータはどれか？",
         "options": [
           "A. @abstract",
-          "B. @interface",
-          "C. @abstractmethod",
-          "D. @override"
+          "B. @override",
+          "C. @interface",
+          "D. @abstractmethod"
         ],
-        "answer": "C",
+        "answer": "D",
         "concept": "抽象クラス",
         "topic": "@abstractmethod"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードで TypeError が発生するのはどの行か？\n\nfrom abc import ABC, abstractmethod\nclass Animal(ABC):\n    @abstractmethod\n    def sound(self): pass\n\nclass Dog(Animal):\n    def sound(self): return 'Woof'\n\na = Animal()  # 行A\nd = Dog()     # 行B",
+        "question": "DataProcessor が持つ2つの抽象メソッドはどれか？",
         "options": [
-          "A. 行A（Animal() のインスタンス化）",
-          "B. 行B（Dog() のインスタンス化）",
-          "C. どちらも発生しない",
-          "D. 抽象メソッド定義時に発生"
+          "A. read() と write()",
+          "B. load() と save()",
+          "C. validate() と ingest()",
+          "D. process() と output()"
         ],
-        "answer": "A",
+        "answer": "C",
         "concept": "抽象クラス",
-        "topic": "抽象クラスのインスタンス化"
+        "topic": "DataProcessor の抽象メソッド"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "ポリモーフィズムの説明として最も適切なものはどれか？",
+        "question": "DataProcessor の output() メソッドの戻り値の型はどれか？",
         "options": [
-          "A. クラスの属性を隠蔽すること",
-          "B. 異なるクラスのオブジェクトが同じインターフェースを通じて異なる動作をすること",
-          "C. 親クラスのメソッドをそのまま継承すること",
-          "D. 複数のクラスを1つのファイルにまとめること"
+          "A. str",
+          "B. list",
+          "C. tuple[int, str]",
+          "D. dict"
         ],
-        "answer": "B",
-        "concept": "ポリモーフィズム",
-        "topic": "ポリモーフィズムの概念"
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "output() の戻り値型"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "子クラスで親クラスのメソッドを上書きすることを何というか？",
+        "question": "data_processor.py で int や float のデータを処理するクラスはどれか？",
         "options": [
-          "A. オーバーロード（Overload）",
-          "B. オーバーライド（Override）",
-          "C. オーバーフロー（Overflow）",
-          "D. ダックタイピング"
+          "A. NumericProcessor",
+          "B. LogProcessor",
+          "C. TextProcessor",
+          "D. DataHandler"
         ],
-        "answer": "B",
-        "concept": "継承",
-        "topic": "メソッドオーバーライド"
+        "answer": "A",
+        "concept": "ポリモーフィズム",
+        "topic": "NumericProcessor"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "次のコードの出力はどれか？\n\nclass A:\n    def hello(self): return 'A'\nclass B(A):\n    def hello(self): return 'B'\nclass C(A):\n    pass\n\nfor obj in [B(), C()]:\n    print(obj.hello())",
+        "question": "TextProcessor が受け付けるデータの型はどれか？",
         "options": [
-          "A. A\\nA",
-          "B. B\\nB",
-          "C. B\\nA",
-          "D. A\\nB"
+          "A. int と float のみ",
+          "B. str または str のリスト",
+          "C. dict のみ",
+          "D. bytes 型"
         ],
-        "answer": "C",
-        "concept": "継承とオーバーライド",
-        "topic": "メソッド解決順序"
+        "answer": "B",
+        "concept": "ポリモーフィズム",
+        "topic": "TextProcessor の入力型"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "ABC クラスを継承する際、全ての抽象メソッドを実装しなかった場合どうなるか？",
+        "question": "LogProcessor が受け付けるデータの型はどれか？",
         "options": [
-          "A. 警告が出るが動作する",
-          "B. インスタンス化時に TypeError が発生する",
-          "C. 定義時に SyntaxError が発生する",
-          "D. NotImplementedError が発生する"
+          "A. str のリスト",
+          "B. int のリスト",
+          "C. str キーと str 値の辞書（またはそのリスト）",
+          "D. タプルのリスト"
         ],
-        "answer": "B",
-        "concept": "抽象クラス",
-        "topic": "抽象メソッドの強制実装"
+        "answer": "C",
+        "concept": "ポリモーフィズム",
+        "topic": "LogProcessor の入力型"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "isinstance(obj, SomeClass) が True を返す条件はどれか？",
+        "question": "data_stream.py の DataStream クラスで各データを適切なプロセッサにルーティングするために使われるメソッドはどれか？",
         "options": [
-          "A. obj が SomeClass の直接のインスタンスのみ",
-          "B. obj が SomeClass またはそのサブクラスのインスタンス",
-          "C. obj が SomeClass の親クラスのインスタンス",
-          "D. obj と SomeClass が同じモジュールにある"
+          "A. ingest()",
+          "B. output()",
+          "C. process()",
+          "D. validate()"
         ],
-        "answer": "B",
-        "concept": "型チェック",
-        "topic": "isinstance()"
+        "answer": "D",
+        "concept": "ポリモーフィズム",
+        "topic": "validate() によるルーティング"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "typing モジュールの List[int] はどういう意味か？",
+        "question": "data_stream.py の DataStream にプロセッサを追加するメソッドはどれか？",
         "options": [
-          "A. int 型の要素のみを含む list（実行時に強制される）",
-          "B. int 型の要素を含むことが期待される list（型ヒント）",
-          "C. list を int に変換する関数",
-          "D. int の部分型を定義する"
+          "A. add_processor()",
+          "B. register_processor()",
+          "C. attach_processor()",
+          "D. connect_processor()"
         ],
         "answer": "B",
-        "concept": "型ヒント",
-        "topic": "Generic 型"
+        "concept": "ポリモーフィズム",
+        "topic": "register_processor()"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "複数の基底クラスを継承する Python の機能は何というか？",
+        "question": "抽象クラスを直接インスタンス化しようとするとどうなるか？",
         "options": [
-          "A. シングル継承",
-          "B. 多重継承（Multiple Inheritance）",
-          "C. ミックスイン専用構文",
-          "D. インターフェース実装"
+          "A. 正常に作成される",
+          "B. None が返される",
+          "C. TypeError が発生する",
+          "D. 空のオブジェクトが作成される"
         ],
-        "answer": "B",
-        "concept": "継承",
-        "topic": "多重継承"
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "抽象クラスのインスタンス化"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "DataStream クラスが複数の DataProcessor を管理する設計パターンに最も近いのはどれか？",
+        "question": "data_pipeline.py の ExportPlugin が継承するクラスはどれか？",
         "options": [
-          "A. Factory パターン",
-          "B. Singleton パターン",
-          "C. Strategy パターン",
-          "D. Observer パターン"
+          "A. ABC",
+          "B. DataProcessor",
+          "C. Protocol",
+          "D. DataStream"
         ],
         "answer": "C",
-        "concept": "デザインパターン",
-        "topic": "Strategy パターン"
+        "concept": "Protocol",
+        "topic": "ExportPlugin と Protocol"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "super() を使う主な目的はどれか？",
+        "question": "Protocol を使ったダックタイピングの説明として正しいものはどれか？",
         "options": [
-          "A. クラス自身のメソッドを再帰的に呼ぶ",
-          "B. 親クラスのメソッドやコンストラクタを呼び出す",
-          "C. 全てのサブクラスのインスタンスを取得する",
-          "D. クラスのドキュメントを取得する"
+          "A. 継承関係があるときのみ型チェックが通る",
+          "B. 必要なメソッドを持っていれば継承なしで型として扱える",
+          "C. すべてのクラスが自動的に Protocol を実装する",
+          "D. Protocol は実行時のみ有効"
         ],
         "answer": "B",
-        "concept": "継承",
-        "topic": "super()"
+        "concept": "Protocol",
+        "topic": "ダックタイピング"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "data_pipeline.py の ExportPlugin が持つメソッドのシグネチャはどれか？",
+        "options": [
+          "A. export(self, data: list) -> None",
+          "B. save(self, data: list) -> None",
+          "C. process_output(self, data: list[tuple[int, str]]) -> None",
+          "D. write(self, data: list) -> None"
+        ],
+        "answer": "C",
+        "concept": "Protocol",
+        "topic": "process_output() シグネチャ"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "data_pipeline.py の CSVPlugin の出力形式はどれか？",
+        "options": [
+          "A. JSON 形式",
+          "B. XML 形式",
+          "C. カンマ区切りの値",
+          "D. タブ区切りの値"
+        ],
+        "answer": "C",
+        "concept": "Protocol",
+        "topic": "CSV 出力形式"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "data_pipeline.py の JSON Plugin の出力形式はどれか？",
+        "options": [
+          "A. [value1, value2, ...]",
+          "B. {\"item_N\": \"value\"} 形式",
+          "C. value1,value2,...",
+          "D. value1\\nvalue2\\n..."
+        ],
+        "answer": "B",
+        "concept": "Protocol",
+        "topic": "JSON 出力形式"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "DataProcessor のサブクラスが全ての抽象メソッドを実装しない場合、どうなるか？",
+        "options": [
+          "A. 実装済みのメソッドだけで動作する",
+          "B. 警告が表示されるが実行はできる",
+          "C. そのクラスも抽象クラスとなりインスタンス化できない",
+          "D. None が返される"
+        ],
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "未実装の抽象メソッド"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "data_stream.py の print_processors_stats() が表示する情報はどれか？",
+        "options": [
+          "A. 各プロセッサの処理速度",
+          "B. 処理済みの総数と残りのアイテム数",
+          "C. プロセッサのクラス名一覧",
+          "D. エラーの発生回数"
+        ],
+        "answer": "B",
+        "concept": "ポリモーフィズム",
+        "topic": "print_processors_stats()"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "DataProcessor クラスで `class DataProcessor(ABC):` の ABC を継承する目的はどれか？",
+        "options": [
+          "A. 自動的に全メソッドを抽象化する",
+          "B. @abstractmethod デコレータを有効にして抽象クラスとして機能させる",
+          "C. すべての型チェックをスキップする",
+          "D. 複数継承を可能にする"
+        ],
+        "answer": "B",
+        "concept": "抽象クラス",
+        "topic": "ABC の継承目的"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "data_pipeline.py の output_pipeline() メソッドが受け取る引数はどれか？",
+        "options": [
+          "A. データリストのみ",
+          "B. プロセッサ数のみ",
+          "C. nb（数）と plugin（ExportPlugin）",
+          "D. ファイルパスと形式"
+        ],
+        "answer": "C",
+        "concept": "Protocol",
+        "topic": "output_pipeline() の引数"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "DataProcessor の validate() メソッドの役割はどれか？",
+        "options": [
+          "A. データをファイルに保存する",
+          "B. データを変換する",
+          "C. 処理結果を表示する",
+          "D. データが処理可能かどうかを確認する"
+        ],
+        "answer": "D",
+        "concept": "抽象クラス",
+        "topic": "validate() の役割"
       }
     ]
   },
   {
     "module": "06",
-    "title": "Module 06: The Codex - インポート・パッケージ管理",
+    "title": "Module 06: The Codex - Pythonインポートの仕組み",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "ディレクトリを Python パッケージとして認識させるために必要なファイルはどれか？",
+        "question": "Python でフォルダをパッケージとして認識させるために必要なファイルはどれか？",
         "options": [
-          "A. setup.py",
-          "B. __init__.py",
-          "C. package.json",
-          "D. __main__.py"
+          "A. __main__.py",
+          "B. __package__.py",
+          "C. __init__.py",
+          "D. setup.py"
         ],
-        "answer": "B",
+        "answer": "C",
         "concept": "パッケージ",
-        "topic": "__init__.py"
+        "topic": "__init__.py の役割"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "次のディレクトリ構造で、mypackage/utils.py の add 関数を絶対インポートする正しい書き方はどれか？\n\nmypackage/\n  __init__.py\n  utils.py",
+        "question": "ft_alembic_0.py で `import elements` 構造を使って elements.py を直接インポートし、create_fire() を呼び出す正しいコードはどれか？",
         "options": [
-          "A. import utils.add",
-          "B. from mypackage.utils import add",
-          "C. from .utils import add",
-          "D. import mypackage/utils"
+          "A. from elements import create_fire; create_fire()",
+          "B. import elements; elements.create_fire()",
+          "C. elements.create_fire()",
+          "D. import create_fire from elements"
         ],
         "answer": "B",
         "concept": "インポート",
-        "topic": "絶対インポート"
+        "topic": "import ... 構造"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "パッケージ内のモジュールから同一パッケージの別モジュールを相対インポートする書き方はどれか？",
+        "question": "ft_alembic_1.py で `from ... import ...` 構造を使って create_water() を直接呼び出すコードはどれか？",
         "options": [
-          "A. import ./sibling",
-          "B. from sibling import func",
-          "C. from .sibling import func",
-          "D. import ..sibling"
+          "A. import elements.create_water",
+          "B. from elements import create_water; create_water()",
+          "C. import create_water",
+          "D. elements.create_water()"
         ],
-        "answer": "C",
+        "answer": "B",
         "concept": "インポート",
-        "topic": "相対インポート"
+        "topic": "from ... import ... 構造"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "__init__.py に __all__ = ['func_a', 'func_b'] と定義する目的はどれか？",
+        "question": "alchemy/elements.py に定義されている関数はどれか？",
         "options": [
-          "A. 関数の実行順序を定義する",
-          "B. from package import * で公開する名前を制御する",
-          "C. パッケージのバージョンを指定する",
-          "D. 非公開関数を削除する"
+          "A. create_fire() と create_water()",
+          "B. healing_potion() と strength_potion()",
+          "C. create_earth() と create_air()",
+          "D. lead_to_gold()"
         ],
-        "answer": "B",
+        "answer": "C",
         "concept": "パッケージ",
-        "topic": "__all__"
+        "topic": "alchemy/elements.py の関数"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "循環インポート（Circular Import）とはどのような状況か？",
+        "question": "elements.py（ルート直下）の create_fire() が返す文字列はどれか？",
         "options": [
-          "A. 同じモジュールを複数回インポートすること",
-          "B. モジュールAがモジュールBをインポートし、BがAをインポートする状況",
-          "C. パッケージの __init__.py で全モジュールをインポートすること",
-          "D. from module import * を使うこと"
+          "A. \"Creating fire\"",
+          "B. \"Fire created\"",
+          "C. \"fire element\"",
+          "D. \"Fire element created\""
+        ],
+        "answer": "D",
+        "concept": "パッケージ",
+        "topic": "create_fire() の戻り値"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "ft_alembic_4.py で `import alchemy` を使って create_earth() を呼び出した場合に発生するエラーはどれか？",
+        "options": [
+          "A. ImportError",
+          "B. ValueError",
+          "C. AttributeError",
+          "D. ModuleNotFoundError"
+        ],
+        "answer": "C",
+        "concept": "パッケージ",
+        "topic": "AttributeError とモジュールインターフェース"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "alchemy/__init__.py の役割として正しいものはどれか？",
+        "options": [
+          "A. パッケージのテストを実行する",
+          "B. モジュールのインターフェースを制御し、公開する属性を決める",
+          "C. 全ての関数を自動的にインポートする",
+          "D. パッケージのバージョンを管理する"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "__init__.py でのインターフェース制御"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "ft_alembic_4.py で `import alchemy` を使って create_air() を呼び出した場合の出力はどれか？",
+        "options": [
+          "A. \"Air created\"",
+          "B. AttributeError が発生する",
+          "C. \"alchemy.create_air() called\"",
+          "D. \"Air element created\""
+        ],
+        "answer": "D",
+        "concept": "パッケージ",
+        "topic": "__init__.py で公開された関数の呼び出し"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "ft_distillation_0.py で alchemy/potions.py の healing_potion() を使うときの正しいインポートはどれか？",
+        "options": [
+          "A. import alchemy.potions.healing_potion",
+          "B. from alchemy.potions import healing_potion",
+          "C. from alchemy import healing_potion",
+          "D. import healing_potion"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "ネストされたインポート"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "alchemy/potions.py の strength_potion() が返す文字列の形式はどれか？",
+        "options": [
+          "A. \"Strong potion\"",
+          "B. \"Strength potion ready\"",
+          "C. \"Strength potion brewed with '[created fire element]' and '[created water element]'\"",
+          "D. \"Strength potion with fire and water\""
+        ],
+        "answer": "C",
+        "concept": "パッケージ",
+        "topic": "strength_potion() の戻り値"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "ft_distillation_1.py で healing_potion() を `alchemy.heal()` として呼び出すためには何が必要か？",
+        "options": [
+          "A. alchemy/potions.py に heal 関数を定義する",
+          "B. __init__.py に heal という別名（エイリアス）を設定する",
+          "C. sys.path を変更する",
+          "D. alchemy/healing.py を作成する"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "__init__.py でのエイリアス設定"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "絶対インポートと相対インポートの違いとして正しいものはどれか？",
+        "options": [
+          "A. 相対インポートはより高速である",
+          "B. 絶対インポートはプロジェクトのルートからのパスを使い、相対インポートは現在のパッケージからの相対位置を使う",
+          "C. 相対インポートは Python 3 では使えない",
+          "D. 絶対インポートはパッケージ内でのみ使える"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "絶対インポート vs 相対インポート"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "alchemy/transmutation/recipes.py が持つ関数はどれか？",
+        "options": [
+          "A. fire_to_water()",
+          "B. lead_to_gold()",
+          "C. transmute()",
+          "D. alchemy_combine()"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "recipes.py の関数"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "Module 06 で sys.path を変更することは許可されているか？",
+        "options": [
+          "A. 絶対パスのみ許可",
+          "B. 相対パスなら許可",
+          "C. テスト用コードでは許可",
+          "D. 禁止されている"
+        ],
+        "answer": "D",
+        "concept": "インポート",
+        "topic": "sys.path の変更禁止"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "ft_transmutation_2.py で `import alchemy` のみを使って lead_to_gold() を呼び出すために必要なことはどれか？",
+        "options": [
+          "A. alchemy/__init__.py で transmutation モジュールを公開する",
+          "B. sys.path に transmutation を追加する",
+          "C. alchemy/transmutation/__init__.py を空にする",
+          "D. lead_to_gold() を alchemy/elements.py に移す"
+        ],
+        "answer": "A",
+        "concept": "パッケージ",
+        "topic": "__init__.py でのネストモジュール公開"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "Python の循環インポート（circular import）とはどれか？",
+        "options": [
+          "A. 同じモジュールを2回インポートすること",
+          "B. モジュール A が B をインポートし、B が A をインポートする状態",
+          "C. パッケージをまとめてインポートすること",
+          "D. 相対インポートを使うこと"
         ],
         "answer": "B",
         "concept": "インポート",
         "topic": "循環インポート"
       },
       {
-        "id": 6,
+        "id": 17,
         "type": "multiple_choice",
-        "question": "Python が import 文でモジュールを検索する場所の優先順位として正しいのはどれか？",
+        "question": "grimoire サブパッケージに含まれるファイルとして正しいものはどれか？",
         "options": [
-          "A. サードパーティ → 標準ライブラリ → カレントディレクトリ",
-          "B. カレントディレクトリ → 標準ライブラリ → サードパーティ",
-          "C. 標準ライブラリ → カレントディレクトリ → サードパーティ",
-          "D. sys.path に登録された順"
-        ],
-        "answer": "D",
-        "concept": "インポートシステム",
-        "topic": "sys.path"
-      },
-      {
-        "id": 7,
-        "type": "multiple_choice",
-        "question": "import module as alias の利点として最も適切なものはどれか？",
-        "options": [
-          "A. モジュールの読み込みが高速になる",
-          "B. 名前の衝突を防いだり、長いモジュール名を短縮できる",
-          "C. プライベートモジュールにアクセスできる",
-          "D. モジュールを完全に上書きできる"
+          "A. elements.py と potions.py",
+          "B. dark_spellbook.py, dark_validator.py, light_spellbook.py, light_validator.py",
+          "C. recipes.py と transmutation.py",
+          "D. fire.py と water.py"
         ],
         "answer": "B",
-        "concept": "インポート",
-        "topic": "エイリアス"
+        "concept": "パッケージ",
+        "topic": "grimoire サブパッケージの構造"
       },
       {
-        "id": 8,
+        "id": 18,
         "type": "multiple_choice",
-        "question": "Python の標準ライブラリに含まれるモジュールはどれか？",
+        "question": "alchemy/elements.py の create_air() が返す文字列はどれか？",
         "options": [
-          "A. numpy",
-          "B. requests",
-          "C. os",
-          "D. pandas"
+          "A. \"Air\"",
+          "B. \"Air created\"",
+          "C. \"Air element created\"",
+          "D. \"Creating air\""
         ],
         "answer": "C",
-        "concept": "標準ライブラリ",
-        "topic": "組み込みモジュール"
+        "concept": "パッケージ",
+        "topic": "create_air() の戻り値"
       },
       {
-        "id": 9,
+        "id": 19,
         "type": "multiple_choice",
-        "question": "__name__ == '__main__' というイディオムの目的はどれか？",
+        "question": "ft_alembic_2.py で alchemy/elements.py の create_earth() を `import ...` 構造で使う正しいコードはどれか？",
         "options": [
-          "A. モジュール名を変更する",
-          "B. スクリプトとして直接実行された場合のみコードを実行する",
-          "C. クラス名を確認する",
-          "D. デバッグモードを有効にする"
+          "A. import alchemy.elements; alchemy.elements.create_earth()",
+          "B. from alchemy.elements import create_earth",
+          "C. import alchemy; alchemy.create_earth()",
+          "D. import create_earth from alchemy.elements"
         ],
-        "answer": "B",
-        "concept": "モジュール実行",
-        "topic": "__name__"
-      },
-      {
-        "id": 10,
-        "type": "multiple_choice",
-        "question": "パッケージの __init__.py でサブモジュールのクラスを公開する利点はどれか？",
-        "options": [
-          "A. コードが高速化される",
-          "B. from package import ClassName のように簡潔にインポートできる",
-          "C. クラスを隠蔽できる",
-          "D. 型チェックが不要になる"
-        ],
-        "answer": "B",
-        "concept": "パッケージ設計",
-        "topic": "__init__.py での公開"
-      },
-      {
-        "id": 11,
-        "type": "multiple_choice",
-        "question": "次のコードで、mymodule が2回インポートされた場合どうなるか？\n\nimport mymodule\nimport mymodule",
-        "options": [
-          "A. モジュールが2回ロードされる",
-          "B. 2回目はキャッシュ（sys.modules）から返され、再ロードされない",
-          "C. ImportError が発生する",
-          "D. 警告が表示されるが動作する"
-        ],
-        "answer": "B",
-        "concept": "インポートシステム",
-        "topic": "sys.modules キャッシュ"
-      },
-      {
-        "id": 12,
-        "type": "multiple_choice",
-        "question": "サブパッケージの親ディレクトリへの相対インポートに使う記法はどれか？",
-        "options": [
-          "A. from . import module",
-          "B. from .. import module",
-          "C. from ... import module",
-          "D. from root import module"
-        ],
-        "answer": "B",
+        "answer": "A",
         "concept": "インポート",
-        "topic": "上位パッケージへの相対インポート"
+        "topic": "パスを指定した import"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Module 06 の一般的な制約として正しいものはどれか？",
+        "options": [
+          "A. eval() と exec() は使用可能",
+          "B. 外部ライブラリは使用可能",
+          "C. このプロジェクトで作成するファイルのインポートのみ許可される",
+          "D. 全ての import 文は __init__.py に書く必要がある"
+        ],
+        "answer": "C",
+        "concept": "インポート",
+        "topic": "インポートの制約"
       }
     ]
   },
   {
     "module": "07",
-    "title": "Module 07: DataDeck - デザインパターン・抽象ファクトリ",
+    "title": "Module 07: DataDeck - 抽象ファクトリ・ケイパビリティ・ストラテジーパターン",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Factory パターンの主な目的はどれか？",
+        "question": "ex0 の Creature 抽象クラスが持つ抽象メソッドはどれか？",
         "options": [
-          "A. オブジェクトの生成ロジックをクライアントコードから分離する",
-          "B. クラス間の通信を管理する",
-          "C. データを永続化する",
-          "D. 並列処理を簡単にする"
+          "A. describe() と fight()",
+          "B. attack() のみ",
+          "C. heal() と attack()",
+          "D. describe() のみ"
         ],
-        "answer": "A",
-        "concept": "デザインパターン",
-        "topic": "Factory パターン"
+        "answer": "B",
+        "concept": "抽象ファクトリ",
+        "topic": "Creature の抽象メソッド"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "Abstract Factory パターンと Factory Method パターンの主な違いはどれか？",
+        "question": "ex0 の Creature クラスが持つ具体メソッド（非抽象）はどれか？",
         "options": [
-          "A. Abstract Factory は単一オブジェクト、Factory Method は複数オブジェクトを生成する",
-          "B. Abstract Factory は関連するオブジェクト群を生成するインターフェースを提供する",
-          "C. Factory Method は抽象クラスを使わない",
-          "D. 違いはない、同じパターン"
+          "A. attack()",
+          "B. fight()",
+          "C. describe()",
+          "D. evolve()"
         ],
-        "answer": "B",
-        "concept": "デザインパターン",
-        "topic": "Abstract Factory"
+        "answer": "C",
+        "concept": "抽象ファクトリ",
+        "topic": "describe() 具体メソッド"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードで `FlameFactory.create_base()` が返すべきオブジェクトの型はどれか？\n\nclass CreatureFactory(ABC):\n    @abstractmethod\n    def create_base(self) -> Creature: ...\n\nclass FlameFactory(CreatureFactory):\n    def create_base(self) -> Creature:\n        return Flameling()",
+        "question": "ex0 の CreatureFactory 抽象クラスが持つ2つの抽象メソッドはどれか？",
         "options": [
-          "A. CreatureFactory 型",
-          "B. Creature 型（またはそのサブクラス）",
-          "C. FlameFactory 型",
-          "D. Flameling 型のみ許容される"
+          "A. create() と destroy()",
+          "B. make_base() と make_evolved()",
+          "C. create_base() と create_evolved()",
+          "D. build() と upgrade()"
         ],
-        "answer": "B",
-        "concept": "デザインパターン",
-        "topic": "戻り値の型"
+        "answer": "C",
+        "concept": "抽象ファクトリ",
+        "topic": "CreatureFactory の抽象メソッド"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "カプセル化（Encapsulation）の説明として正しいのはどれか？",
+        "question": "FlameFactory が生成する2つのクリーチャーはどれか？",
         "options": [
-          "A. 複数のクラスを1つにまとめること",
-          "B. オブジェクトの内部状態を隠蔽し、定義されたインターフェースのみで操作させること",
-          "C. クラスを継承すること",
-          "D. メソッドを抽象化すること"
+          "A. Flameling と Aquabub",
+          "B. Flameling と Pyrodon",
+          "C. Pyrodon と Torragon",
+          "D. Aquabub と Torragon"
         ],
         "answer": "B",
-        "concept": "OOP",
-        "topic": "カプセル化"
+        "concept": "抽象ファクトリ",
+        "topic": "FlameFactory のクリーチャー"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "Python でプライベート属性を示す命名規則はどれか？",
+        "question": "battle.py で Flameling の attack() の出力はどれか？",
         "options": [
-          "A. attribute",
-          "B. _attribute（シングルアンダースコア）",
-          "C. __attribute（ダブルアンダースコア）",
-          "D. BとC、両方正しい（目的による）"
+          "A. \"Flameling uses Flamethrower!\"",
+          "B. \"Flameling attacks!\"",
+          "C. \"Flameling uses Ember!\"",
+          "D. \"Flameling uses Fire!\""
         ],
-        "answer": "D",
-        "concept": "OOP",
-        "topic": "アクセス修飾子"
+        "answer": "C",
+        "concept": "抽象ファクトリ",
+        "topic": "Flameling の attack()"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "__str__ メソッドをクラスに定義する目的はどれか？",
+        "question": "ex0 パッケージが直接公開してよいものはどれか？",
         "options": [
-          "A. オブジェクトを文字列に変換する際の表現を定義する",
-          "B. オブジェクトを比較する",
-          "C. オブジェクトをコピーする",
-          "D. オブジェクトを削除する"
+          "A. 具体的な Creature クラス",
+          "B. ファクトリクラスのみ",
+          "C. 全てのクラス",
+          "D. 抽象クラスのみ"
         ],
-        "answer": "A",
-        "concept": "特殊メソッド",
-        "topic": "__str__"
+        "answer": "B",
+        "concept": "抽象ファクトリ",
+        "topic": "パッケージの公開制約"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "Strategy パターンで Capability（能力）を実装する利点はどれか？",
+        "question": "ex1 の HealCapability 抽象クラスが定義する抽象メソッドはどれか？",
         "options": [
-          "A. 能力を継承で固定できる",
-          "B. 実行時に振る舞いを交換・組み合わせできる",
-          "C. コードが少なくなる",
-          "D. 型チェックが不要になる"
+          "A. transform() と revert()",
+          "B. attack() と heal()",
+          "C. heal()",
+          "D. boost()"
         ],
-        "answer": "B",
-        "concept": "デザインパターン",
-        "topic": "Strategy パターン"
+        "answer": "C",
+        "concept": "ケイパビリティ",
+        "topic": "HealCapability の抽象メソッド"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "次のコードでクラス変数とインスタンス変数の違いを説明したものはどれか？\n\nclass Creature:\n    species = 'Unknown'  # クラス変数\n    def __init__(self, name):\n        self.name = name  # インスタンス変数",
+        "question": "ex1 の Sproutling と Bloomelle はどのクラスを継承しているか？",
         "options": [
-          "A. クラス変数は全インスタンスで共有され、インスタンス変数は各インスタンス固有",
-          "B. クラス変数はプライベートで、インスタンス変数はパブリック",
-          "C. クラス変数は変更できない",
-          "D. 違いはない"
+          "A. Creature のみ",
+          "B. HealCapability のみ",
+          "C. Creature と TransformCapability",
+          "D. Creature と HealCapability"
         ],
-        "answer": "A",
-        "concept": "OOP",
-        "topic": "クラス変数とインスタンス変数"
+        "answer": "D",
+        "concept": "ケイパビリティ",
+        "topic": "Sproutling/Bloomelle の継承"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "@classmethod と @staticmethod の違いはどれか？",
+        "question": "ex1 の Shiftling と Morphagon が継承するクラスの組み合わせはどれか？",
         "options": [
-          "A. @classmethod は cls を受け取り、@staticmethod はクラス・インスタンスの参照を受け取らない",
-          "B. @staticmethod はクラスにアクセスでき、@classmethod はできない",
-          "C. どちらも self を受け取る",
-          "D. @classmethod はインスタンスからのみ呼べる"
+          "A. Creature と HealCapability",
+          "B. Creature のみ",
+          "C. Creature と TransformCapability",
+          "D. TransformCapability のみ"
         ],
-        "answer": "A",
-        "concept": "特殊メソッド",
-        "topic": "@classmethod vs @staticmethod"
+        "answer": "C",
+        "concept": "ケイパビリティ",
+        "topic": "Shiftling/Morphagon の継承"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "依存性逆転の原則（DIP）の説明として最も適切なのはどれか？",
+        "question": "capacitor.py で Transforming Creature のテストシナリオの順序として正しいものはどれか？",
         "options": [
-          "A. 具体クラスではなく抽象（インターフェース）に依存するべき",
-          "B. クラスはできるだけ小さくすべき",
-          "C. 継承より委譲を使うべき",
-          "D. グローバル変数を使うべきでない"
+          "A. describe → heal → attack",
+          "B. describe → attack → transform → attack → revert",
+          "C. attack → describe → transform",
+          "D. transform → attack → describe → revert"
         ],
-        "answer": "A",
-        "concept": "設計原則",
-        "topic": "SOLID 原則"
+        "answer": "B",
+        "concept": "ケイパビリティ",
+        "topic": "Transform テストシナリオ"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "Python の dataclass デコレータの主な用途はどれか？",
+        "question": "ex2 の BattleStrategy 抽象クラスが定義する抽象メソッドはどれか？",
         "options": [
-          "A. データベース操作のため",
-          "B. __init__、__repr__、__eq__ などを自動生成する",
-          "C. クラスをシリアライズする",
-          "D. クラスをイミュータブルにする"
+          "A. fight() と run()",
+          "B. act() と is_valid()",
+          "C. attack() と defend()",
+          "D. check() と execute()"
         ],
         "answer": "B",
-        "concept": "デコレータ",
-        "topic": "@dataclass"
+        "concept": "ストラテジーパターン",
+        "topic": "BattleStrategy の抽象メソッド"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "オブジェクト指向の4つの基本概念として正しい組み合わせはどれか？",
+        "question": "NormalStrategy が適用可能なクリーチャーはどれか？",
         "options": [
-          "A. 継承・カプセル化・ポリモーフィズム・抽象化",
-          "B. 継承・ループ・関数・クラス",
-          "C. カプセル化・シングルトン・ファクトリ・デコレータ",
-          "D. 抽象化・同期・並行・分散"
+          "A. TransformCapability を持つクリーチャーのみ",
+          "B. HealCapability を持つクリーチャーのみ",
+          "C. 全てのクリーチャー",
+          "D. ファクトリで生成されたクリーチャーのみ"
         ],
-        "answer": "A",
-        "concept": "OOP",
-        "topic": "OOPの4原則"
+        "answer": "C",
+        "concept": "ストラテジーパターン",
+        "topic": "NormalStrategy の適用範囲"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "AggressiveStrategy が適用可能なのはどのクリーチャーか？",
+        "options": [
+          "A. HealCapability を持つクリーチャー",
+          "B. 全てのクリーチャー",
+          "C. TransformCapability を持つクリーチャー",
+          "D. Creature の基底クラスのみ"
+        ],
+        "answer": "C",
+        "concept": "ストラテジーパターン",
+        "topic": "AggressiveStrategy の適用条件"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "AggressiveStrategy の act() で実行される順序はどれか？",
+        "options": [
+          "A. attack → transform → revert",
+          "B. transform → attack → revert",
+          "C. attack → heal → revert",
+          "D. transform → heal → attack"
+        ],
+        "answer": "B",
+        "concept": "ストラテジーパターン",
+        "topic": "AggressiveStrategy のアクション順序"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "DefensiveStrategy の act() で実行される順序はどれか？",
+        "options": [
+          "A. heal → attack",
+          "B. transform → attack → heal",
+          "C. attack → transform",
+          "D. attack → heal"
+        ],
+        "answer": "D",
+        "concept": "ストラテジーパターン",
+        "topic": "DefensiveStrategy のアクション順序"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "is_valid() が False を返す場合に act() を呼び出すとどうなるか？",
+        "options": [
+          "A. デフォルトの攻撃が実行される",
+          "B. None が返される",
+          "C. 専用の例外が発生する",
+          "D. 警告が表示されて続行"
+        ],
+        "answer": "C",
+        "concept": "ストラテジーパターン",
+        "topic": "無効な組み合わせの例外"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "tournament.py の battle() 関数が受け取る引数はどれか？",
+        "options": [
+          "A. クリーチャーのリスト",
+          "B. CreatureFactory と BattleStrategy のタプルのリスト",
+          "C. ストラテジーのリストのみ",
+          "D. ファクトリのリストのみ"
+        ],
+        "answer": "B",
+        "concept": "ストラテジーパターン",
+        "topic": "battle() 関数の引数"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "Flameling に AggressiveStrategy を使おうとしたとき、is_valid() が返す値はどれか？",
+        "options": [
+          "A. True（NormalStrategy は常に有効）",
+          "B. False（Flameling は TransformCapability を持たない）",
+          "C. None（型チェックなし）",
+          "D. True（全ストラテジーは全クリーチャーに有効）"
+        ],
+        "answer": "B",
+        "concept": "ストラテジーパターン",
+        "topic": "無効な Creature-Strategy 組み合わせ"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "AquaFactory が生成する2つのクリーチャーはどれか？",
+        "options": [
+          "A. Flameling と Pyrodon",
+          "B. Sproutling と Bloomelle",
+          "C. Aquabub と Torragon",
+          "D. Shiftling と Morphagon"
+        ],
+        "answer": "C",
+        "concept": "抽象ファクトリ",
+        "topic": "AquaFactory のクリーチャー"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Module 07 において各 exercise フォルダに必須のファイルはどれか？",
+        "options": [
+          "A. main.py",
+          "B. __init__.py",
+          "C. setup.py",
+          "D. config.py"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "__init__.py の必須要件"
       }
     ]
   },
   {
     "module": "09",
-    "title": "Module 09: The Matrix - 仮想環境・パッケージ管理",
+    "title": "Module 09: The Matrix - 仮想環境・パッケージ管理・環境変数",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Python の仮想環境を作成するコマンドはどれか？",
+        "question": "construct.py で仮想環境が有効かどうかを検出するために使う Python の仕組みはどれか？",
         "options": [
-          "A. python -m venv myenv",
-          "B. python --virtualenv myenv",
-          "C. pip create myenv",
-          "D. virtualenv --create myenv"
+          "A. os.environ[\"VIRTUAL\"]",
+          "B. sys.prefix と sys.base_prefix の比較",
+          "C. venv.is_active()",
+          "D. import venv; venv.check()"
         ],
-        "answer": "A",
+        "answer": "B",
         "concept": "仮想環境",
-        "topic": "venv"
+        "topic": "仮想環境の検出"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "macOS/Linux で仮想環境を有効化するコマンドはどれか？",
+        "question": "仮想環境の外で construct.py を実行したときに表示される「MATRIX STATUS」の内容はどれか？",
         "options": [
-          "A. activate myenv",
-          "B. source myenv/bin/activate",
-          "C. myenv\\Scripts\\activate",
-          "D. python -m activate myenv"
+          "A. \"MATRIX STATUS: Welcome to the construct\"",
+          "B. \"MATRIX STATUS: Active\"",
+          "C. \"MATRIX STATUS: You're still plugged in\"",
+          "D. \"MATRIX STATUS: No environment\""
         ],
-        "answer": "B",
+        "answer": "C",
         "concept": "仮想環境",
-        "topic": "activate"
+        "topic": "仮想環境外のステータスメッセージ"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "pip でインストールしたパッケージ一覧をファイルに出力するコマンドはどれか？",
+        "question": "仮想環境の中で construct.py を実行したときに表示される「MATRIX STATUS」の内容はどれか？",
         "options": [
-          "A. pip save > requirements.txt",
-          "B. pip freeze > requirements.txt",
-          "C. pip list > requirements.txt",
-          "D. pip export requirements.txt"
+          "A. \"MATRIX STATUS: You're still plugged in\"",
+          "B. \"MATRIX STATUS: Welcome to the construct\"",
+          "C. \"MATRIX STATUS: Virtual active\"",
+          "D. \"MATRIX STATUS: Isolated\""
         ],
         "answer": "B",
-        "concept": "パッケージ管理",
-        "topic": "pip freeze"
+        "concept": "仮想環境",
+        "topic": "仮想環境内のステータスメッセージ"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "requirements.txt からパッケージを一括インストールするコマンドはどれか？",
+        "question": "Python の仮想環境を作成するコマンドはどれか？",
         "options": [
-          "A. pip install requirements.txt",
-          "B. pip load -r requirements.txt",
-          "C. pip install -r requirements.txt",
-          "D. pip batch requirements.txt"
+          "A. python3 -m virtualenv matrix_env",
+          "B. pip create matrix_env",
+          "C. python3 -m venv matrix_env",
+          "D. venv create matrix_env"
         ],
         "answer": "C",
-        "concept": "パッケージ管理",
-        "topic": "pip install -r"
+        "concept": "仮想環境",
+        "topic": "venv による仮想環境作成"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "Poetry でプロジェクトの依存関係を追加するコマンドはどれか？",
+        "question": "Unix 系 OS で仮想環境を有効化するコマンドはどれか？",
         "options": [
-          "A. poetry install numpy",
-          "B. poetry add numpy",
-          "C. poetry require numpy",
-          "D. poetry deps add numpy"
+          "A. activate matrix_env",
+          "B. venv start matrix_env",
+          "C. matrix_env/start.sh",
+          "D. source matrix_env/bin/activate"
         ],
-        "answer": "B",
-        "concept": "Poetry",
-        "topic": "poetry add"
+        "answer": "D",
+        "concept": "仮想環境",
+        "topic": "仮想環境の有効化"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "pyproject.toml はどのような目的で使われるか？",
+        "question": "construct.py でインポートが許可されているモジュールはどれか？",
         "options": [
-          "A. Python のバージョンを固定する",
-          "B. プロジェクトのメタデータ、依存関係、ビルド設定を定義する",
-          "C. 仮想環境のパスを保存する",
-          "D. テストの設定のみ"
+          "A. pandas, numpy, requests",
+          "B. sys, os, site モジュール",
+          "C. flask, django",
+          "D. abc, typing のみ"
         ],
         "answer": "B",
-        "concept": "プロジェクト設定",
-        "topic": "pyproject.toml"
+        "concept": "仮想環境",
+        "topic": "construct.py の許可モジュール"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "仮想環境を使う主な利点はどれか？",
+        "question": "loading.py でデータ分析に使用する外部ライブラリの組み合わせはどれか？",
         "options": [
-          "A. コードが高速化される",
-          "B. プロジェクトごとに独立したパッケージ環境を持てる",
-          "C. Python のバージョンが自動更新される",
-          "D. デバッグが容易になる"
+          "A. flask, SQLAlchemy, celery",
+          "B. django, rest_framework, boto3",
+          "C. pandas, numpy, matplotlib",
+          "D. scipy, sklearn, tensorflow"
         ],
-        "answer": "B",
-        "concept": "仮想環境",
-        "topic": "仮想環境の目的"
+        "answer": "C",
+        "concept": "パッケージ管理",
+        "topic": "loading.py の外部ライブラリ"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "現在の仮想環境の Python を確認するコマンドはどれか？",
+        "question": "pip を使って依存関係を管理するファイルはどれか？",
         "options": [
-          "A. python --path",
-          "B. which python または where python",
-          "C. python -v",
-          "D. pip show python"
+          "A. pyproject.toml",
+          "B. Pipfile",
+          "C. setup.cfg",
+          "D. requirements.txt"
         ],
-        "answer": "B",
-        "concept": "仮想環境",
-        "topic": "which python"
+        "answer": "D",
+        "concept": "パッケージ管理",
+        "topic": "requirements.txt"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "パッケージのバージョン指定で requests>=2.0,<3.0 の意味はどれか？",
+        "question": "Poetry を使って依存関係を管理するファイルはどれか？",
         "options": [
-          "A. requests のバージョン 2.0 のみ",
-          "B. requests 2.0 以上かつ 3.0 未満",
-          "C. requests 2.0 超かつ 3.0 以下",
-          "D. requests 2.0 または 3.0"
+          "A. requirements.txt",
+          "B. pyproject.toml",
+          "C. Pipfile",
+          "D. setup.py"
         ],
         "answer": "B",
         "concept": "パッケージ管理",
-        "topic": "バージョン指定"
+        "topic": "pyproject.toml と Poetry"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "sys.path に含まれる内容はどれか？",
+        "question": "pip を使ってパッケージをインストールするコマンドはどれか？",
         "options": [
-          "A. インストール済みパッケージの名前一覧",
-          "B. Python がモジュールを検索するディレクトリのリスト",
-          "C. 環境変数のリスト",
-          "D. 実行中のスクリプトのスタックトレース"
+          "A. pip add pandas",
+          "B. pip get pandas",
+          "C. pip install pandas",
+          "D. pip download pandas"
         ],
-        "answer": "B",
-        "concept": "Pythonインポートシステム",
-        "topic": "sys.path"
+        "answer": "C",
+        "concept": "パッケージ管理",
+        "topic": "pip install"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "Poetry.lock ファイルの役割はどれか？",
+        "question": "Poetry を使ってパッケージをインストールするコマンドはどれか？",
         "options": [
-          "A. ファイルの書き込みをロックする",
-          "B. 依存パッケージの正確なバージョンを記録し、再現可能な環境を保証する",
-          "C. 秘密鍵を保管する",
-          "D. テスト結果をキャッシュする"
+          "A. poetry add pandas",
+          "B. poetry install pandas",
+          "C. poetry get pandas",
+          "D. poetry pip pandas"
         ],
-        "answer": "B",
-        "concept": "Poetry",
-        "topic": "poetry.lock"
+        "answer": "A",
+        "concept": "パッケージ管理",
+        "topic": "poetry add"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "環境変数を Python コードから取得するための正しい方法はどれか？",
+        "question": "loading.py で numpy がシミュレートされたデータの「ソース」として使われる理由はどれか？",
         "options": [
-          "A. env.get('KEY')",
-          "B. os.environ.get('KEY')",
-          "C. sys.env['KEY']",
-          "D. environment['KEY']"
+          "A. pandas より高速だから",
+          "B. ハードコードされたリストや range() を避けるため",
+          "C. matplotlib が numpy を必要とするから",
+          "D. requests の代替として使えるから"
+        ],
+        "answer": "B",
+        "concept": "パッケージ管理",
+        "topic": "numpy によるデータ生成"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "oracle.py で環境変数を .env ファイルから読み込むために使うライブラリはどれか？",
+        "options": [
+          "A. configparser",
+          "B. python-dotenv",
+          "C. os.env",
+          "D. dotconfig"
         ],
         "answer": "B",
         "concept": "環境変数",
-        "topic": "os.environ"
+        "topic": "python-dotenv"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "oracle.py が扱う設定変数「MATRIX_MODE」が取り得る値はどれか？",
+        "options": [
+          "A. \"on\" または \"off\"",
+          "B. \"active\" または \"inactive\"",
+          "C. \"development\" または \"production\"",
+          "D. \"debug\" または \"release\""
+        ],
+        "answer": "C",
+        "concept": "環境変数",
+        "topic": "MATRIX_MODE の値"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": ".env ファイルをバージョン管理システム（git）から除外すべき理由はどれか？",
+        "options": [
+          "A. ファイルが大きすぎるから",
+          "B. API キーやパスワードなど機密情報が含まれているから",
+          "C. git が .env 形式を認識できないから",
+          "D. テスト環境でのみ使用するから"
+        ],
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": ".env と .gitignore"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "oracle.py で設定すべき環境変数の1つ「API_KEY」の目的はどれか？",
+        "options": [
+          "A. Python のバージョン管理",
+          "B. 外部サービスへの認証キー",
+          "C. データベースのテーブル名",
+          "D. ログのフォーマット設定"
+        ],
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": "API_KEY"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "loading.py で依存関係が不足している場合のプログラムの挙動はどれか？",
+        "options": [
+          "A. クラッシュして終了する",
+          "B. ライブラリを自動インストールする",
+          "C. 不足しているパッケージを表示してインストール方法を案内する",
+          "D. デフォルト値で処理を続行する"
+        ],
+        "answer": "C",
+        "concept": "パッケージ管理",
+        "topic": "依存関係の欠如への対処"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "仮想環境を git リポジトリに含めてはいけない理由はどれか？",
+        "options": [
+          "A. サイズが大きく、環境ごとに再作成すべきだから",
+          "B. git が Python ファイルを認識できないから",
+          "C. 仮想環境のファイルは暗号化されているから",
+          "D. リポジトリのセキュリティポリシーに反するから"
+        ],
+        "answer": "A",
+        "concept": "仮想環境",
+        "topic": "仮想環境を git に含めない理由"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "construct.py が「仮想環境内での実行」を検出したとき、パッケージインストール先として表示するパスの形式はどれか？",
+        "options": [
+          "A. /usr/local/lib/python3/site-packages",
+          "B. /path/to/matrix_env/lib/python3.11/site-packages",
+          "C. ~/.python/packages",
+          "D. /tmp/python_packages"
+        ],
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "site-packages のパス"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "oracle.py が設定する環境変数「DATABASE_URL」の用途はどれか？",
+        "options": [
+          "A. Python インタープリターのパス",
+          "B. データストレージへの接続文字列",
+          "C. ログファイルの保存先",
+          "D. API のエンドポイント URL"
+        ],
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": "DATABASE_URL"
       }
     ]
   },
@@ -1572,170 +2580,282 @@
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "lambda x: x * 2 の説明として正しいのはどれか？",
+        "question": "lambda_spells.py の artifact_sorter() でアーティファクトを power レベルの降順にソートするために使う関数の組み合わせはどれか？",
         "options": [
-          "A. x を2倍にして返す無名関数",
-          "B. x に2を加える名前付き関数",
-          "C. x を文字列 '2' に変換する関数",
-          "D. 2つの引数を受け取る関数"
+          "A. sorted() と lambda",
+          "B. sort() と def",
+          "C. filter() と lambda",
+          "D. map() と sorted()"
         ],
         "answer": "A",
-        "concept": "ラムダ式",
-        "topic": "lambda"
+        "concept": "ラムダ",
+        "topic": "sorted() と lambda"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "次のコードの出力はどれか？\n\nresult = list(map(lambda x: x ** 2, [1, 2, 3, 4]))\nprint(result)",
+        "question": "lambda_spells.py の power_filter() で使われる組み込み関数はどれか？",
         "options": [
-          "A. [1, 4, 9, 16]",
-          "B. [2, 4, 6, 8]",
-          "C. [1, 2, 3, 4]",
-          "D. 16"
+          "A. sorted()",
+          "B. map()",
+          "C. filter()",
+          "D. reduce()"
         ],
-        "answer": "A",
-        "concept": "高階関数",
-        "topic": "map()"
+        "answer": "C",
+        "concept": "ラムダ",
+        "topic": "filter() 関数"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "filter(func, iterable) の動作として正しいのはどれか？",
+        "question": "lambda_spells.py の spell_transformer() で呪文名を変換するために使う関数はどれか？",
         "options": [
-          "A. iterable の各要素に func を適用した結果を返す",
-          "B. func が True を返す要素のみを返す",
-          "C. iterable を func でソートして返す",
-          "D. func の結果を累積して1つの値を返す"
+          "A. filter() と lambda",
+          "B. sorted() と lambda",
+          "C. map() と lambda",
+          "D. reduce() と lambda"
         ],
-        "answer": "B",
-        "concept": "高階関数",
-        "topic": "filter()"
+        "answer": "C",
+        "concept": "ラムダ",
+        "topic": "map() 関数"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "functools.reduce(lambda a, b: a + b, [1, 2, 3, 4]) の結果はどれか？",
+        "question": "spell_transformer(['fireball', 'heal', 'shield']) の出力はどれか？",
         "options": [
-          "A. [1, 3, 6, 10]",
-          "B. 10",
-          "C. (1, 2, 3, 4)",
-          "D. 4"
+          "A. ['FIREBALL', 'HEAL', 'SHIELD']",
+          "B. ['* fireball *', '* heal *', '* shield *']",
+          "C. ['fireball*', 'heal*', 'shield*']",
+          "D. ['*fireball', '*heal', '*shield']"
         ],
         "answer": "B",
-        "concept": "高階関数",
-        "topic": "reduce()"
+        "concept": "ラムダ",
+        "topic": "spell_transformer() の出力"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "クロージャ（Closure）の説明として正しいのはどれか？",
+        "question": "lambda_spells.py の mage_stats() が返す辞書のキーはどれか？",
         "options": [
-          "A. クラスのプライベートメソッド",
-          "B. 外側のスコープの変数を参照・保持する内部関数",
-          "C. 例外を捕捉する try-except",
-          "D. モジュールをまとめるパッケージ"
+          "A. 'max', 'min', 'avg'",
+          "B. 'high', 'low', 'mean'",
+          "C. 'max_power', 'min_power', 'avg_power'",
+          "D. 'strongest', 'weakest', 'average'"
         ],
-        "answer": "B",
-        "concept": "クロージャ",
-        "topic": "クロージャ"
+        "answer": "C",
+        "concept": "ラムダ",
+        "topic": "mage_stats() の戻り値"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "デコレータ（@decorator）の主な用途はどれか？",
+        "question": "Module 10 の Exercise 0 で `def` キーワードを使って名前付き関数を定義することは許可されているか？",
         "options": [
-          "A. クラスを継承する",
-          "B. 関数の振る舞いを変更・拡張するラッパーを適用する",
-          "C. 変数の型を変換する",
-          "D. モジュールを読み込む"
+          "A. はい、全てのケースで使える",
+          "B. はい、ただしラムダと混在できる",
+          "C. いいえ、全ての変換にラムダ式を使わなければならない",
+          "D. はい、ただし1つのみ"
         ],
-        "answer": "B",
-        "concept": "デコレータ",
-        "topic": "デコレータ"
+        "answer": "C",
+        "concept": "ラムダ",
+        "topic": "Exercise 0 の制約"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "@functools.wraps(func) をデコレータ内で使う理由はどれか？",
+        "question": "higher_magic.py の spell_combiner(spell1, spell2) が返すものはどれか？",
         "options": [
-          "A. デコレータを高速化する",
-          "B. ラップされた関数の __name__ や __doc__ を保持する",
-          "C. 関数を複製する",
-          "D. 再帰的デコレータを作成する"
+          "A. 2つの呪文の結果を連結した文字列",
+          "B. 両方の呪文を同じ引数で呼び出す新しい関数",
+          "C. spell1 を優先して呼び出す関数",
+          "D. 呪文のリスト"
         ],
         "answer": "B",
-        "concept": "デコレータ",
-        "topic": "@wraps"
+        "concept": "高階関数",
+        "topic": "spell_combiner() の動作"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "functools.partial の用途はどれか？",
+        "question": "higher_magic.py の power_amplifier(base_spell, multiplier) が返すものはどれか？",
         "options": [
-          "A. 関数の一部の引数を固定して新しい関数を作る",
-          "B. 関数を非同期にする",
-          "C. 関数をクラスメソッドに変換する",
-          "D. 関数の実行を遅延させる"
+          "A. base_spell の power を multiplier 倍した数値",
+          "B. base_spell と同じシグネチャで、power を multiplier 倍した後に呼び出す新しい関数",
+          "C. multiplier 個の base_spell を格納したリスト",
+          "D. base_spell の文字列表現"
         ],
-        "answer": "A",
-        "concept": "関数型プログラミング",
-        "topic": "partial"
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "power_amplifier() の動作"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの result はどうなるか？\n\ndef make_adder(n):\n    return lambda x: x + n\n\nadd5 = make_adder(5)\nresult = add5(3)",
+        "question": "higher_magic.py の conditional_caster() で条件が False の場合の戻り値はどれか？",
         "options": [
-          "A. 5",
-          "B. 3",
-          "C. 8",
-          "D. lambda オブジェクト"
+          "A. None",
+          "B. \"Spell failed\"",
+          "C. \"Spell fizzled\"",
+          "D. \"Condition not met\""
         ],
         "answer": "C",
-        "concept": "クロージャ",
-        "topic": "クロージャの例"
+        "concept": "高階関数",
+        "topic": "conditional_caster() の失敗時の戻り値"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "リスト内包表記 [x*2 for x in range(5) if x % 2 == 0] の結果はどれか？",
+        "question": "Exercise 1 で Callable 型ヒントを使う際に推奨されるインポート元はどれか？",
         "options": [
-          "A. [0, 2, 4, 6, 8]",
-          "B. [0, 4, 8]",
-          "C. [0, 2, 4]",
-          "D. [2, 4, 6, 8, 10]"
+          "A. typing",
+          "B. functools",
+          "C. collections.abc",
+          "D. abc"
         ],
-        "answer": "B",
-        "concept": "内包表記",
-        "topic": "リスト内包表記"
+        "answer": "C",
+        "concept": "高階関数",
+        "topic": "Callable の推奨インポート元"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "高階関数（Higher-Order Function）の定義として正しいのはどれか？",
+        "question": "scope_mysteries.py の mage_counter() が実現するパターンはどれか？",
         "options": [
-          "A. 大量のデータを処理する関数",
-          "B. 関数を引数として受け取るか、関数を返す関数",
-          "C. クラスに定義されたメソッド",
-          "D. 再帰的に呼び出される関数"
+          "A. グローバル変数を使ったカウンタ",
+          "B. クラスベースのカウンタ",
+          "C. クロージャを使ったカウンタ（状態を内部に持つ）",
+          "D. ジェネレータベースのカウンタ"
         ],
-        "answer": "B",
-        "concept": "高階関数",
-        "topic": "高階関数の定義"
+        "answer": "C",
+        "concept": "クロージャ",
+        "topic": "mage_counter() とクロージャ"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "itertools.chain([1,2], [3,4], [5]) の結果はどれか？",
+        "question": "scope_mysteries.py で2つの独立したカウンタを作成したとき、それぞれのカウントはどうなるか？",
         "options": [
-          "A. [[1,2], [3,4], [5]]",
-          "B. [1, 2, 3, 4, 5] のイテレータ",
-          "C. (1, 2, 3, 4, 5) のタプル",
-          "D. {1, 2, 3, 4, 5} のセット"
+          "A. 同じカウント値を共有する",
+          "B. 互いに独立した状態を持つ",
+          "C. エラーが発生する",
+          "D. 最初のカウンタがリセットされる"
         ],
         "answer": "B",
-        "concept": "itertools",
-        "topic": "chain()"
+        "concept": "クロージャ",
+        "topic": "クロージャの独立性"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "scope_mysteries.py で `nonlocal` キーワードが使われる目的はどれか？",
+        "options": [
+          "A. 変数をグローバルスコープに公開する",
+          "B. 変数をモジュールレベルで定義する",
+          "C. 内部関数から外部関数のスコープにある変数を変更するため",
+          "D. クラス変数にアクセスするため"
+        ],
+        "answer": "C",
+        "concept": "クロージャ",
+        "topic": "nonlocal キーワード"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "scope_mysteries.py の enchantment_factory('Flaming') が返す関数に 'Sword' を渡したときの出力はどれか？",
+        "options": [
+          "A. \"Sword Flaming\"",
+          "B. \"enchanted Sword\"",
+          "C. \"Flaming Sword\"",
+          "D. \"Flaming enchanted Sword\""
+        ],
+        "answer": "C",
+        "concept": "クロージャ",
+        "topic": "enchantment_factory() の動作"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "scope_mysteries.py の memory_vault() が返す辞書のキーはどれか？",
+        "options": [
+          "A. 'read' と 'write'",
+          "B. 'get' と 'set'",
+          "C. 'load' と 'save'",
+          "D. 'store' と 'recall'"
+        ],
+        "answer": "D",
+        "concept": "クロージャ",
+        "topic": "memory_vault() の戻り値"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "functools_artifacts.py の spell_reducer() で空のリストが渡された場合の戻り値はどれか？",
+        "options": [
+          "A. None",
+          "B. エラーが発生する",
+          "C. []",
+          "D. 0"
+        ],
+        "answer": "D",
+        "concept": "functools",
+        "topic": "spell_reducer() の空リスト処理"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "functools_artifacts.py の memoized_fibonacci() でキャッシュを実現するデコレータはどれか？",
+        "options": [
+          "A. @functools.cache",
+          "B. @functools.lru_cache",
+          "C. @cache_result",
+          "D. @memoize"
+        ],
+        "answer": "B",
+        "concept": "functools",
+        "topic": "@functools.lru_cache"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "functools_artifacts.py の partial_enchanter() で functools.partial を使って pre-fill する引数はどれか？",
+        "options": [
+          "A. target のみ",
+          "B. power=50 と element",
+          "C. element と target",
+          "D. power のみ"
+        ],
+        "answer": "B",
+        "concept": "functools",
+        "topic": "functools.partial の使用"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "functools_artifacts.py の spell_dispatcher() で使うデコレータはどれか？",
+        "options": [
+          "A. @functools.wraps",
+          "B. @functools.reduce",
+          "C. @functools.dispatch",
+          "D. @functools.singledispatch"
+        ],
+        "answer": "D",
+        "concept": "functools",
+        "topic": "@functools.singledispatch"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Module 10 において global 変数が禁止されている理由はどれか？",
+        "options": [
+          "A. グローバル変数は遅いから",
+          "B. 関数型プログラミングの純粋性（functional purity）を維持するため",
+          "C. Python 3.10 以降は global キーワードが削除されたから",
+          "D. global 変数はクロージャと競合するから"
+        ],
+        "answer": "B",
+        "concept": "関数型プログラミング",
+        "topic": "global 禁止の理由"
       }
     ]
   }
