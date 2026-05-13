@@ -1,0 +1,1742 @@
+[
+  {
+    "module": "00",
+    "title": "Module 00: Growing Code - Python基本構文",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Python でユーザーからキーボード入力を受け取る組み込み関数はどれか？",
+        "options": [
+          "A. read()",
+          "B. scan()",
+          "C. input()",
+          "D. get()"
+        ],
+        "answer": "C",
+        "concept": "入出力",
+        "topic": "input()"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "input() が返す値の型はどれか？",
+        "options": [
+          "A. int",
+          "B. float",
+          "C. str",
+          "D. 入力内容によって変わる"
+        ],
+        "answer": "C",
+        "concept": "データ型",
+        "topic": "input() の戻り値"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "次のコードの出力はどれか？\n\nx = 5\ny = 3\nprint(x * y)",
+        "options": [
+          "A. 53",
+          "B. 8",
+          "C. 15",
+          "D. '5 * 3'"
+        ],
+        "answer": "C",
+        "concept": "演算子",
+        "topic": "乗算"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "for ループで 1 から 5 まで（5を含む）繰り返すための正しいコードはどれか？",
+        "options": [
+          "A. for i in range(1, 5):",
+          "B. for i in range(1, 6):",
+          "C. for i in range(5):",
+          "D. for i in range(0, 5):"
+        ],
+        "answer": "B",
+        "concept": "制御フロー",
+        "topic": "range()"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "次のコードで age が 20 のとき、出力される文字列はどれか？\n\nage = 20\nif age >= 18:\n    print('adult')\nelse:\n    print('minor')",
+        "options": [
+          "A. minor",
+          "B. adult",
+          "C. 20",
+          "D. エラーになる"
+        ],
+        "answer": "B",
+        "concept": "制御フロー",
+        "topic": "if-else"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "Python で関数を定義するキーワードはどれか？",
+        "options": [
+          "A. function",
+          "B. func",
+          "C. define",
+          "D. def"
+        ],
+        "answer": "D",
+        "concept": "関数",
+        "topic": "def"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "f-string を使った正しい文字列フォーマットはどれか？\n\nname = 'Alice'\n（nameを埋め込んで 'Hello, Alice!' と出力したい）",
+        "options": [
+          "A. print('Hello, ' + {name} + '!')",
+          "B. print(f'Hello, {name}!')",
+          "C. print('Hello, %s!' % name)",
+          "D. BとCは両方正しい"
+        ],
+        "answer": "D",
+        "concept": "文字列操作",
+        "topic": "文字列フォーマット"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "再帰関数に必ずが必要な条件はどれか？",
+        "options": [
+          "A. グローバル変数の宣言",
+          "B. 再帰を終了させる基底ケース（base case）",
+          "C. return 文を省略すること",
+          "D. ループとの組み合わせ"
+        ],
+        "answer": "B",
+        "concept": "再帰",
+        "topic": "基底ケース"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "次のコードの出力はどれか？\n\ndef greet(name: str) -> None:\n    print(f'Hi, {name}!')\n\ngreet('Bob')",
+        "options": [
+          "A. greet('Bob')",
+          "B. name",
+          "C. Hi, Bob!",
+          "D. None"
+        ],
+        "answer": "C",
+        "concept": "関数",
+        "topic": "関数呼び出し"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "型ヒント `def func(x: int) -> str:` の意味はどれか？",
+        "options": [
+          "A. x は str 型で、戻り値は int 型",
+          "B. x は int 型で、戻り値は str 型",
+          "C. x と戻り値の両方が int 型",
+          "D. 型チェックを無効化する"
+        ],
+        "answer": "B",
+        "concept": "型ヒント",
+        "topic": "関数シグネチャ"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "int('42') の結果はどれか？",
+        "options": [
+          "A. 文字列 '42'",
+          "B. 整数 42",
+          "C. 浮動小数点 42.0",
+          "D. TypeError が発生する"
+        ],
+        "answer": "B",
+        "concept": "型変換",
+        "topic": "int() キャスト"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "次のコードで合計値はいくつになるか？\n\ntotal = 0\nfor i in range(1, 4):\n    total += i\nprint(total)",
+        "options": [
+          "A. 3",
+          "B. 6",
+          "C. 10",
+          "D. 4"
+        ],
+        "answer": "B",
+        "concept": "ループ",
+        "topic": "累積計算"
+      }
+    ]
+  },
+  {
+    "module": "01",
+    "title": "Module 01: Code Cultivation - オブジェクト指向プログラミング",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Python でクラスを定義するキーワードはどれか？",
+        "options": [
+          "A. struct",
+          "B. object",
+          "C. class",
+          "D. type"
+        ],
+        "answer": "C",
+        "concept": "OOP",
+        "topic": "クラス定義"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "クラスのコンストラクタ（初期化メソッド）として定義する特殊メソッドはどれか？",
+        "options": [
+          "A. def constructor(self):",
+          "B. def __init__(self):",
+          "C. def init(self):",
+          "D. def new(self):"
+        ],
+        "answer": "B",
+        "concept": "OOP",
+        "topic": "__init__"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "インスタンスメソッドの第1引数として慣習的に使われる名前はどれか？",
+        "options": [
+          "A. this",
+          "B. cls",
+          "C. me",
+          "D. self"
+        ],
+        "answer": "D",
+        "concept": "OOP",
+        "topic": "self"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "次のコードで dog.name の値はどれか？\n\nclass Dog:\n    def __init__(self, name: str) -> None:\n        self.name = name\n\ndog = Dog('Rex')\nprint(dog.name)",
+        "options": [
+          "A. Dog",
+          "B. name",
+          "C. Rex",
+          "D. None"
+        ],
+        "answer": "C",
+        "concept": "OOP",
+        "topic": "インスタンス属性"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "子クラスが親クラスを継承する正しい構文はどれか？",
+        "options": [
+          "A. class Child extends Parent:",
+          "B. class Child inherits Parent:",
+          "C. class Child(Parent):",
+          "D. class Child -> Parent:"
+        ],
+        "answer": "C",
+        "concept": "継承",
+        "topic": "継承の構文"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "子クラスのコンストラクタで親クラスの __init__ を呼び出す正しい方法はどれか？",
+        "options": [
+          "A. Parent.__init__()",
+          "B. super().__init__()",
+          "C. self.parent.__init__()",
+          "D. base.__init__()"
+        ],
+        "answer": "B",
+        "concept": "継承",
+        "topic": "super()"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "__str__ メソッドはいつ呼び出されるか？",
+        "options": [
+          "A. オブジェクトを削除するとき",
+          "B. print() でオブジェクトを表示するとき",
+          "C. オブジェクトをコピーするとき",
+          "D. isinstance() を呼ぶとき"
+        ],
+        "answer": "B",
+        "concept": "特殊メソッド",
+        "topic": "__str__"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "@staticmethod デコレータで定義したメソッドの特徴はどれか？",
+        "options": [
+          "A. self も cls も受け取らず、クラスやインスタンスに依存しない",
+          "B. self を受け取り、インスタンスにアクセスできる",
+          "C. cls を受け取り、クラス属性を変更できる",
+          "D. 継承時に自動的にオーバーライドされる"
+        ],
+        "answer": "A",
+        "concept": "特殊メソッド",
+        "topic": "@staticmethod"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "@classmethod デコレータで定義したメソッドの第1引数として慣習的に使われる名前はどれか？",
+        "options": [
+          "A. self",
+          "B. this",
+          "C. cls",
+          "D. klass"
+        ],
+        "answer": "C",
+        "concept": "特殊メソッド",
+        "topic": "@classmethod"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "属性名の前に _ を1つつける（例：_name）慣習の意味はどれか？",
+        "options": [
+          "A. 完全なプライベート属性で外からアクセスできない",
+          "B. クラスメソッドであることを示す",
+          "C. 「内部利用を想定」という慣習的な目印（外部アクセスは技術的には可能）",
+          "D. 静的属性であることを示す"
+        ],
+        "answer": "C",
+        "concept": "カプセル化",
+        "topic": "_protected 慣習"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "ネストされたクラス（クラスの中にクラスを定義する）の主な用途はどれか？",
+        "options": [
+          "A. 継承を代替するため",
+          "B. 外側のクラスと密接に関連する補助クラスをまとめるため",
+          "C. 処理を高速化するため",
+          "D. クラスメソッドを定義するため"
+        ],
+        "answer": "B",
+        "concept": "OOP",
+        "topic": "ネストされたクラス"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "if __name__ == '__main__': というブロックを書く目的はどれか？",
+        "options": [
+          "A. クラスの外でコードを実行できなくする",
+          "B. スクリプトとして直接実行したときのみコードを実行し、インポート時は実行しない",
+          "C. モジュール名を変更する",
+          "D. デバッグモードを有効にする"
+        ],
+        "answer": "B",
+        "concept": "モジュール実行",
+        "topic": "__name__ == '__main__'"
+      }
+    ]
+  },
+  {
+    "module": "02",
+    "title": "Module 02: Garden Guardian - 例外処理・エラーハンドリング",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "try ブロック内で例外が発生したとき、実行が移る場所はどれか？",
+        "options": [
+          "A. finally ブロック",
+          "B. else ブロック",
+          "C. 対応する except ブロック",
+          "D. プログラムが終了する"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "try-except の基本"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "int('abc') を実行したとき発生する例外はどれか？",
+        "options": [
+          "A. TypeError",
+          "B. ValueError",
+          "C. AttributeError",
+          "D. RuntimeError"
+        ],
+        "answer": "B",
+        "concept": "組み込み例外",
+        "topic": "ValueError"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "1 / 0 を実行したとき発生する例外はどれか？",
+        "options": [
+          "A. ValueError",
+          "B. ArithmeticError",
+          "C. ZeroDivisionError",
+          "D. OverflowError"
+        ],
+        "answer": "C",
+        "concept": "組み込み例外",
+        "topic": "ZeroDivisionError"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "finally ブロックが実行されるタイミングはどれか？",
+        "options": [
+          "A. 例外が発生しなかったときのみ",
+          "B. 例外が発生したときのみ",
+          "C. 例外の有無にかかわらず必ず実行される",
+          "D. return 文の後に実行される"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "finally"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "意図的に例外を発生させるキーワードはどれか？",
+        "options": [
+          "A. throw",
+          "B. raise",
+          "C. error",
+          "D. exception"
+        ],
+        "answer": "B",
+        "concept": "例外処理",
+        "topic": "raise"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "カスタム例外クラスを定義するとき、通常どのクラスを継承するか？",
+        "options": [
+          "A. Error",
+          "B. BaseException",
+          "C. Exception",
+          "D. RuntimeError"
+        ],
+        "answer": "C",
+        "concept": "カスタム例外",
+        "topic": "Exception の継承"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "else ブロックが実行されるのはいつか？\n\ntry:\n    ...\nexcept SomeError:\n    ...\nelse:\n    ...",
+        "options": [
+          "A. 常に実行される",
+          "B. try ブロックで例外が発生しなかったとき",
+          "C. try ブロックで例外が発生したとき",
+          "D. finally の前に必ず実行される"
+        ],
+        "answer": "B",
+        "concept": "例外処理",
+        "topic": "else ブロック"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "except 句で例外オブジェクト自体を変数に受け取る構文はどれか？",
+        "options": [
+          "A. except ValueError(e):",
+          "B. except ValueError, e:",
+          "C. except ValueError as e:",
+          "D. except(ValueError) -> e:"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "except ... as e"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "次のコードで出力される文字列はどれか？\n\ntry:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('zero')\nfinally:\n    print('done')",
+        "options": [
+          "A. zero のみ",
+          "B. done のみ",
+          "C. zero\\ndone",
+          "D. エラーで終了"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "finally の動作"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "GardenError(Exception) を定義し、PlantError(GardenError) を定義したとき、except GardenError でキャッチできるのはどれか？",
+        "options": [
+          "A. GardenError のみ",
+          "B. PlantError のみ",
+          "C. GardenError と PlantError の両方",
+          "D. Exception 全体"
+        ],
+        "answer": "C",
+        "concept": "カスタム例外",
+        "topic": "例外の継承チェーン"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "存在しないリストのインデックスにアクセスしたとき（例：my_list[100]）発生する例外はどれか？",
+        "options": [
+          "A. KeyError",
+          "B. IndexError",
+          "C. ValueError",
+          "D. OutOfBoundsError"
+        ],
+        "answer": "B",
+        "concept": "組み込み例外",
+        "topic": "IndexError"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "with open('file.txt') as f: という構文を使うと、例外が発生した場合にファイルはどうなるか？",
+        "options": [
+          "A. ファイルが削除される",
+          "B. 自動的にクローズされる",
+          "C. 開いたままになる",
+          "D. 再度オープンされる"
+        ],
+        "answer": "B",
+        "concept": "コンテキストマネージャ",
+        "topic": "with 文とリソース管理"
+      }
+    ]
+  },
+  {
+    "module": "03",
+    "title": "Module 03: Data Quest - コレクション・ジェネレータ・内包表記",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Python の list、tuple、set、dict の説明として正しいのはどれか？",
+        "options": [
+          "A. list は不変、tuple は可変",
+          "B. set は重複要素を許可する",
+          "C. tuple は不変（イミュータブル）なシーケンス",
+          "D. dict は順序を保持しない（Python 3.7 以降でも）"
+        ],
+        "answer": "C",
+        "concept": "コレクション",
+        "topic": "tuple の特性"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "次のコードの出力はどれか？\n\nmy_set = {1, 2, 2, 3, 3, 3}\nprint(len(my_set))",
+        "options": [
+          "A. 6",
+          "B. 3",
+          "C. 2",
+          "D. エラーになる"
+        ],
+        "answer": "B",
+        "concept": "コレクション",
+        "topic": "set の重複排除"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "辞書から存在しないキーにアクセスするとき、KeyError を発生させない安全な方法はどれか？",
+        "options": [
+          "A. dict[key]",
+          "B. dict.get(key)",
+          "C. dict.find(key)",
+          "D. dict.fetch(key)"
+        ],
+        "answer": "B",
+        "concept": "コレクション",
+        "topic": "dict.get()"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "リスト内包表記 [x for x in range(10) if x % 2 == 0] の結果はどれか？",
+        "options": [
+          "A. [1, 3, 5, 7, 9]",
+          "B. [0, 2, 4, 6, 8]",
+          "C. [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",
+          "D. [2, 4, 6, 8, 10]"
+        ],
+        "answer": "B",
+        "concept": "内包表記",
+        "topic": "リスト内包表記"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "ジェネレータ関数を通常の関数と区別する特徴はどれか？",
+        "options": [
+          "A. return の代わりに yield を使う",
+          "B. def の代わりに gen を使う",
+          "C. クラスを継承する必要がある",
+          "D. 非同期関数である"
+        ],
+        "answer": "A",
+        "concept": "ジェネレータ",
+        "topic": "yield"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "ジェネレータの主な利点はどれか？",
+        "options": [
+          "A. 実行速度が2倍になる",
+          "B. 全要素を一度にメモリに保持しないため、メモリ効率が良い",
+          "C. 型チェックが不要になる",
+          "D. マルチスレッドで実行できる"
+        ],
+        "answer": "B",
+        "concept": "ジェネレータ",
+        "topic": "遅延評価（lazy evaluation）"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "set の .intersection() メソッドが返すものはどれか？\n\na = {1, 2, 3}\nb = {2, 3, 4}\na.intersection(b)",
+        "options": [
+          "A. {1, 2, 3, 4}",
+          "B. {2, 3}",
+          "C. {1, 4}",
+          "D. {1, 2, 3, 2, 3, 4}"
+        ],
+        "answer": "B",
+        "concept": "コレクション",
+        "topic": "set.intersection()"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "辞書内包表記で {k: v*2 for k, v in {'a': 1, 'b': 2}.items()} の結果はどれか？",
+        "options": [
+          "A. {'a': 1, 'b': 2}",
+          "B. {'a': 2, 'b': 4}",
+          "C. {1: 'a', 2: 'b'}",
+          "D. ['a', 'b']"
+        ],
+        "answer": "B",
+        "concept": "内包表記",
+        "topic": "辞書内包表記"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "sys.argv[0] には何が入るか？",
+        "options": [
+          "A. 最初のコマンドライン引数",
+          "B. 実行したスクリプトのファイル名",
+          "C. Python のバージョン",
+          "D. None"
+        ],
+        "answer": "B",
+        "concept": "コマンドライン",
+        "topic": "sys.argv"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "次のジェネレータ関数を呼び出した後、gen = counter() として next(gen) を3回呼んだときの出力はどれか？\n\ndef counter():\n    i = 0\n    while True:\n        yield i\n        i += 1",
+        "options": [
+          "A. 0, 1, 2",
+          "B. 1, 2, 3",
+          "C. 0, 0, 0",
+          "D. StopIteration が発生する"
+        ],
+        "answer": "A",
+        "concept": "ジェネレータ",
+        "topic": "next() の動作"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "enumerate(['a', 'b', 'c']) を for ループで使うと何が取得できるか？",
+        "options": [
+          "A. 要素のみ（'a', 'b', 'c'）",
+          "B. インデックスのみ（0, 1, 2）",
+          "C. (インデックス, 要素) のタプル（(0,'a'), (1,'b'), (2,'c')）",
+          "D. 要素の長さ"
+        ],
+        "answer": "C",
+        "concept": "組み込み関数",
+        "topic": "enumerate()"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "set の .difference() メソッドで a.difference(b) が返すものはどれか？\n\na = {1, 2, 3}\nb = {2, 3, 4}",
+        "options": [
+          "A. {2, 3}（共通部分）",
+          "B. {1, 4}（両方に含まれない要素）",
+          "C. {1}（a にあって b にない要素）",
+          "D. {1, 2, 3, 4}（和集合）"
+        ],
+        "answer": "C",
+        "concept": "コレクション",
+        "topic": "set.difference()"
+      }
+    ]
+  },
+  {
+    "module": "04",
+    "title": "Module 04: Data Archivist - ファイルI/O・例外処理",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "存在しないファイルを open() で開こうとしたとき、発生する例外はどれか？",
+        "options": [
+          "A. IOError",
+          "B. FileNotFoundError",
+          "C. FileError",
+          "D. PathError"
+        ],
+        "answer": "B",
+        "concept": "例外処理",
+        "topic": "FileNotFoundError"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "ファイルを読み取り専用で開く正しい open() の呼び出しはどれか？",
+        "options": [
+          "A. open('file.txt', 'w')",
+          "B. open('file.txt', 'a')",
+          "C. open('file.txt', 'r')",
+          "D. open('file.txt', 'x')"
+        ],
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "open() モード"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "with 文を使ってファイルを開く主な利点はどれか？",
+        "options": [
+          "A. ファイルを高速に読み込める",
+          "B. 例外が発生しても自動でファイルが閉じられる",
+          "C. バイナリファイルのみ扱える",
+          "D. ファイルサイズを取得できる"
+        ],
+        "answer": "B",
+        "concept": "コンテキストマネージャ",
+        "topic": "with 文"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "コマンドライン引数を取得するために使うモジュールと属性の組み合わせとして正しいのはどれか？",
+        "options": [
+          "A. os.args",
+          "B. sys.argv",
+          "C. argparse.args",
+          "D. sys.arguments"
+        ],
+        "answer": "B",
+        "concept": "コマンドライン引数",
+        "topic": "sys.argv"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "次のコードの出力として正しいものはどれか？\n\ntry:\n    x = int('abc')\nexcept ValueError as e:\n    print('ValueError:', e)\nexcept Exception as e:\n    print('Exception:', e)",
+        "options": [
+          "A. Exception: invalid literal for int() with base 10: 'abc'",
+          "B. ValueError: invalid literal for int() with base 10: 'abc'",
+          "C. エラーなし、xにNoneが入る",
+          "D. TypeError が発生する"
+        ],
+        "answer": "B",
+        "concept": "例外処理",
+        "topic": "except の優先順位"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "ファイルの全行をリストとして取得するメソッドはどれか？",
+        "options": [
+          "A. file.read()",
+          "B. file.readline()",
+          "C. file.readlines()",
+          "D. file.lines()"
+        ],
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "readlines()"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "try-except-else-finally の組み合わせで、例外が発生しなかった場合のみ実行されるブロックはどれか？",
+        "options": [
+          "A. try",
+          "B. except",
+          "C. else",
+          "D. finally"
+        ],
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "else ブロック"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "Python の型ヒントで、文字列または None を受け取る引数の型注釈として正しいのはどれか？",
+        "options": [
+          "A. str | None",
+          "B. str or None",
+          "C. Optional[str] のみ正しい",
+          "D. AとCは両方正しい（Python 3.10以降）"
+        ],
+        "answer": "D",
+        "concept": "型ヒント",
+        "topic": "Optional 型"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "ファイルに書き込む際、既存内容を消さずに末尾に追記するモードはどれか？",
+        "options": [
+          "A. 'w'",
+          "B. 'r+'",
+          "C. 'a'",
+          "D. 'x'"
+        ],
+        "answer": "C",
+        "concept": "ファイル操作",
+        "topic": "append モード"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "PermissionError はどの基底例外クラスを継承しているか？",
+        "options": [
+          "A. ValueError",
+          "B. RuntimeError",
+          "C. OSError",
+          "D. IOError（OSError とは別物）"
+        ],
+        "answer": "C",
+        "concept": "例外階層",
+        "topic": "OSError サブクラス"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "次のうち、mypy で型チェックを行う際に正しい実行コマンドはどれか？",
+        "options": [
+          "A. python --type-check script.py",
+          "B. mypy script.py",
+          "C. python -m typecheck script.py",
+          "D. typehint script.py"
+        ],
+        "answer": "B",
+        "concept": "型チェック",
+        "topic": "mypy"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "io モジュールの StringIO クラスは何に使うか？",
+        "options": [
+          "A. ファイルを圧縮する",
+          "B. 文字列をファイルオブジェクトのように扱う",
+          "C. バイナリデータを文字列に変換する",
+          "D. ファイルのエンコーディングを変換する"
+        ],
+        "answer": "B",
+        "concept": "ストリーム操作",
+        "topic": "io.StringIO"
+      }
+    ]
+  },
+  {
+    "module": "05",
+    "title": "Module 05: Code Nexus - 抽象クラス・ポリモーフィズム",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Python で抽象基底クラスを作成するために使うモジュールはどれか？",
+        "options": [
+          "A. abstract",
+          "B. abc",
+          "C. interface",
+          "D. base"
+        ],
+        "answer": "B",
+        "concept": "抽象クラス",
+        "topic": "abc モジュール"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "抽象メソッドを定義するデコレータはどれか？",
+        "options": [
+          "A. @abstract",
+          "B. @interface",
+          "C. @abstractmethod",
+          "D. @override"
+        ],
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "@abstractmethod"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "次のコードで TypeError が発生するのはどの行か？\n\nfrom abc import ABC, abstractmethod\nclass Animal(ABC):\n    @abstractmethod\n    def sound(self): pass\n\nclass Dog(Animal):\n    def sound(self): return 'Woof'\n\na = Animal()  # 行A\nd = Dog()     # 行B",
+        "options": [
+          "A. 行A（Animal() のインスタンス化）",
+          "B. 行B（Dog() のインスタンス化）",
+          "C. どちらも発生しない",
+          "D. 抽象メソッド定義時に発生"
+        ],
+        "answer": "A",
+        "concept": "抽象クラス",
+        "topic": "抽象クラスのインスタンス化"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "ポリモーフィズムの説明として最も適切なものはどれか？",
+        "options": [
+          "A. クラスの属性を隠蔽すること",
+          "B. 異なるクラスのオブジェクトが同じインターフェースを通じて異なる動作をすること",
+          "C. 親クラスのメソッドをそのまま継承すること",
+          "D. 複数のクラスを1つのファイルにまとめること"
+        ],
+        "answer": "B",
+        "concept": "ポリモーフィズム",
+        "topic": "ポリモーフィズムの概念"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "子クラスで親クラスのメソッドを上書きすることを何というか？",
+        "options": [
+          "A. オーバーロード（Overload）",
+          "B. オーバーライド（Override）",
+          "C. オーバーフロー（Overflow）",
+          "D. ダックタイピング"
+        ],
+        "answer": "B",
+        "concept": "継承",
+        "topic": "メソッドオーバーライド"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "次のコードの出力はどれか？\n\nclass A:\n    def hello(self): return 'A'\nclass B(A):\n    def hello(self): return 'B'\nclass C(A):\n    pass\n\nfor obj in [B(), C()]:\n    print(obj.hello())",
+        "options": [
+          "A. A\\nA",
+          "B. B\\nB",
+          "C. B\\nA",
+          "D. A\\nB"
+        ],
+        "answer": "C",
+        "concept": "継承とオーバーライド",
+        "topic": "メソッド解決順序"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "ABC クラスを継承する際、全ての抽象メソッドを実装しなかった場合どうなるか？",
+        "options": [
+          "A. 警告が出るが動作する",
+          "B. インスタンス化時に TypeError が発生する",
+          "C. 定義時に SyntaxError が発生する",
+          "D. NotImplementedError が発生する"
+        ],
+        "answer": "B",
+        "concept": "抽象クラス",
+        "topic": "抽象メソッドの強制実装"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "isinstance(obj, SomeClass) が True を返す条件はどれか？",
+        "options": [
+          "A. obj が SomeClass の直接のインスタンスのみ",
+          "B. obj が SomeClass またはそのサブクラスのインスタンス",
+          "C. obj が SomeClass の親クラスのインスタンス",
+          "D. obj と SomeClass が同じモジュールにある"
+        ],
+        "answer": "B",
+        "concept": "型チェック",
+        "topic": "isinstance()"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "typing モジュールの List[int] はどういう意味か？",
+        "options": [
+          "A. int 型の要素のみを含む list（実行時に強制される）",
+          "B. int 型の要素を含むことが期待される list（型ヒント）",
+          "C. list を int に変換する関数",
+          "D. int の部分型を定義する"
+        ],
+        "answer": "B",
+        "concept": "型ヒント",
+        "topic": "Generic 型"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "複数の基底クラスを継承する Python の機能は何というか？",
+        "options": [
+          "A. シングル継承",
+          "B. 多重継承（Multiple Inheritance）",
+          "C. ミックスイン専用構文",
+          "D. インターフェース実装"
+        ],
+        "answer": "B",
+        "concept": "継承",
+        "topic": "多重継承"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "DataStream クラスが複数の DataProcessor を管理する設計パターンに最も近いのはどれか？",
+        "options": [
+          "A. Factory パターン",
+          "B. Singleton パターン",
+          "C. Strategy パターン",
+          "D. Observer パターン"
+        ],
+        "answer": "C",
+        "concept": "デザインパターン",
+        "topic": "Strategy パターン"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "super() を使う主な目的はどれか？",
+        "options": [
+          "A. クラス自身のメソッドを再帰的に呼ぶ",
+          "B. 親クラスのメソッドやコンストラクタを呼び出す",
+          "C. 全てのサブクラスのインスタンスを取得する",
+          "D. クラスのドキュメントを取得する"
+        ],
+        "answer": "B",
+        "concept": "継承",
+        "topic": "super()"
+      }
+    ]
+  },
+  {
+    "module": "06",
+    "title": "Module 06: The Codex - インポート・パッケージ管理",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "ディレクトリを Python パッケージとして認識させるために必要なファイルはどれか？",
+        "options": [
+          "A. setup.py",
+          "B. __init__.py",
+          "C. package.json",
+          "D. __main__.py"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "__init__.py"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "次のディレクトリ構造で、mypackage/utils.py の add 関数を絶対インポートする正しい書き方はどれか？\n\nmypackage/\n  __init__.py\n  utils.py",
+        "options": [
+          "A. import utils.add",
+          "B. from mypackage.utils import add",
+          "C. from .utils import add",
+          "D. import mypackage/utils"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "絶対インポート"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "パッケージ内のモジュールから同一パッケージの別モジュールを相対インポートする書き方はどれか？",
+        "options": [
+          "A. import ./sibling",
+          "B. from sibling import func",
+          "C. from .sibling import func",
+          "D. import ..sibling"
+        ],
+        "answer": "C",
+        "concept": "インポート",
+        "topic": "相対インポート"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "__init__.py に __all__ = ['func_a', 'func_b'] と定義する目的はどれか？",
+        "options": [
+          "A. 関数の実行順序を定義する",
+          "B. from package import * で公開する名前を制御する",
+          "C. パッケージのバージョンを指定する",
+          "D. 非公開関数を削除する"
+        ],
+        "answer": "B",
+        "concept": "パッケージ",
+        "topic": "__all__"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "循環インポート（Circular Import）とはどのような状況か？",
+        "options": [
+          "A. 同じモジュールを複数回インポートすること",
+          "B. モジュールAがモジュールBをインポートし、BがAをインポートする状況",
+          "C. パッケージの __init__.py で全モジュールをインポートすること",
+          "D. from module import * を使うこと"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "循環インポート"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "Python が import 文でモジュールを検索する場所の優先順位として正しいのはどれか？",
+        "options": [
+          "A. サードパーティ → 標準ライブラリ → カレントディレクトリ",
+          "B. カレントディレクトリ → 標準ライブラリ → サードパーティ",
+          "C. 標準ライブラリ → カレントディレクトリ → サードパーティ",
+          "D. sys.path に登録された順"
+        ],
+        "answer": "D",
+        "concept": "インポートシステム",
+        "topic": "sys.path"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "import module as alias の利点として最も適切なものはどれか？",
+        "options": [
+          "A. モジュールの読み込みが高速になる",
+          "B. 名前の衝突を防いだり、長いモジュール名を短縮できる",
+          "C. プライベートモジュールにアクセスできる",
+          "D. モジュールを完全に上書きできる"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "エイリアス"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "Python の標準ライブラリに含まれるモジュールはどれか？",
+        "options": [
+          "A. numpy",
+          "B. requests",
+          "C. os",
+          "D. pandas"
+        ],
+        "answer": "C",
+        "concept": "標準ライブラリ",
+        "topic": "組み込みモジュール"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "__name__ == '__main__' というイディオムの目的はどれか？",
+        "options": [
+          "A. モジュール名を変更する",
+          "B. スクリプトとして直接実行された場合のみコードを実行する",
+          "C. クラス名を確認する",
+          "D. デバッグモードを有効にする"
+        ],
+        "answer": "B",
+        "concept": "モジュール実行",
+        "topic": "__name__"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "パッケージの __init__.py でサブモジュールのクラスを公開する利点はどれか？",
+        "options": [
+          "A. コードが高速化される",
+          "B. from package import ClassName のように簡潔にインポートできる",
+          "C. クラスを隠蔽できる",
+          "D. 型チェックが不要になる"
+        ],
+        "answer": "B",
+        "concept": "パッケージ設計",
+        "topic": "__init__.py での公開"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "次のコードで、mymodule が2回インポートされた場合どうなるか？\n\nimport mymodule\nimport mymodule",
+        "options": [
+          "A. モジュールが2回ロードされる",
+          "B. 2回目はキャッシュ（sys.modules）から返され、再ロードされない",
+          "C. ImportError が発生する",
+          "D. 警告が表示されるが動作する"
+        ],
+        "answer": "B",
+        "concept": "インポートシステム",
+        "topic": "sys.modules キャッシュ"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "サブパッケージの親ディレクトリへの相対インポートに使う記法はどれか？",
+        "options": [
+          "A. from . import module",
+          "B. from .. import module",
+          "C. from ... import module",
+          "D. from root import module"
+        ],
+        "answer": "B",
+        "concept": "インポート",
+        "topic": "上位パッケージへの相対インポート"
+      }
+    ]
+  },
+  {
+    "module": "07",
+    "title": "Module 07: DataDeck - デザインパターン・抽象ファクトリ",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Factory パターンの主な目的はどれか？",
+        "options": [
+          "A. オブジェクトの生成ロジックをクライアントコードから分離する",
+          "B. クラス間の通信を管理する",
+          "C. データを永続化する",
+          "D. 並列処理を簡単にする"
+        ],
+        "answer": "A",
+        "concept": "デザインパターン",
+        "topic": "Factory パターン"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "Abstract Factory パターンと Factory Method パターンの主な違いはどれか？",
+        "options": [
+          "A. Abstract Factory は単一オブジェクト、Factory Method は複数オブジェクトを生成する",
+          "B. Abstract Factory は関連するオブジェクト群を生成するインターフェースを提供する",
+          "C. Factory Method は抽象クラスを使わない",
+          "D. 違いはない、同じパターン"
+        ],
+        "answer": "B",
+        "concept": "デザインパターン",
+        "topic": "Abstract Factory"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "次のコードで `FlameFactory.create_base()` が返すべきオブジェクトの型はどれか？\n\nclass CreatureFactory(ABC):\n    @abstractmethod\n    def create_base(self) -> Creature: ...\n\nclass FlameFactory(CreatureFactory):\n    def create_base(self) -> Creature:\n        return Flameling()",
+        "options": [
+          "A. CreatureFactory 型",
+          "B. Creature 型（またはそのサブクラス）",
+          "C. FlameFactory 型",
+          "D. Flameling 型のみ許容される"
+        ],
+        "answer": "B",
+        "concept": "デザインパターン",
+        "topic": "戻り値の型"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "カプセル化（Encapsulation）の説明として正しいのはどれか？",
+        "options": [
+          "A. 複数のクラスを1つにまとめること",
+          "B. オブジェクトの内部状態を隠蔽し、定義されたインターフェースのみで操作させること",
+          "C. クラスを継承すること",
+          "D. メソッドを抽象化すること"
+        ],
+        "answer": "B",
+        "concept": "OOP",
+        "topic": "カプセル化"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "Python でプライベート属性を示す命名規則はどれか？",
+        "options": [
+          "A. attribute",
+          "B. _attribute（シングルアンダースコア）",
+          "C. __attribute（ダブルアンダースコア）",
+          "D. BとC、両方正しい（目的による）"
+        ],
+        "answer": "D",
+        "concept": "OOP",
+        "topic": "アクセス修飾子"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "__str__ メソッドをクラスに定義する目的はどれか？",
+        "options": [
+          "A. オブジェクトを文字列に変換する際の表現を定義する",
+          "B. オブジェクトを比較する",
+          "C. オブジェクトをコピーする",
+          "D. オブジェクトを削除する"
+        ],
+        "answer": "A",
+        "concept": "特殊メソッド",
+        "topic": "__str__"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "Strategy パターンで Capability（能力）を実装する利点はどれか？",
+        "options": [
+          "A. 能力を継承で固定できる",
+          "B. 実行時に振る舞いを交換・組み合わせできる",
+          "C. コードが少なくなる",
+          "D. 型チェックが不要になる"
+        ],
+        "answer": "B",
+        "concept": "デザインパターン",
+        "topic": "Strategy パターン"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "次のコードでクラス変数とインスタンス変数の違いを説明したものはどれか？\n\nclass Creature:\n    species = 'Unknown'  # クラス変数\n    def __init__(self, name):\n        self.name = name  # インスタンス変数",
+        "options": [
+          "A. クラス変数は全インスタンスで共有され、インスタンス変数は各インスタンス固有",
+          "B. クラス変数はプライベートで、インスタンス変数はパブリック",
+          "C. クラス変数は変更できない",
+          "D. 違いはない"
+        ],
+        "answer": "A",
+        "concept": "OOP",
+        "topic": "クラス変数とインスタンス変数"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "@classmethod と @staticmethod の違いはどれか？",
+        "options": [
+          "A. @classmethod は cls を受け取り、@staticmethod はクラス・インスタンスの参照を受け取らない",
+          "B. @staticmethod はクラスにアクセスでき、@classmethod はできない",
+          "C. どちらも self を受け取る",
+          "D. @classmethod はインスタンスからのみ呼べる"
+        ],
+        "answer": "A",
+        "concept": "特殊メソッド",
+        "topic": "@classmethod vs @staticmethod"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "依存性逆転の原則（DIP）の説明として最も適切なのはどれか？",
+        "options": [
+          "A. 具体クラスではなく抽象（インターフェース）に依存するべき",
+          "B. クラスはできるだけ小さくすべき",
+          "C. 継承より委譲を使うべき",
+          "D. グローバル変数を使うべきでない"
+        ],
+        "answer": "A",
+        "concept": "設計原則",
+        "topic": "SOLID 原則"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "Python の dataclass デコレータの主な用途はどれか？",
+        "options": [
+          "A. データベース操作のため",
+          "B. __init__、__repr__、__eq__ などを自動生成する",
+          "C. クラスをシリアライズする",
+          "D. クラスをイミュータブルにする"
+        ],
+        "answer": "B",
+        "concept": "デコレータ",
+        "topic": "@dataclass"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "オブジェクト指向の4つの基本概念として正しい組み合わせはどれか？",
+        "options": [
+          "A. 継承・カプセル化・ポリモーフィズム・抽象化",
+          "B. 継承・ループ・関数・クラス",
+          "C. カプセル化・シングルトン・ファクトリ・デコレータ",
+          "D. 抽象化・同期・並行・分散"
+        ],
+        "answer": "A",
+        "concept": "OOP",
+        "topic": "OOPの4原則"
+      }
+    ]
+  },
+  {
+    "module": "09",
+    "title": "Module 09: The Matrix - 仮想環境・パッケージ管理",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "Python の仮想環境を作成するコマンドはどれか？",
+        "options": [
+          "A. python -m venv myenv",
+          "B. python --virtualenv myenv",
+          "C. pip create myenv",
+          "D. virtualenv --create myenv"
+        ],
+        "answer": "A",
+        "concept": "仮想環境",
+        "topic": "venv"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "macOS/Linux で仮想環境を有効化するコマンドはどれか？",
+        "options": [
+          "A. activate myenv",
+          "B. source myenv/bin/activate",
+          "C. myenv\\Scripts\\activate",
+          "D. python -m activate myenv"
+        ],
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "activate"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "pip でインストールしたパッケージ一覧をファイルに出力するコマンドはどれか？",
+        "options": [
+          "A. pip save > requirements.txt",
+          "B. pip freeze > requirements.txt",
+          "C. pip list > requirements.txt",
+          "D. pip export requirements.txt"
+        ],
+        "answer": "B",
+        "concept": "パッケージ管理",
+        "topic": "pip freeze"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "requirements.txt からパッケージを一括インストールするコマンドはどれか？",
+        "options": [
+          "A. pip install requirements.txt",
+          "B. pip load -r requirements.txt",
+          "C. pip install -r requirements.txt",
+          "D. pip batch requirements.txt"
+        ],
+        "answer": "C",
+        "concept": "パッケージ管理",
+        "topic": "pip install -r"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "Poetry でプロジェクトの依存関係を追加するコマンドはどれか？",
+        "options": [
+          "A. poetry install numpy",
+          "B. poetry add numpy",
+          "C. poetry require numpy",
+          "D. poetry deps add numpy"
+        ],
+        "answer": "B",
+        "concept": "Poetry",
+        "topic": "poetry add"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "pyproject.toml はどのような目的で使われるか？",
+        "options": [
+          "A. Python のバージョンを固定する",
+          "B. プロジェクトのメタデータ、依存関係、ビルド設定を定義する",
+          "C. 仮想環境のパスを保存する",
+          "D. テストの設定のみ"
+        ],
+        "answer": "B",
+        "concept": "プロジェクト設定",
+        "topic": "pyproject.toml"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "仮想環境を使う主な利点はどれか？",
+        "options": [
+          "A. コードが高速化される",
+          "B. プロジェクトごとに独立したパッケージ環境を持てる",
+          "C. Python のバージョンが自動更新される",
+          "D. デバッグが容易になる"
+        ],
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "仮想環境の目的"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "現在の仮想環境の Python を確認するコマンドはどれか？",
+        "options": [
+          "A. python --path",
+          "B. which python または where python",
+          "C. python -v",
+          "D. pip show python"
+        ],
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "which python"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "パッケージのバージョン指定で requests>=2.0,<3.0 の意味はどれか？",
+        "options": [
+          "A. requests のバージョン 2.0 のみ",
+          "B. requests 2.0 以上かつ 3.0 未満",
+          "C. requests 2.0 超かつ 3.0 以下",
+          "D. requests 2.0 または 3.0"
+        ],
+        "answer": "B",
+        "concept": "パッケージ管理",
+        "topic": "バージョン指定"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "sys.path に含まれる内容はどれか？",
+        "options": [
+          "A. インストール済みパッケージの名前一覧",
+          "B. Python がモジュールを検索するディレクトリのリスト",
+          "C. 環境変数のリスト",
+          "D. 実行中のスクリプトのスタックトレース"
+        ],
+        "answer": "B",
+        "concept": "Pythonインポートシステム",
+        "topic": "sys.path"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "Poetry.lock ファイルの役割はどれか？",
+        "options": [
+          "A. ファイルの書き込みをロックする",
+          "B. 依存パッケージの正確なバージョンを記録し、再現可能な環境を保証する",
+          "C. 秘密鍵を保管する",
+          "D. テスト結果をキャッシュする"
+        ],
+        "answer": "B",
+        "concept": "Poetry",
+        "topic": "poetry.lock"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "環境変数を Python コードから取得するための正しい方法はどれか？",
+        "options": [
+          "A. env.get('KEY')",
+          "B. os.environ.get('KEY')",
+          "C. sys.env['KEY']",
+          "D. environment['KEY']"
+        ],
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": "os.environ"
+      }
+    ]
+  },
+  {
+    "module": "10",
+    "title": "Module 10: FuncMage - 関数型プログラミング",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "lambda x: x * 2 の説明として正しいのはどれか？",
+        "options": [
+          "A. x を2倍にして返す無名関数",
+          "B. x に2を加える名前付き関数",
+          "C. x を文字列 '2' に変換する関数",
+          "D. 2つの引数を受け取る関数"
+        ],
+        "answer": "A",
+        "concept": "ラムダ式",
+        "topic": "lambda"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "次のコードの出力はどれか？\n\nresult = list(map(lambda x: x ** 2, [1, 2, 3, 4]))\nprint(result)",
+        "options": [
+          "A. [1, 4, 9, 16]",
+          "B. [2, 4, 6, 8]",
+          "C. [1, 2, 3, 4]",
+          "D. 16"
+        ],
+        "answer": "A",
+        "concept": "高階関数",
+        "topic": "map()"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "filter(func, iterable) の動作として正しいのはどれか？",
+        "options": [
+          "A. iterable の各要素に func を適用した結果を返す",
+          "B. func が True を返す要素のみを返す",
+          "C. iterable を func でソートして返す",
+          "D. func の結果を累積して1つの値を返す"
+        ],
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "filter()"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "functools.reduce(lambda a, b: a + b, [1, 2, 3, 4]) の結果はどれか？",
+        "options": [
+          "A. [1, 3, 6, 10]",
+          "B. 10",
+          "C. (1, 2, 3, 4)",
+          "D. 4"
+        ],
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "reduce()"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "クロージャ（Closure）の説明として正しいのはどれか？",
+        "options": [
+          "A. クラスのプライベートメソッド",
+          "B. 外側のスコープの変数を参照・保持する内部関数",
+          "C. 例外を捕捉する try-except",
+          "D. モジュールをまとめるパッケージ"
+        ],
+        "answer": "B",
+        "concept": "クロージャ",
+        "topic": "クロージャ"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "デコレータ（@decorator）の主な用途はどれか？",
+        "options": [
+          "A. クラスを継承する",
+          "B. 関数の振る舞いを変更・拡張するラッパーを適用する",
+          "C. 変数の型を変換する",
+          "D. モジュールを読み込む"
+        ],
+        "answer": "B",
+        "concept": "デコレータ",
+        "topic": "デコレータ"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "@functools.wraps(func) をデコレータ内で使う理由はどれか？",
+        "options": [
+          "A. デコレータを高速化する",
+          "B. ラップされた関数の __name__ や __doc__ を保持する",
+          "C. 関数を複製する",
+          "D. 再帰的デコレータを作成する"
+        ],
+        "answer": "B",
+        "concept": "デコレータ",
+        "topic": "@wraps"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "functools.partial の用途はどれか？",
+        "options": [
+          "A. 関数の一部の引数を固定して新しい関数を作る",
+          "B. 関数を非同期にする",
+          "C. 関数をクラスメソッドに変換する",
+          "D. 関数の実行を遅延させる"
+        ],
+        "answer": "A",
+        "concept": "関数型プログラミング",
+        "topic": "partial"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "次のコードの result はどうなるか？\n\ndef make_adder(n):\n    return lambda x: x + n\n\nadd5 = make_adder(5)\nresult = add5(3)",
+        "options": [
+          "A. 5",
+          "B. 3",
+          "C. 8",
+          "D. lambda オブジェクト"
+        ],
+        "answer": "C",
+        "concept": "クロージャ",
+        "topic": "クロージャの例"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "リスト内包表記 [x*2 for x in range(5) if x % 2 == 0] の結果はどれか？",
+        "options": [
+          "A. [0, 2, 4, 6, 8]",
+          "B. [0, 4, 8]",
+          "C. [0, 2, 4]",
+          "D. [2, 4, 6, 8, 10]"
+        ],
+        "answer": "B",
+        "concept": "内包表記",
+        "topic": "リスト内包表記"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "高階関数（Higher-Order Function）の定義として正しいのはどれか？",
+        "options": [
+          "A. 大量のデータを処理する関数",
+          "B. 関数を引数として受け取るか、関数を返す関数",
+          "C. クラスに定義されたメソッド",
+          "D. 再帰的に呼び出される関数"
+        ],
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "高階関数の定義"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "itertools.chain([1,2], [3,4], [5]) の結果はどれか？",
+        "options": [
+          "A. [[1,2], [3,4], [5]]",
+          "B. [1, 2, 3, 4, 5] のイテレータ",
+          "C. (1, 2, 3, 4, 5) のタプル",
+          "D. {1, 2, 3, 4, 5} のセット"
+        ],
+        "answer": "B",
+        "concept": "itertools",
+        "topic": "chain()"
+      }
+    ]
+  }
+]

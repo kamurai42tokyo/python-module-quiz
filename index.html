@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Python Module Quiz</title>
+<style>
+:root {
+  --primary: #00a896;
+  --primary-dark: #008a7a;
+  --primary-light: #00c9a7;
+  --bg: #f0faf8;
+  --white: #ffffff;
+  --dark: #1a1a2e;
+  --text: #333333;
+  --gray: #888888;
+  --border: #e8edf2;
+  --card-bg: #e0f7f4;
+  --card-border: #99e6dc;
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --error: #dc2626;
+  --error-bg: #fee2e2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* ===== SCREEN SYSTEM ===== */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  background: var(--bg);
+}
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===== COMMON PARTS ===== */
+.gradient-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: env(safe-area-inset-top, 0) 0 0;
+  flex-shrink: 0;
+}
+.gradient-header-inner {
+  padding: 52px 20px 24px;
+  text-align: center;
+}
+
+.screen-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 16px 110px;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.3px;
+  line-height: 1;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  flex: 2;
+}
+.btn-primary:disabled {
+  background: var(--border);
+  color: var(--gray);
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  flex: 1;
+}
+.btn-full { width: 100%; flex: none; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ===== HOME SCREEN ===== */
+.app-title {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.app-title span { color: #a0ede5; }
+.app-tagline { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 16px;
+}
+.stat-num { font-size: 22px; font-weight: 800; }
+.stat-label { font-size: 10px; opacity: 0.85; margin-top: 2px; }
+
+.module-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.module-card:active {
+  background: var(--bg);
+  border-color: var(--primary);
+}
+.module-num {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.module-info { flex: 1; min-width: 0; }
+.module-name { font-size: 14px; font-weight: 700; color: var(--dark); }
+.module-desc { font-size: 11px; color: var(--gray); margin-top: 2px; }
+.module-arrow { color: #ccc; font-size: 20px; font-weight: 300; }
+
+/* ===== QUIZ SCREEN ===== */
+.quiz-header {
+  background: var(--white);
+  padding-top: env(safe-area-inset-top, 0);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.quiz-header-inner {
+  padding: 52px 20px 14px;
+}
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.progress-label { font-size: 13px; color: var(--gray); font-weight: 600; }
+.module-tag {
+  background: var(--card-bg);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.question-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  white-space: pre-wrap;
+}
+
+.option-btn {
+  width: 100%;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.4;
+  transition: border-color 0.15s, background 0.15s;
+}
+.option-key {
+  width: 30px;
+  height: 30px;
+  background: #f0f4f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.option-btn.selected { border-color: var(--primary); background: #f0faf8; }
+.option-btn.selected .option-key { background: var(--primary); color: white; }
+.option-btn.correct-ans { border-color: var(--success); background: var(--success-bg); }
+.option-btn.correct-ans .option-key { background: var(--success); color: white; }
+.option-btn.wrong-ans { border-color: var(--error); background: var(--error-bg); }
+.option-btn.wrong-ans .option-key { background: var(--error); color: white; }
+
+/* ===== FEEDBACK SCREEN ===== */
+.feedback-header {
+  background: var(--white);
+  padding-top: env(safe-area-inset-top, 0);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.feedback-header-inner { padding: 48px 20px 20px; }
+
+.result-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 30px;
+}
+.result-icon.correct { background: var(--success-bg); }
+.result-icon.wrong { background: var(--error-bg); }
+.result-label { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+.result-label.correct { color: var(--success); }
+.result-label.wrong { color: var(--error); }
+.correct-answer-note { font-size: 13px; color: var(--gray); }
+
+.review-box {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 13px 16px;
+  margin-bottom: 10px;
+}
+.review-lbl { font-size: 11px; font-weight: 700; color: var(--gray); text-transform: uppercase; margin-bottom: 4px; }
+.review-val { font-size: 14px; font-weight: 700; color: var(--dark); }
+.review-val.correct { color: var(--success); }
+.review-val.wrong { color: var(--error); }
+
+.claude-card {
+  background: linear-gradient(135deg, #f0faf8, var(--card-bg));
+  border: 1.5px solid var(--card-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.claude-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.claude-icon {
+  width: 26px;
+  height: 26px;
+  background: var(--primary);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.claude-card-title { font-size: 12px; font-weight: 700; color: var(--primary); }
+.claude-card-text { font-size: 13px; color: var(--text); line-height: 1.7; }
+
+/* ===== RESULTS SCREEN ===== */
+.results-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding-top: env(safe-area-inset-top, 0);
+  flex-shrink: 0;
+}
+.results-header-inner { padding: 48px 20px 28px; text-align: center; }
+
+.score-circle {
+  width: 110px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+.score-num { font-size: 36px; font-weight: 900; line-height: 1; }
+.score-denom { font-size: 13px; opacity: 0.8; }
+.score-pct { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.score-msg { font-size: 13px; opacity: 0.9; }
+
+.weak-item {
+  background: var(--white);
+  border: 1.5px solid #fecaca;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.weak-dot { width: 8px; height: 8px; background: var(--error); border-radius: 50%; flex-shrink: 0; }
+.weak-text { font-size: 13px; color: var(--text); font-weight: 600; }
+
+/* ===== LOADING / ERROR ===== */
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  padding: 32px;
+  text-align: center;
+}
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--card-bg);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-msg { color: var(--gray); font-size: 14px; }
+.error-icon { font-size: 48px; }
+.error-title { font-size: 18px; font-weight: 700; color: var(--dark); }
+.error-msg { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+/* ===== DESKTOP ===== */
+@media (min-width: 480px) {
+  html, body {
+    background: #c8ede8;
+    overflow: auto;
+  }
+  #app {
+    height: 100vh;
+    box-shadow: 0 12px 60px rgba(0, 0, 0, 0.2);
+  }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="screen active">
+    <div class="center-screen">
+      <div class="spinner"></div>
+      <div class="loading-msg">データを読み込み中...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== DATA =====
+let allModules = [];
+let feedbackData = {};
+
+// ===== QUIZ STATE =====
+let quiz = {
+  title: '',
+  moduleTag: '',
+  questions: [],
+  index: 0,
+  selected: null,
+  score: 0,
+  weakTopics: [],
+  startParams: { moduleIds: null, title: '' },
+};
+
+// ===== UTILITIES =====
+function h(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function render(html) {
+  document.getElementById('app').innerHTML = html;
+}
+
+function getFeedback(moduleId, questionId) {
+  return feedbackData[`${moduleId}_${questionId}`]
+    || 'この問題の解説を読み込めませんでした。';
+}
+
+function getSummary(pct) {
+  const s = feedbackData.summaries || {};
+  if (pct >= 95) return s.excellent || '完璧です！この調子で頑張りましょう！';
+  if (pct >= 70) return s.good    || '素晴らしい成績です！';
+  if (pct >= 50) return s.okay    || 'もう少しです！復習してみましょう。';
+  return s.needs_review || '基礎をしっかり固めてもう一度チャレンジ！';
+}
+
+function parseTitle(title) {
+  const m = title.match(/Module\s+(\d+)[:\s]+(.+?)\s*[-–]\s*(.+)/);
+  if (m) return { num: m[1], name: m[2], desc: m[3] };
+  const m2 = title.match(/Module\s+(\d+)[:\s]+(.+)/);
+  if (m2) return { num: m2[1], name: m2[2], desc: '' };
+  return { num: '?', name: title, desc: '' };
+}
+
+// ===== INIT =====
+async function init() {
+  try {
+    const [qRes, fRes] = await Promise.all([
+      fetch('data/questions.json'),
+      fetch('data/feedback.json'),
+    ]);
+    if (!qRes.ok) throw new Error('questions.json が見つかりません');
+    if (!fRes.ok) throw new Error('feedback.json が見つかりません');
+    allModules = await qRes.json();
+    feedbackData = await fRes.json();
+    renderHome();
+  } catch (e) {
+    render(`
+      <div class="screen active">
+        <div class="center-screen">
+          <div class="error-icon">⚠️</div>
+          <div class="error-title">データが見つかりません</div>
+          <div class="error-msg">
+            まず以下のコマンドを実行してください：<br><br>
+            <code style="background:#e0f7f4;padding:6px 10px;border-radius:8px;font-size:13px;">
+              python generate_feedback.py
+            </code><br><br>
+            完了後、このページを再読み込みしてください。
+          </div>
+        </div>
+      </div>
+    `);
+  }
+}
+
+// ===== HOME =====
+function renderHome() {
+  const totalQ = allModules.reduce((s, m) => s + m.questions.length, 0);
+
+  const cards = allModules.map(m => {
+    const t = parseTitle(m.title);
+    return `
+      <div class="module-card" onclick="startQuiz(['${h(m.module)}'], '${h(m.title)}')">
+        <div class="module-num">${h(t.num)}</div>
+        <div class="module-info">
+          <div class="module-name">${h(t.desc || t.name)}</div>
+          <div class="module-desc">${h(t.name)} · ${m.questions.length}問</div>
+        </div>
+        <div class="module-arrow">›</div>
+      </div>`;
+  }).join('');
+
+  render(`
+    <div class="screen active">
+      <div class="gradient-header">
+        <div class="gradient-header-inner">
+          <div class="app-title">Python Module <span>Quiz</span></div>
+          <div class="app-tagline">Python Module 対策アプリ</div>
+          <div class="stats-row">
+            <div><div class="stat-num">${allModules.length}</div><div class="stat-label">モジュール</div></div>
+            <div><div class="stat-num">${totalQ}</div><div class="stat-label">問題</div></div>
+            <div><div class="stat-num">AI</div><div class="stat-label">フィードバック</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="section-label">モジュールを選ぶ</div>
+        ${cards}
+      </div>
+      <div class="bottom-bar">
+        <button class="btn btn-primary btn-full" onclick="startQuiz(null, '全モジュール')">
+          全モジュールで挑戦する
+        </button>
+      </div>
+    </div>
+  `);
+}
+
+// ===== QUIZ START =====
+function startQuiz(moduleIds, title) {
+  quiz.title = title;
+  quiz.index = 0;
+  quiz.score = 0;
+  quiz.weakTopics = [];
+  quiz.selected = null;
+  quiz.startParams = { moduleIds, title };
+
+  let pool = [];
+  if (moduleIds === null) {
+    allModules.forEach(m =>
+      m.questions.forEach(q => pool.push({ ...q, moduleId: m.module }))
+    );
+    quiz.moduleTag = '全モジュール';
+  } else {
+    moduleIds.forEach(id => {
+      const m = allModules.find(m => m.module === id);
+      if (m) m.questions.forEach(q => pool.push({ ...q, moduleId: m.module }));
+    });
+    quiz.moduleTag = `Module ${moduleIds[0]}`;
+  }
+
+  const count = moduleIds === null ? 20 : Math.min(10, pool.length);
+  quiz.questions = shuffle(pool).slice(0, count);
+  renderQuestion();
+}
+
+function retryQuiz() {
+  startQuiz(quiz.startParams.moduleIds, quiz.startParams.title);
+}
+
+// ===== QUESTION =====
+function renderQuestion() {
+  const q = quiz.questions[quiz.index];
+  const total = quiz.questions.length;
+  const fillPct = (quiz.index / total * 100).toFixed(1);
+
+  const options = q.options.map((opt, i) => {
+    const key = String.fromCharCode(65 + i);
+    const text = opt.replace(/^[A-D]\.\s*/, '');
+    const sel = quiz.selected === key ? 'selected' : '';
+    return `
+      <button class="option-btn ${sel}" onclick="selectOption('${key}')">
+        <span class="option-key">${key}</span>
+        ${h(text)}
+      </button>`;
+  }).join('');
+
+  render(`
+    <div class="screen active">
+      <div class="quiz-header">
+        <div class="quiz-header-inner">
+          <div class="progress-row">
+            <span class="progress-label">問題 ${quiz.index + 1} / ${total}</span>
+            <span class="module-tag">${h(quiz.moduleTag)}</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:${fillPct}%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="question-text">${h(q.question)}</div>
+        ${options}
+      </div>
+      <div class="bottom-bar">
+        <button class="btn btn-secondary" onclick="confirmQuit()">終了</button>
+        <button class="btn btn-primary" id="submit-btn" onclick="submitAnswer()"
+          ${quiz.selected ? '' : 'disabled'}>回答する</button>
+      </div>
+    </div>
+  `);
+}
+
+function selectOption(key) {
+  quiz.selected = key;
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    const k = String.fromCharCode(65 + i);
+    const sel = k === key;
+    btn.classList.toggle('selected', sel);
+    const optKey = btn.querySelector('.option-key');
+    optKey.style.background = sel ? 'var(--primary)' : '';
+    optKey.style.color = sel ? 'white' : '';
+  });
+  const sub = document.getElementById('submit-btn');
+  if (sub) sub.disabled = false;
+}
+
+function submitAnswer() {
+  const q = quiz.questions[quiz.index];
+  const isCorrect = quiz.selected === q.answer;
+  if (isCorrect) {
+    quiz.score++;
+  } else if (!quiz.weakTopics.includes(q.topic)) {
+    quiz.weakTopics.push(q.topic);
+  }
+  renderFeedback(q, quiz.selected, isCorrect);
+}
+
+// ===== FEEDBACK =====
+function renderFeedback(q, userAnswer, isCorrect) {
+  const correctOpt = q.options.find(o => o.startsWith(q.answer + '.'));
+  const userOpt    = q.options.find(o => o.startsWith(userAnswer + '.'));
+  const explanation = getFeedback(q.moduleId, q.id);
+  const isLast = quiz.index >= quiz.questions.length - 1;
+
+  const correctText = correctOpt ? correctOpt.replace(/^[A-D]\.\s*/, '') : '';
+  const userText    = userOpt    ? userOpt.replace(/^[A-D]\.\s*/, '')    : userAnswer;
+
+  render(`
+    <div class="screen active">
+      <div class="feedback-header">
+        <div class="feedback-header-inner">
+          <div class="result-icon ${isCorrect ? 'correct' : 'wrong'}">
+            ${isCorrect ? '✓' : '✗'}
+          </div>
+          <div class="result-label ${isCorrect ? 'correct' : 'wrong'}">
+            ${isCorrect ? '正解！' : '不正解'}
+          </div>
+          ${!isCorrect ? `<div class="correct-answer-note">正解は ${h(q.answer)}: ${h(correctText)}</div>` : ''}
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="review-box">
+          <div class="review-lbl">あなたの回答</div>
+          <div class="review-val ${isCorrect ? 'correct' : 'wrong'}">${h(userAnswer)}: ${h(userText)}</div>
+        </div>
+        ${!isCorrect ? `
+        <div class="review-box">
+          <div class="review-lbl">正解</div>
+          <div class="review-val correct">${h(q.answer)}: ${h(correctText)}</div>
+        </div>` : ''}
+        <div class="claude-card">
+          <div class="claude-card-head">
+            <div class="claude-icon">AI</div>
+            <div class="claude-card-title">Claudeからの解説</div>
+          </div>
+          <div class="claude-card-text">${h(explanation)}</div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <button class="btn btn-secondary" onclick="confirmQuit()">終了</button>
+        <button class="btn btn-primary" onclick="nextQuestion()">
+          ${isLast ? '結果を見る' : '次の問題 →'}
+        </button>
+      </div>
+    </div>
+  `);
+}
+
+function nextQuestion() {
+  quiz.index++;
+  quiz.selected = null;
+  if (quiz.index >= quiz.questions.length) {
+    renderResults();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ===== RESULTS =====
+function renderResults() {
+  const total = quiz.questions.length;
+  const pct   = Math.round(quiz.score / total * 100);
+  const summary = getSummary(pct);
+
+  let msg = '';
+  if (pct >= 95)      msg = '完璧です！';
+  else if (pct >= 70) msg = 'よくできました！';
+  else if (pct >= 50) msg = 'もう少しです！';
+  else                msg = '基礎を復習しましょう';
+
+  const weakList = quiz.weakTopics.length > 0
+    ? quiz.weakTopics.map(t => `
+        <div class="weak-item">
+          <div class="weak-dot"></div>
+          <div class="weak-text">${h(t)}</div>
+        </div>`).join('')
+    : '<p style="color:var(--gray);font-size:13px;padding:4px 0 12px;">苦手トピックなし 🎉</p>';
+
+  render(`
+    <div class="screen active">
+      <div class="results-header">
+        <div class="results-header-inner">
+          <div class="score-circle">
+            <div class="score-num">${quiz.score}</div>
+            <div class="score-denom">/ ${total}</div>
+          </div>
+          <div class="score-pct">${pct}%</div>
+          <div class="score-msg">${h(msg)}</div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="section-label">苦手トピック</div>
+        ${weakList}
+        <div class="claude-card" style="margin-top:8px;">
+          <div class="claude-card-head">
+            <div class="claude-icon">AI</div>
+            <div class="claude-card-title">Claudeからの総評</div>
+          </div>
+          <div class="claude-card-text">${h(summary)}</div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <button class="btn btn-secondary" onclick="renderHome()">ホームへ</button>
+        <button class="btn btn-primary" onclick="retryQuiz()">もう一度</button>
+      </div>
+    </div>
+  `);
+}
+
+// ===== HELPERS =====
+function confirmQuit() {
+  if (confirm('クイズを終了してホームに戻りますか？')) {
+    renderHome();
+  }
+}
+
+// ===== START =====
+init();
+</script>
+</body>
+</html>
