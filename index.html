@@ -909,11 +909,18 @@ function _renderFrame(canvas, stageIdx, canvasSize, S, pulse) {
   ctx.restore();
 }
 
-function drawChar(canvas, stageIdx, canvasSize, S) {
-  canvasSize = canvasSize || 120;
+function drawChar(canvas, stageIdx, baseSize, S) {
+  baseSize = baseSize || 120;
   S = S || 3;
-  canvas.width = canvasSize;
+  // Stage 8→10 に連れてキャンバスを拡大し、オーラがキャラクターを大きく包む
+  // Stage 8: ×1.20  Stage 9: ×1.46  Stage 10: ×1.75
+  const scale = stageIdx >= 8 ? [1.20, 1.46, 1.75][stageIdx - 8] : 1.0;
+  const canvasSize = Math.round(baseSize * scale);
+  canvas.width  = canvasSize;
   canvas.height = canvasSize;
+  // CSS クラスの固定サイズを inline style で上書き
+  canvas.style.width  = canvasSize + 'px';
+  canvas.style.height = canvasSize + 'px';
   _renderFrame(canvas, stageIdx, canvasSize, S, 1.0);
   if (stageIdx >= 8) startAuraPulse(canvas, stageIdx, canvasSize, S);
 }
