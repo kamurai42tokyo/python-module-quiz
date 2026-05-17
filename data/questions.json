@@ -859,859 +859,859 @@
   },
   {
     "module": "03",
-    "title": "Module 03: クラス定義・オブジェクト指向基礎",
+    "title": "Module 03: Data Quest - コレクション・リスト・タプル・セット・辞書・ジェネレータ・内包表記",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Dog:\n    def __init__(self, name):\n        self.name = name\n\nd = Dog(\"Pochi\")\nprint(d.name)",
+        "question": "sys.argvについて正しい説明はどれか？",
         "options": [
-          "A. Dog",
-          "B. Pochi",
-          "C. name",
-          "D. None"
+          "A. コマンドライン引数の文字列リストで、sys.argv[0]はスクリプト名",
+          "B. コマンドライン引数の整数リストで、sys.argv[0]は最初の引数",
+          "C. キーワード引数を格納する辞書",
+          "D. 環境変数を格納するタプル"
         ],
-        "answer": "B",
-        "concept": "インスタンス変数",
-        "topic": "__init__ と self.name の初期化"
+        "answer": "A",
+        "concept": "sys.argv",
+        "topic": "sys.argvの構造とインデックス"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "Pythonでクラスを定義する正しい構文はどれか？",
+        "question": "次のコードの出力は何か？\n\nscores = [1500, 2300, 1800]\nprint(max(scores))",
         "options": [
-          "A. class MyClass[]:",
-          "B. class MyClass():",
-          "C. object MyClass:",
-          "D. def MyClass():"
+          "A. 1500",
+          "B. 1800",
+          "C. 2300",
+          "D. エラーになる"
         ],
-        "answer": "B",
-        "concept": "クラス定義",
-        "topic": "class 文の構文"
+        "answer": "C",
+        "concept": "リスト",
+        "topic": "max()関数のリストへの適用"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Counter:\n    def __init__(self):\n        self.count = 0\n\n    def increment(self):\n        self.count += 1\n\nc = Counter()\nc.increment()\nc.increment()\nprint(c.count)",
+        "question": "Pythonのリストとタプルの違いについて正しい説明はどれか？",
         "options": [
-          "A. 0",
-          "B. 1",
-          "C. None",
-          "D. 2"
+          "A. リストはイミュータブル、タプルはミュータブル",
+          "B. リストは[]で定義しミュータブル、タプルは()で定義しイミュータブル",
+          "C. リストは重複を許さず、タプルは重複を許す",
+          "D. リストはハッシュ可能、タプルはハッシュ不可"
         ],
-        "answer": "D",
-        "concept": "メソッド定義と呼び出し",
-        "topic": "インスタンスメソッドによる状態変更"
+        "answer": "B",
+        "concept": "リスト・タプル",
+        "topic": "リストとタプルのミュータブル性の違い"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "__init__ メソッドの説明として正しいものはどれか？",
+        "question": "次のコードを実行するとどうなるか？\n\npos = (1.0, 2.5, 3.0)\npos[0] = 5.0",
         "options": [
-          "A. クラスを呼び出すたびに自動で実行されるクラスメソッド",
-          "B. インスタンスを削除するときに呼ばれるメソッド",
-          "C. クラス変数を定義するための特殊メソッド",
-          "D. インスタンス生成時に自動で呼ばれる初期化メソッド"
+          "A. pos[0]が5.0に変わる",
+          "B. 新しいタプルが作成される",
+          "C. TypeErrorが発生する",
+          "D. IndexErrorが発生する"
         ],
-        "answer": "D",
-        "concept": "__init__",
-        "topic": "__init__ の役割と呼び出しタイミング"
+        "answer": "C",
+        "concept": "タプル",
+        "topic": "タプルのイミュータブル性"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Point:\n    def __str__(self):\n        return \"(0, 0)\"\n\np = Point()\nprint(p)",
+        "question": "Pythonのsetについて正しい説明はどれか？",
         "options": [
-          "A. <__main__.Point object>",
-          "B. Point",
-          "C. (0, 0)",
-          "D. None"
+          "A. 順序を保持し、重複要素を許可する",
+          "B. 順序を保持し、重複要素を許可しない",
+          "C. 順序を保持せず、重複要素を許可しない",
+          "D. 順序を保持せず、重複要素を許可する"
         ],
         "answer": "C",
-        "concept": "__str__",
-        "topic": "__str__ による文字列表現のカスタマイズ"
+        "concept": "セット",
+        "topic": "setの特性（順序なし・重複なし）"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "インスタンスメソッドの第一引数に `self` を書く理由として正しいものはどれか？",
+        "question": "次のコードの出力は何か？\n\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint(a & b)",
         "options": [
-          "A. Pythonの予約語なので必須である",
-          "B. そのメソッドを呼び出したインスタンス自身を参照するため",
-          "C. クラス変数にアクセスするためのキーワードだから",
-          "D. 静的メソッドを定義するために必要だから"
+          "A. {1, 2, 3, 4, 5, 6}",
+          "B. {3, 4}",
+          "C. {1, 2}",
+          "D. {1, 2, 5, 6}"
         ],
         "answer": "B",
-        "concept": "self",
-        "topic": "self の意味と必要性"
+        "concept": "セット",
+        "topic": "セットの積集合（intersection）演算"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "次のコードはどのエラーになるか？\n\nclass Cat:\n    def speak(self):\n        print(\"Meow\")\n\nc = Cat()\nc.speak(extra=True)",
+        "question": "次のコードの出力は何か？\n\na = {1, 2, 3}\nb = {3, 4, 5}\nprint(a | b)",
         "options": [
-          "A. エラーにならない",
-          "B. TypeError: speak() got an unexpected keyword argument",
-          "C. SyntaxError",
-          "D. AttributeError: 'Cat' has no attribute 'extra'"
+          "A. {3}",
+          "B. {1, 2}",
+          "C. {1, 2, 4, 5}",
+          "D. {1, 2, 3, 4, 5}"
         ],
-        "answer": "B",
-        "concept": "メソッド定義と呼び出し",
-        "topic": "メソッド引数の不一致によるエラー"
+        "answer": "D",
+        "concept": "セット",
+        "topic": "セットの和集合（union）演算"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Box:\n    def __init__(self, w, h):\n        self.w = w\n        self.h = h\n\n    def area(self):\n        return self.w * self.h\n\nb = Box(3, 4)\nprint(b.area())",
+        "question": "空のセットを正しく作成する方法はどれか？",
         "options": [
-          "A. 7",
-          "B. 12",
-          "C. (3, 4)",
-          "D. None"
+          "A. s = {}",
+          "B. s = set()",
+          "C. s = set{}",
+          "D. s = empty_set()"
         ],
         "answer": "B",
-        "concept": "メソッド定義と呼び出し",
-        "topic": "インスタンス変数を使ったメソッドの計算"
+        "concept": "セット",
+        "topic": "空のセットの作成方法（{}は辞書）"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "__repr__ と __str__ の違いとして正しいものはどれか？",
+        "question": "次のコードの出力は何か？\n\ninventory = {'sword': 1, 'potion': 5, 'shield': 2}\nprint(list(inventory.keys()))",
         "options": [
-          "A. __repr__ はデバッグ用の公式表現、__str__ はユーザー向けの読みやすい表現",
-          "B. __str__ はデバッグ用、__repr__ はユーザー向け",
-          "C. 両者は全く同じ役割を持つ",
-          "D. __repr__ は数値専用、__str__ は文字列専用"
+          "A. [1, 5, 2]",
+          "B. {'sword', 'potion', 'shield'}",
+          "C. ['sword', 'potion', 'shield']",
+          "D. ('sword', 'potion', 'shield')"
         ],
-        "answer": "A",
-        "concept": "__repr__",
-        "topic": "__repr__ と __str__ の使い分け"
+        "answer": "C",
+        "concept": "辞書",
+        "topic": "dict.keys()とlist()変換"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass A:\n    x = 10\n\na1 = A()\na2 = A()\na1.x = 99\nprint(a2.x)",
+        "question": "辞書に新しいキーと値を追加する正しい方法はどれか？",
         "options": [
-          "A. 99",
-          "B. None",
-          "C. AttributeError が発生する",
-          "D. 10"
+          "A. d.add('key', 'value')",
+          "B. d.append({'key': 'value'})",
+          "C. d['key'] = 'value'",
+          "D. d.insert('key', 'value')"
         ],
-        "answer": "D",
-        "concept": "クラス変数とインスタンス変数",
-        "topic": "クラス変数の共有とインスタンス変数による隠蔽"
+        "answer": "C",
+        "concept": "辞書",
+        "topic": "辞書への要素追加の構文"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __str__(self):\n        return f\"{self.name} ({self.age})\"\n\np = Person(\"Alice\", 30)\nprint(str(p))",
+        "question": "次のコードの出力は何か？\n\ndef gen_numbers():\n    yield 1\n    yield 2\n    yield 3\n\ng = gen_numbers()\nprint(next(g))\nprint(next(g))",
         "options": [
-          "A. Person",
-          "B. Alice",
-          "C. Alice (30)",
-          "D. ('Alice', 30)"
+          "A. 1\n1",
+          "B. 1\n2",
+          "C. [1, 2, 3]\n[1, 2, 3]",
+          "D. エラーになる"
         ],
-        "answer": "C",
-        "concept": "__str__",
-        "topic": "f文字列を使った __str__ の実装"
+        "answer": "B",
+        "concept": "ジェネレータ",
+        "topic": "yieldとnext()による値の逐次取得"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "Pythonのクラスでインスタンス変数を定義する正しい場所はどれか？",
+        "question": "ジェネレータ関数とリストを返す通常の関数の主な違いはどれか？",
         "options": [
-          "A. __init__ メソッド内で self.変数名 = 値 と書く",
-          "B. クラスブロックのトップレベルに直接書く",
-          "C. @property デコレータを使って定義する",
-          "D. def 変数名() として定義する"
+          "A. ジェネレータは値を一度にメモリに格納し、通常の関数は逐次生成する",
+          "B. ジェネレータはyieldを使い値を逐次生成してメモリを節約する",
+          "C. ジェネレータはreturnを使用できないが通常の関数はyieldも使える",
+          "D. ジェネレータはリストより常に遅い"
         ],
-        "answer": "A",
-        "concept": "インスタンス変数",
-        "topic": "インスタンス変数の正しい定義方法"
+        "answer": "B",
+        "concept": "ジェネレータ",
+        "topic": "ジェネレータのメモリ効率の利点"
       },
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "次のコードはどのエラーになるか？\n\nclass Foo:\n    def hello():\n        print(\"hi\")\n\nf = Foo()\nf.hello()",
+        "question": "次のリスト内包表記と同じ結果を返す通常のコードはどれか？\n\nresult = [x * 2 for x in range(5)]",
         "options": [
-          "A. 正常に 'hi' と表示される",
-          "B. AttributeError: 'Foo' has no attribute 'hello'",
-          "C. SyntaxError",
-          "D. TypeError: hello() takes 0 positional arguments but 1 was given"
+          "A. result = []\nfor x in range(5):\n    result.add(x * 2)",
+          "B. result = []\nfor x in range(5):\n    result.append(x * 2)",
+          "C. result = (x * 2 for x in range(5))",
+          "D. result = {x * 2 for x in range(5)}"
         ],
-        "answer": "D",
-        "concept": "self",
-        "topic": "self を省略した場合のエラー"
+        "answer": "B",
+        "concept": "リスト内包表記",
+        "topic": "リスト内包表記と等価なforループ"
       },
       {
         "id": 14,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def __repr__(self):\n        return f\"Animal('{self.name}')\"\n\na = Animal(\"Cat\")\nprint(repr(a))",
+        "question": "次のコードの出力は何か？\n\nnames = ['alice', 'Bob', 'charlie', 'Dylan']\ncapitalized = [n for n in names if n[0].isupper()]\nprint(capitalized)",
         "options": [
-          "A. Cat",
-          "B. Animal",
-          "C. Animal('Cat')",
-          "D. <Animal object>"
+          "A. ['alice', 'charlie']",
+          "B. ['ALICE', 'BOB', 'CHARLIE', 'DYLAN']",
+          "C. ['Bob', 'Dylan']",
+          "D. ['Alice', 'Bob', 'Charlie', 'Dylan']"
         ],
         "answer": "C",
-        "concept": "__repr__",
-        "topic": "repr() 関数と __repr__ メソッド"
+        "concept": "リスト内包表記",
+        "topic": "条件付きリスト内包表記によるフィルタリング"
       },
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "同じクラスから複数のインスタンスを作成したとき、各インスタンスのインスタンス変数の関係として正しいものはどれか？",
+        "question": "辞書内包表記を使って名前とスコアのペアから辞書を作る正しい書き方はどれか？\n\nnames = ['Alice', 'Bob', 'Charlie']\nscores = [263, 666, 907]",
         "options": [
-          "A. 全インスタンスで共有される",
-          "B. __init__ を呼んだ場合のみ共有される",
-          "C. 変数の型によって異なる",
-          "D. 各インスタンスが独自のコピーを持つ"
+          "A. d = {name: score for name, score in zip(names, scores)}",
+          "B. d = [name: score for name, score in zip(names, scores)]",
+          "C. d = (name: score for name, score in zip(names, scores))",
+          "D. d = {name => score for name, score in zip(names, scores)}"
         ],
-        "answer": "D",
-        "concept": "オブジェクトの状態",
-        "topic": "インスタンスの独立性"
+        "answer": "A",
+        "concept": "辞書内包表記",
+        "topic": "辞書内包表記の構文"
       },
       {
         "id": 16,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Stack:\n    def __init__(self):\n        self.items = []\n\n    def push(self, x):\n        self.items.append(x)\n\ns = Stack()\ns.push(1)\ns.push(2)\nprint(s.items)",
+        "question": "次のコードの出力は何か？\n\nscores = {'Alice': 263, 'Bob': 666, 'Charlie': 907}\navg = sum(scores.values()) / len(scores)\nhigh = {k: v for k, v in scores.items() if v > avg}\nprint(list(high.keys()))",
         "options": [
-          "A. [1, 2]",
-          "B. [2, 1]",
-          "C. (1, 2)",
-          "D. 2"
+          "A. ['Alice']",
+          "B. ['Charlie']",
+          "C. ['Bob', 'Charlie']",
+          "D. ['Alice', 'Bob', 'Charlie']"
         ],
-        "answer": "A",
-        "concept": "オブジェクトの状態",
-        "topic": "リストをインスタンス変数として使う"
+        "answer": "C",
+        "concept": "辞書内包表記",
+        "topic": "平均値を超える要素のフィルタリング"
       },
       {
         "id": 17,
         "type": "multiple_choice",
-        "question": "__str__ が定義されていないクラスのインスタンスを print() したとき、表示されるのはどれか？",
+        "question": "次のコードの出力は何か？\n\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint(a - b)",
         "options": [
-          "A. None",
-          "B. クラス名のみ",
-          "C. <クラス名 object at メモリアドレス> 形式の文字列",
-          "D. エラーが発生する"
+          "A. {1, 2, 3, 4, 5, 6}",
+          "B. {3, 4}",
+          "C. {5, 6}",
+          "D. {1, 2}"
         ],
-        "answer": "C",
-        "concept": "__str__",
-        "topic": "デフォルトの __str__ 動作"
+        "answer": "D",
+        "concept": "セット",
+        "topic": "セットの差集合（difference）演算"
       },
       {
         "id": 18,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Num:\n    def __init__(self, v):\n        self.v = v\n\n    def double(self):\n        return self.v * 2\n\nx = Num(5)\ny = Num(3)\nprint(x.double() + y.double())",
+        "question": "次のコードを実行したときの出力は何か？\n\npos1 = (1.0, 2.5, 3.0)\nx, y, z = pos1\nprint(y)",
         "options": [
-          "A. 16",
-          "B. 8",
-          "C. 10",
-          "D. 6"
+          "A. 1.0",
+          "B. 2.5",
+          "C. 3.0",
+          "D. (1.0, 2.5, 3.0)"
         ],
-        "answer": "A",
-        "concept": "メソッド定義と呼び出し",
-        "topic": "複数インスタンスのメソッド呼び出しと計算"
+        "answer": "B",
+        "concept": "タプル",
+        "topic": "タプルのアンパック（分割代入）"
       },
       {
         "id": 19,
         "type": "multiple_choice",
-        "question": "クラス変数とインスタンス変数の違いとして正しいものはどれか？",
+        "question": "次のコードの出力は何か？\n\nnames = ['Alice', 'bob', 'Charlie', 'dylan']\nresult = [n.capitalize() for n in names]\nprint(result)",
         "options": [
-          "A. クラス変数は __init__ 内で定義し、インスタンス変数はクラスブロック直下で定義する",
-          "B. 両者は完全に同じであり区別はない",
-          "C. クラス変数は全インスタンスで共有され、インスタンス変数は各インスタンス固有の値を持つ",
-          "D. インスタンス変数はメソッド内でしかアクセスできない"
+          "A. ['alice', 'bob', 'charlie', 'dylan']",
+          "B. ['ALICE', 'BOB', 'CHARLIE', 'DYLAN']",
+          "C. ['Alice', 'Bob', 'Charlie', 'Dylan']",
+          "D. エラーになる"
         ],
         "answer": "C",
-        "concept": "クラス変数とインスタンス変数",
-        "topic": "クラス変数とインスタンス変数の違い"
+        "concept": "リスト内包表記",
+        "topic": "capitalize()メソッドとリスト内包表記"
       },
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "次のコードはどのエラーになるか？\n\nclass Calc:\n    def add(self, a, b):\n        return a + b\n\nprint(Calc.add(1, 2))",
+        "question": "ジェネレータ関数であることを示すキーワードはどれか？また、そのキーワードを含む関数を呼び出した結果の型はどれか？",
         "options": [
-          "A. TypeError: add() missing 1 required positional argument",
-          "B. 3 が表示される",
-          "C. AttributeError が発生する",
-          "D. 0 が表示される"
+          "A. return を使い、呼び出すとlistが返る",
+          "B. yield を使い、呼び出すとgeneratorオブジェクトが返る",
+          "C. yield を使い、呼び出すと全ての値のリストが返る",
+          "D. generate を使い、呼び出すとiteratorが返る"
         ],
-        "answer": "A",
-        "concept": "self",
-        "topic": "インスタンスを経由せずメソッドを呼ぶ場合のエラー"
+        "answer": "B",
+        "concept": "ジェネレータ",
+        "topic": "yieldキーワードとジェネレータオブジェクトの型"
       }
     ]
   },
   {
     "module": "04",
-    "title": "Module 04: 継承・ポリモーフィズム・クラスメソッド",
+    "title": "Module 04: Data Archivist - ファイルI/O・with文・sys.stdin/stdout/stderr・例外処理",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Animal:\n    def speak(self):\n        return \"...\"\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof\"\n\nd = Dog()\nprint(d.speak())",
+        "question": "Pythonでファイルを読み込み専用で開く正しい方法はどれか？",
         "options": [
-          "A. ...",
-          "B. Woof",
-          "C. None",
-          "D. エラーが発生する"
+          "A. open(\"file.txt\", \"w\")",
+          "B. open(\"file.txt\", \"r\")",
+          "C. open(\"file.txt\", \"a\")",
+          "D. open(\"file.txt\", \"x\")"
         ],
         "answer": "B",
-        "concept": "メソッドオーバーライド",
-        "topic": "サブクラスでの親メソッドの上書き"
+        "concept": "ファイル読み込み",
+        "topic": "open()のモード引数"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "Pythonでクラス継承を定義する正しい構文はどれか？",
+        "question": "open()関数の戻り値として正しいものはどれか？",
         "options": [
-          "A. class Child(Parent):",
-          "B. class Child extends Parent:",
-          "C. class Child inherits Parent:",
-          "D. class Child -> Parent:"
+          "A. 文字列（ファイルの内容）",
+          "B. 整数（ファイルサイズ）",
+          "C. ファイルオブジェクト（IOオブジェクト）",
+          "D. バイト列（バイナリデータ）"
         ],
-        "answer": "A",
-        "concept": "クラス継承",
-        "topic": "継承の構文"
+        "answer": "C",
+        "concept": "ファイル読み込み",
+        "topic": "open()の戻り値の型"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Base:\n    def __init__(self):\n        self.x = 10\n\nclass Child(Base):\n    def __init__(self):\n        super().__init__()\n        self.y = 20\n\nc = Child()\nprint(c.x, c.y)",
+        "question": "次のコードの出力は何か？\n\nf = open(\"test.txt\", \"w\")\nf.write(\"Hello\")\nf.write(\" World\")\nf.close()\n\nf = open(\"test.txt\", \"r\")\nprint(f.read())\nf.close()",
         "options": [
-          "A. AttributeError が発生する",
-          "B. 10 20",
-          "C. None None",
-          "D. 20 10"
+          "A. Hello",
+          "B. Hello\\n World",
+          "C. Hello World",
+          "D. エラーが発生する"
         ],
-        "answer": "B",
-        "concept": "super()",
-        "topic": "super().__init__() による親クラスの初期化"
+        "answer": "C",
+        "concept": "ファイル書き込み",
+        "topic": "write()の連続呼び出し"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "@staticmethod の特徴として正しいものはどれか？",
+        "question": "with文を使ったファイル操作の利点として正しいものはどれか？",
         "options": [
-          "A. クラス自体を第一引数として受け取る",
-          "B. インスタンスを第一引数として受け取る",
-          "C. クラスにもインスタンスにも依存せず self も cls も受け取らない",
-          "D. インスタンス変数にのみアクセスできる"
+          "A. ファイルの読み書きが高速になる",
+          "B. ブロックを抜けると自動的にファイルが閉じられ、リソースリークを防ぐ",
+          "C. ファイルの内容を自動的に暗号化する",
+          "D. バイナリファイルのみに使用できる"
         ],
-        "answer": "C",
-        "concept": "@staticmethod",
-        "topic": "静的メソッドの特徴"
+        "answer": "B",
+        "concept": "with文",
+        "topic": "コンテキストマネージャの利点"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass MathUtil:\n    @staticmethod\n    def add(a, b):\n        return a + b\n\nprint(MathUtil.add(3, 4))",
+        "question": "with文を使ったファイル読み込みの正しい構文はどれか？",
         "options": [
-          "A. エラーが発生する",
-          "B. None",
-          "C. 7",
-          "D. (3, 4)"
+          "A. with open(\"file.txt\") as f:\n    content = f.read()",
+          "B. with file(\"file.txt\") as f:\n    content = f.read()",
+          "C. using open(\"file.txt\") as f:\n    content = f.read()",
+          "D. open(\"file.txt\") with f:\n    content = f.read()"
         ],
-        "answer": "C",
-        "concept": "@staticmethod",
-        "topic": "静的メソッドの呼び出し"
+        "answer": "A",
+        "concept": "with文",
+        "topic": "with open()の構文"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "@classmethod の第一引数の慣習的な名前と、その参照先として正しいものはどれか？",
+        "question": "存在しないファイルをopen()で読み込もうとしたとき、発生する例外はどれか？",
         "options": [
-          "A. self — インスタンス自身",
-          "B. base — 親クラス",
-          "C. this — 現在のオブジェクト",
-          "D. cls — クラス自身"
+          "A. ValueError",
+          "B. TypeError",
+          "C. FileNotFoundError",
+          "D. IOError"
         ],
-        "answer": "D",
-        "concept": "@classmethod",
-        "topic": "クラスメソッドの cls 引数"
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "FileNotFoundError"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Shape:\n    color = \"red\"\n\n    @classmethod\n    def get_color(cls):\n        return cls.color\n\nprint(Shape.get_color())",
+        "question": "アクセス権限のないファイルをopen()で開こうとしたとき、発生する例外はどれか？",
         "options": [
-          "A. red",
-          "B. TypeError が発生する",
-          "C. AttributeError が発生する",
-          "D. None"
+          "A. FileNotFoundError",
+          "B. PermissionError",
+          "C. AccessError",
+          "D. SecurityError"
         ],
-        "answer": "A",
-        "concept": "@classmethod",
-        "topic": "クラスメソッドでクラス変数にアクセス"
+        "answer": "B",
+        "concept": "例外処理",
+        "topic": "PermissionError"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "名前マングリング（name mangling）とは何か？",
+        "question": "次のコードについて、ファイルが存在しない場合の動作として正しいものはどれか？\n\ntry:\n    f = open(\"missing.txt\", \"r\")\n    print(f.read())\n    f.close()\nexcept FileNotFoundError as e:\n    print(\"Error:\", e)",
         "options": [
-          "A. クラス名を短縮するための技法",
-          "B. メソッド名を自動生成する機能",
-          "C. 変数名を暗号化する手法",
-          "D. __ で始まる属性名をクラス名を含む名前に変換してサブクラスからの意図しない上書きを防ぐ仕組み"
+          "A. プログラムがクラッシュする",
+          "B. 空文字列が出力される",
+          "C. Error: と例外のメッセージが出力される",
+          "D. None が出力される"
         ],
-        "answer": "D",
-        "concept": "名前マングリング",
-        "topic": "__ プレフィックスによる名前変換"
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "FileNotFoundErrorのキャッチ"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Foo:\n    def __init__(self):\n        self.__secret = 42\n\nf = Foo()\nprint(f._Foo__secret)",
+        "question": "sys.stderrにエラーメッセージを出力する正しい方法はどれか？",
         "options": [
-          "A. AttributeError が発生する",
-          "B. None",
-          "C. 42",
-          "D. '__secret'"
+          "A. print(\"エラー\", file=sys.stdout)",
+          "B. sys.stderr(\"エラー\")",
+          "C. print(\"エラー\", file=sys.stderr)",
+          "D. stderr.write(\"エラー\")"
         ],
         "answer": "C",
-        "concept": "名前マングリング",
-        "topic": "_クラス名__属性名 でのアクセス"
+        "concept": "sys.stderr",
+        "topic": "標準エラー出力への書き込み"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "isinstance(obj, cls) の正しい説明はどれか？",
+        "question": "sys.stdin.readline()とinput()の主な違いとして正しいものはどれか？",
         "options": [
-          "A. obj が cls のサブクラスかどうかを調べる",
-          "B. obj が cls のインスタンスか、またはそのサブクラスのインスタンスかを調べる",
-          "C. cls が obj を継承しているかを調べる",
-          "D. obj と cls が同じ型かどうかだけを調べる"
+          "A. sys.stdin.readline()は末尾の改行文字（\\n）を含むが、input()は含まない",
+          "B. input()は末尾の改行文字を含むが、sys.stdin.readline()は含まない",
+          "C. 両者は全く同じ動作をする",
+          "D. sys.stdin.readline()はファイルからしか読めない"
         ],
-        "answer": "B",
-        "concept": "isinstance/issubclass",
-        "topic": "isinstance の動作と継承関係"
+        "answer": "A",
+        "concept": "sys.stdin",
+        "topic": "readline()とinput()の違い"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass A:\n    pass\n\nclass B(A):\n    pass\n\nb = B()\nprint(isinstance(b, A))",
+        "question": "open()の \"a\" モードの動作として正しいものはどれか？",
         "options": [
-          "A. True",
-          "B. False",
-          "C. None",
-          "D. TypeError が発生する"
+          "A. ファイルの内容を削除して最初から書き込む",
+          "B. ファイルが存在しない場合エラーになる",
+          "C. ファイルの末尾に追記する（ファイルがなければ新規作成）",
+          "D. ファイルを読み込み専用で開く"
         ],
-        "answer": "A",
-        "concept": "isinstance/issubclass",
-        "topic": "親クラスに対する isinstance の結果"
+        "answer": "C",
+        "concept": "ファイル書き込み",
+        "topic": "open()の追記モード（a）"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "MRO（Method Resolution Order）とは何か？",
+        "question": "次のコードを実行したとき、ファイル \"output.txt\" に書き込まれる内容として正しいものはどれか？\n\nwith open(\"output.txt\", \"w\") as f:\n    f.write(\"Line1\\n\")\n    f.write(\"Line2\\n\")",
         "options": [
-          "A. メソッドの呼び出しコストを計算する仕組み",
-          "B. メソッドの引数を自動変換する機能",
-          "C. クラスのメソッド一覧を表示するコマンド",
-          "D. 多重継承時にメソッドを探索するクラスの順序"
+          "A. Line1 Line2（1行）",
+          "B. Line1\\nLine2\\n（バックスラッシュnが文字として書かれる）",
+          "C. Line1とLine2が別々の行として書き込まれる",
+          "D. エラーが発生する"
         ],
-        "answer": "D",
-        "concept": "MRO",
-        "topic": "メソッド解決順序の意味"
+        "answer": "C",
+        "concept": "ファイル書き込み",
+        "topic": "write()での改行文字の扱い"
       },
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass P:\n    def hello(self):\n        return \"P\"\n\nclass C(P):\n    pass\n\nc = C()\nprint(c.hello())",
+        "question": "sys.stdout.write()とprint()の違いとして正しいものはどれか？",
         "options": [
-          "A. None",
-          "B. AttributeError が発生する",
-          "C. C",
-          "D. P"
+          "A. sys.stdout.write()は自動的に末尾に改行を追加するが、print()は追加しない",
+          "B. print()は自動的に末尾に改行を追加するが、sys.stdout.write()は追加しない",
+          "C. 両者は全く同じ動作をする",
+          "D. sys.stdout.write()は整数を渡せるが、print()は文字列のみ"
         ],
-        "answer": "D",
-        "concept": "クラス継承",
-        "topic": "親クラスのメソッドの継承"
+        "answer": "B",
+        "concept": "sys.stdout",
+        "topic": "print()とsys.stdout.write()の違い"
       },
       {
         "id": 14,
         "type": "multiple_choice",
-        "question": "issubclass(B, A) の正しい説明はどれか？",
+        "question": "次のコードの実行結果として正しいものはどれか？\n\nimport sys\nsys.stdout.write(\"Hello\")\nsys.stdout.write(\" World\\n\")",
         "options": [
-          "A. B のインスタンスが A かどうかを調べる",
-          "B. A が B を継承しているかを調べる",
-          "C. B が A のサブクラスかどうかを調べる",
-          "D. A と B が同じクラスかを調べる"
+          "A. HelloとWorldが別々の行に出力される",
+          "B. Hello World（改行なし）",
+          "C. Hello World（末尾に改行あり）",
+          "D. エラーが発生する"
         ],
         "answer": "C",
-        "concept": "isinstance/issubclass",
-        "topic": "issubclass の動作"
+        "concept": "sys.stdout",
+        "topic": "sys.stdout.write()の動作"
       },
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Vehicle:\n    def __init__(self, speed):\n        self.speed = speed\n\nclass Car(Vehicle):\n    def __init__(self, speed, brand):\n        super().__init__(speed)\n        self.brand = brand\n\nc = Car(120, \"Toyota\")\nprint(c.speed)",
+        "question": "Pythonでファイルを新規作成専用で開くモードはどれか（ファイルが既存の場合はエラー）？",
         "options": [
-          "A. AttributeError が発生する",
-          "B. None",
-          "C. Toyota",
-          "D. 120"
+          "A. \"w\"",
+          "B. \"r\"",
+          "C. \"x\"",
+          "D. \"n\""
         ],
-        "answer": "D",
-        "concept": "super()",
-        "topic": "super() で親の __init__ に引数を渡す"
+        "answer": "C",
+        "concept": "ファイル書き込み",
+        "topic": "open()の排他的作成モード（x）"
       },
       {
         "id": 16,
         "type": "multiple_choice",
-        "question": "__str__ をオーバーライドしないサブクラスが print() されたとき、どのメソッドが使われるか？",
+        "question": "次のコードについて、正しい説明はどれか？\n\nf = open(\"data.txt\", \"r\")\ncontent = f.read()\nf.close()",
         "options": [
-          "A. 親クラスの __str__ が継承されて使われる",
-          "B. サブクラスの __repr__ が優先される",
-          "C. None が返される",
-          "D. TypeError が発生する"
+          "A. with文と比べてより安全なファイル操作である",
+          "B. close()を呼び忘れるとファイルが開きっぱなしになるリスクがある",
+          "C. read()後はclose()を呼ぶ必要がない",
+          "D. このコードはSyntaxErrorになる"
         ],
-        "answer": "A",
-        "concept": "メソッドオーバーライド",
-        "topic": "オーバーライドしない場合の継承動作"
+        "answer": "B",
+        "concept": "ファイル読み込み",
+        "topic": "close()を忘れた場合のリスク"
       },
       {
         "id": 17,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass A:\n    val = 1\n\nclass B(A):\n    val = 2\n\nclass C(B):\n    pass\n\nprint(C.val)",
+        "question": "次のコードの出力は何か？（/etc/master.passwdへのアクセスが拒否される環境を想定）\n\ntry:\n    f = open(\"/etc/master.passwd\", \"r\")\nexcept PermissionError as e:\n    print(\"[STDERR]\", e)",
         "options": [
-          "A. 1",
-          "B. 2",
-          "C. None",
-          "D. AttributeError が発生する"
+          "A. ファイルの内容が出力される",
+          "B. エラーメッセージが何も出力されない",
+          "C. [STDERR] [Errno 13] Permission denied: '/etc/master.passwd' が出力される",
+          "D. FileNotFoundError が発生する"
         ],
-        "answer": "B",
-        "concept": "MRO",
-        "topic": "MRO に沿った属性の探索順序"
+        "answer": "C",
+        "concept": "例外処理",
+        "topic": "PermissionErrorのキャッチとメッセージ"
       },
       {
         "id": 18,
         "type": "multiple_choice",
-        "question": "@staticmethod と @classmethod の違いとして正しいものはどれか？",
+        "question": "sys.stdinからユーザーの入力を読み込む（input()を使わない）正しいコードはどれか？",
         "options": [
-          "A. @classmethod はクラス cls を第一引数で受け取るが、@staticmethod は何も受け取らない",
-          "B. @staticmethod は cls を受け取り、@classmethod は self を受け取る",
-          "C. 両者は全く同じである",
-          "D. @staticmethod はインスタンスからしか呼べない"
+          "A. line = sys.stdin.readline()",
+          "B. line = sys.stdin.read_line()",
+          "C. line = sys.stdin.get()",
+          "D. line = sys.stdin.input()"
         ],
         "answer": "A",
-        "concept": "@classmethod",
-        "topic": "@staticmethod と @classmethod の比較"
+        "concept": "sys.stdin",
+        "topic": "sys.stdin.readline()の使い方"
       },
       {
         "id": 19,
         "type": "multiple_choice",
-        "question": "次のコードはどのエラーになるか？\n\nclass MyClass:\n    def __init__(self):\n        self.__value = 10\n\nm = MyClass()\nprint(m.__value)",
+        "question": "with文を使ったファイル書き込みで、ブロックを抜けたあとのファイルオブジェクトの状態として正しいものはどれか？",
         "options": [
-          "A. 10 が表示される",
-          "B. AttributeError: 'MyClass' object has no attribute '__value'",
-          "C. NameError が発生する",
-          "D. None が表示される"
+          "A. まだ開いた状態で再利用できる",
+          "B. 自動的に閉じられている",
+          "C. None になっている",
+          "D. 読み込み専用モードに切り替わっている"
         ],
         "answer": "B",
-        "concept": "名前マングリング",
-        "topic": "__ 属性に外部からアクセスした場合のエラー"
+        "concept": "with文",
+        "topic": "with文終了後のファイルの状態"
       },
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Base:\n    def greet(self):\n        return \"Base\"\n\nclass Child(Base):\n    def greet(self):\n        return super().greet() + \"+Child\"\n\nc = Child()\nprint(c.greet())",
+        "question": "次のコードの出力は何か？（\"data.txt\" には \"Hello\\nWorld\\n\" が書かれている）\n\nwith open(\"data.txt\", \"r\") as f:\n    lines = f.read().split(\"\\n\")\nprint(len(lines))",
         "options": [
-          "A. Base",
-          "B. Child",
-          "C. Base+Child",
-          "D. +Child"
+          "A. 1",
+          "B. 2",
+          "C. 3",
+          "D. 0"
         ],
         "answer": "C",
-        "concept": "super()",
-        "topic": "super() を使った親メソッドの呼び出しと拡張"
+        "concept": "ファイル読み込み",
+        "topic": "read()とsplit()による行数カウント"
       }
     ]
   },
   {
     "module": "05",
-    "title": "Module 05: 例外処理・カスタム例外・例外の階層",
+    "title": "Module 05: Code Nexus - 抽象クラス・ポリモーフィズム・Protocol・ダックタイピング",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    x = int(\"abc\")\nexcept ValueError:\n    print(\"変換失敗\")",
+        "question": "PythonでABCを使って抽象クラスを定義する正しい方法はどれか？",
         "options": [
-          "A. abc",
-          "B. 変換失敗",
-          "C. 0",
-          "D. エラーが発生してクラッシュする"
+          "A. class DataProcessor(Abstract):",
+          "B. class DataProcessor(ABC):",
+          "C. class DataProcessor: @abstract",
+          "D. abstract class DataProcessor:"
         ],
         "answer": "B",
-        "concept": "try/except",
-        "topic": "ValueError の捕捉"
+        "concept": "抽象クラス",
+        "topic": "ABCを継承した抽象クラスの定義"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "try/except/else 構文において、else ブロックが実行されるのはいつか？",
+        "question": "ABCと@abstractmethodをインポートする正しい記述はどれか？",
         "options": [
-          "A. 例外が発生したとき",
-          "B. 例外が発生しなかったとき",
-          "C. finally の後",
-          "D. 常に実行される"
+          "A. from abstract import ABC, abstractmethod",
+          "B. import abc.ABC, abc.abstractmethod",
+          "C. from abc import ABC, abstractmethod",
+          "D. from typing import ABC, abstractmethod"
         ],
-        "answer": "B",
-        "concept": "try/except/else",
-        "topic": "else ブロックの実行条件"
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "abcモジュールのインポート"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    print(\"try\")\nexcept Exception:\n    print(\"except\")\nelse:\n    print(\"else\")\nfinally:\n    print(\"finally\")",
+        "question": "次のコードを実行したとき何が起きるか？\n\nfrom abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    @abstractmethod\n    def validate(self, data):\n        pass\n\nproc = DataProcessor()",
         "options": [
-          "A. try / finally",
-          "B. try / else / finally",
-          "C. try / else",
-          "D. try / except / finally"
+          "A. DataProcessor のインスタンスが正常に作られる",
+          "B. @abstractmethod があるため TypeError が発生する",
+          "C. validate メソッドが呼び出される",
+          "D. SyntaxError が発生する"
         ],
         "answer": "B",
-        "concept": "try/except/else/finally",
-        "topic": "例外なし時の実行順序"
+        "concept": "抽象クラス",
+        "topic": "抽象クラスのインスタンス化禁止"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "Pythonで例外を手動で発生させる正しい構文はどれか？",
+        "question": "次のコードの出力は何か？\n\nfrom abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    @abstractmethod\n    def validate(self, data: object) -> bool:\n        pass\n\nclass NumericProcessor(DataProcessor):\n    def validate(self, data: object) -> bool:\n        return isinstance(data, (int, float))\n\nproc = NumericProcessor()\nprint(proc.validate(42))",
         "options": [
-          "A. raise ValueError(\"エラー\")",
-          "B. throw ValueError(\"エラー\")",
-          "C. error ValueError(\"エラー\")",
-          "D. trigger ValueError(\"エラー\")"
+          "A. None",
+          "B. False",
+          "C. True",
+          "D. TypeError が発生する"
         ],
-        "answer": "A",
-        "concept": "raise",
-        "topic": "raise 文の構文"
+        "answer": "C",
+        "concept": "抽象クラス",
+        "topic": "具象クラスでのabstractmethodオーバーライド"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "カスタム例外クラスを作成する正しい方法はどれか？",
+        "question": "具象クラス（concreteクラス）とは何か？",
         "options": [
-          "A. class MyError(Error):",
-          "B. class MyError(BaseException):",
-          "C. class MyError(Exception):",
-          "D. class MyError: のみが正解"
+          "A. ABCを継承したクラスのこと",
+          "B. @abstractmethodを持つクラスのこと",
+          "C. 全ての抽象メソッドをオーバーライドして実装したクラスのこと",
+          "D. インスタンス化できないクラスのこと"
         ],
         "answer": "C",
-        "concept": "カスタム例外クラス",
-        "topic": "Exception を継承したカスタム例外の定義"
+        "concept": "具象クラス",
+        "topic": "具象クラスの定義"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    raise ValueError(\"bad value\")\nexcept ValueError as e:\n    print(e)",
+        "question": "次のコードを実行したとき何が起きるか？\n\nfrom abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    @abstractmethod\n    def validate(self, data: object) -> bool:\n        pass\n    @abstractmethod\n    def ingest(self, data: object) -> None:\n        pass\n\nclass TextProcessor(DataProcessor):\n    def validate(self, data: object) -> bool:\n        return isinstance(data, str)\n\ntp = TextProcessor()",
         "options": [
-          "A. ValueError",
-          "B. None",
-          "C. e",
-          "D. bad value"
+          "A. TextProcessor のインスタンスが正常に作られる",
+          "B. ingest が未実装なため TypeError が発生する",
+          "C. validate のみ実装されているため警告が出る",
+          "D. SyntaxError が発生する"
         ],
-        "answer": "D",
-        "concept": "as キーワード",
-        "topic": "except ... as e で例外メッセージを取得"
+        "answer": "B",
+        "concept": "抽象クラス",
+        "topic": "抽象メソッドの未実装によるTypeError"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "次のコードを実行したとき何が起きるか？\n\ntry:\n    1 / 0\nexcept ValueError:\n    print(\"ValueError\")",
+        "question": "ポリモーフィズムの説明として最も適切なものはどれか？",
         "options": [
-          "A. ValueError と表示される",
-          "B. ZeroDivisionError がキャッチされず伝播する",
-          "C. 0 が表示される",
-          "D. 何も表示されない"
+          "A. 同じクラスから複数のインスタンスを作ること",
+          "B. 異なる型のオブジェクトが共通のインターフェースで操作でき、型ごとに異なる振る舞いをすること",
+          "C. クラスの属性を外部から隠蔽すること",
+          "D. 親クラスのメソッドをそのまま使うこと"
         ],
         "answer": "B",
-        "concept": "例外の伝播",
-        "topic": "対応しない except による例外の伝播"
+        "concept": "ポリモーフィズム",
+        "topic": "ポリモーフィズムの概念"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "finally ブロックが実行されるのはどのタイミングか？",
+        "question": "次のコードの出力は何か？\n\nfrom abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    @abstractmethod\n    def ingest(self, data: object) -> None:\n        pass\n\nclass NumericProcessor(DataProcessor):\n    def ingest(self, data: object) -> None:\n        print(f\"Numeric: {data}\")\n\nclass TextProcessor(DataProcessor):\n    def ingest(self, data: object) -> None:\n        print(f\"Text: {data}\")\n\nprocessors = [NumericProcessor(), TextProcessor()]\nfor p in processors:\n    p.ingest(\"hello\")",
         "options": [
-          "A. 例外の有無に関わらず常に実行される",
-          "B. 例外が発生しなかった場合のみ",
-          "C. try ブロックが正常終了した場合のみ",
-          "D. 例外が発生した場合のみ"
+          "A. Numeric: hello が2行表示される",
+          "B. Text: hello が2行表示される",
+          "C. Numeric: hello / Text: hello の順に表示される",
+          "D. TypeError が発生する"
         ],
-        "answer": "A",
-        "concept": "finally",
-        "topic": "finally の実行保証"
+        "answer": "C",
+        "concept": "ポリモーフィズム",
+        "topic": "ポリモーフィズムによる型ごとの異なる振る舞い"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef f():\n    try:\n        return 1\n    finally:\n        return 2\n\nprint(f())",
+        "question": "DataProcessorパターンにおいて、validateメソッドのシグネチャとして最も適切なものはどれか？",
         "options": [
-          "A. 2",
-          "B. 1",
-          "C. None",
-          "D. エラーが発生する"
+          "A. def validate(self) -> bool:",
+          "B. def validate(self, data: Any) -> bool:",
+          "C. def validate(data: Any) -> bool:",
+          "D. def validate(self, data: str) -> bool:"
         ],
-        "answer": "A",
-        "concept": "finally",
-        "topic": "return と finally の優先順位（落とし穴）"
+        "answer": "B",
+        "concept": "DataProcessorパターン",
+        "topic": "validateメソッドのシグネチャ"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "複数の except ブロックがある場合の動作として正しい説明はどれか？",
+        "question": "DataProcessorパターンにおいて、ingestメソッドのシグネチャとして最も適切なものはどれか？",
         "options": [
-          "A. 全ての except が必ず実行される",
-          "B. 最後の except ブロックが優先される",
-          "C. 最初にマッチした except ブロックだけが実行される",
-          "D. 例外の型に関わらず全て同じ処理になる"
+          "A. def ingest(self, data: Any) -> bool:",
+          "B. def ingest(self, data: Any) -> str:",
+          "C. def ingest(data: Any) -> None:",
+          "D. def ingest(self, data: Any) -> None:"
         ],
-        "answer": "C",
-        "concept": "複数のexcept",
-        "topic": "複数 except ブロックの実行順序"
+        "answer": "D",
+        "concept": "DataProcessorパターン",
+        "topic": "ingestメソッドのシグネチャ"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass AppError(Exception):\n    pass\n\ntry:\n    raise AppError(\"app error\")\nexcept Exception as e:\n    print(f\"caught: {e}\")",
+        "question": "DataProcessorのoutputメソッドの戻り値型として正しいものはどれか？",
         "options": [
-          "A. AppError",
-          "B. app error",
-          "C. caught: app error",
-          "D. エラーが伝播してクラッシュする"
+          "A. tuple[str, int]",
+          "B. tuple[int, str]",
+          "C. list[str]",
+          "D. dict[str, str]"
         ],
-        "answer": "C",
-        "concept": "カスタム例外クラス",
-        "topic": "親クラスの except でカスタム例外を捕捉"
+        "answer": "B",
+        "concept": "DataProcessorパターン",
+        "topic": "outputメソッドの戻り値型"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "Python の組み込み例外の階層として正しいものはどれか？",
+        "question": "NumericProcessorが取り込める（ingestできる）データ型の組み合わせとして正しいものはどれか？",
         "options": [
-          "A. BaseException → Exception → ValueError",
-          "B. Exception → BaseException → ValueError",
-          "C. ValueError → Exception → BaseException",
-          "D. Exception → ValueError → BaseException"
+          "A. str と bytes",
+          "B. int と str",
+          "C. int、float、およびそれらのリスト（混合リストを含む）",
+          "D. dict のみ"
         ],
-        "answer": "A",
-        "concept": "例外の階層",
-        "topic": "Python 組み込み例外クラスの継承ツリー"
+        "answer": "C",
+        "concept": "DataProcessorパターン",
+        "topic": "NumericProcessorが受け付けるデータ型"
       },
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    raise ValueError(\"v\")\nexcept TypeError:\n    print(\"type\")\nexcept ValueError:\n    print(\"value\")\nexcept Exception:\n    print(\"ex\")",
+        "question": "DataStreamクラスにおいて、process_streamメソッドが各要素をどのプロセッサーに送るかを決める仕組みはどれか？",
         "options": [
-          "A. type",
-          "B. value",
-          "C. value と ex の両方",
-          "D. ex"
+          "A. 要素のインデックスを使って決定する",
+          "B. 各プロセッサーのvalidateメソッドを呼んで、Trueを返すプロセッサーに送る",
+          "C. 要素の型名を文字列で比較して決定する",
+          "D. 登録順に常に最初のプロセッサーに送る"
         ],
         "answer": "B",
-        "concept": "複数のexcept",
-        "topic": "複数の except での最初のマッチ"
+        "concept": "ポリモーフィズム",
+        "topic": "DataStreamのprocess_streamの動作原理"
       },
       {
         "id": 14,
         "type": "multiple_choice",
-        "question": "関数内で raise した例外を呼び出し元で捕捉していない場合はどうなるか？",
+        "question": "Pythonのダックタイピング（duck typing）の説明として最も正確なものはどれか？",
         "options": [
-          "A. 例外は無視される",
-          "B. 例外はそのスコープで自動的に処理される",
-          "C. 例外はコールスタックを遡って伝播し、最終的に未処理なら実行が停止する",
-          "D. プログラムは続行されて None が返る"
+          "A. クラスが特定の基底クラスを継承しているかで型を判断する",
+          "B. オブジェクトが必要なメソッドや属性を持っていれば、実際の型に関わらず使えるという考え方",
+          "C. isinstance()を使って型を厳密にチェックすること",
+          "D. クラス名に「Duck」を含めることで型安全を保証する仕組み"
         ],
-        "answer": "C",
-        "concept": "例外の伝播",
-        "topic": "コールスタックを通じた例外の伝播"
+        "answer": "B",
+        "concept": "ダックタイピング",
+        "topic": "ダックタイピングの概念"
       },
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError as e:\n    print(type(e).__name__)",
+        "question": "Pythonのtypingモジュールにおいて、Protocolクラスを使う主な目的はどれか？",
         "options": [
-          "A. Error",
-          "B. Exception",
-          "C. ZeroDivisionError",
-          "D. e"
+          "A. 継承関係なしにダックタイピングを静的型チェッカーに認識させるインターフェースを定義すること",
+          "B. クラスのインスタンス化を禁止すること",
+          "C. 全ての抽象メソッドを自動実装すること",
+          "D. 実行時に型エラーを自動修正すること"
         ],
-        "answer": "C",
-        "concept": "as キーワード",
-        "topic": "as で取得した例外オブジェクトのクラス名"
+        "answer": "A",
+        "concept": "Protocol",
+        "topic": "Protocolクラスの目的"
       },
       {
         "id": 16,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ntry:\n    pass\nexcept:\n    print(\"error\")\nelse:\n    print(\"ok\")\nfinally:\n    print(\"done\")",
+        "question": "次のコードは正しく動作するか？また、ExportPluginとCSVExporterの関係はどれか？\n\nfrom typing import Protocol\n\nclass ExportPlugin(Protocol):\n    def process_output(self, data: list) -> None:\n        ...\n\nclass CSVExporter:\n    def process_output(self, data: list) -> None:\n        print(\"CSV output\")\n\ndef export(plugin: ExportPlugin, data: list) -> None:\n    plugin.process_output(data)\n\nexport(CSVExporter(), [\"a\", \"b\"])",
         "options": [
-          "A. ok と done が表示される",
-          "B. error と done が表示される",
-          "C. done のみ表示される",
-          "D. SyntaxError が発生する"
+          "A. CSVExporter が ExportPlugin を継承していないためエラーになる",
+          "B. 正常に動作する。CSVExporter は ExportPlugin を継承せずともProtocolを満たす",
+          "C. Protocol クラスはインスタンス化できないためエラーになる",
+          "D. process_output の引数型が違うためエラーになる"
         ],
-        "answer": "A",
-        "concept": "try/except/else/finally",
-        "topic": "例外なし時の else と finally の動作"
+        "answer": "B",
+        "concept": "Protocol",
+        "topic": "Protocolによる構造的サブタイピング"
       },
       {
         "id": 17,
         "type": "multiple_choice",
-        "question": "カスタム例外を使う最大のメリットとして最も適切なものはどれか？",
+        "question": "DataPipelineにおいてCSVエクスポートプラグインとJSONエクスポートプラグインを設計する際、両プラグインをExportPluginとして扱えるようにする方法として最も適切なものはどれか？",
         "options": [
-          "A. 実行速度が向上する",
-          "B. 全ての例外を自動的に処理できる",
-          "C. except ブロックが不要になる",
-          "D. アプリケーション固有のエラーを意味のある名前で区別して扱える"
+          "A. 両クラスが ABC を継承して @abstractmethod を実装する",
+          "B. 両クラスが ExportPlugin（Protocol）が要求するメソッドシグネチャを実装する",
+          "C. 両クラスが同名のクラス名を持つ必要がある",
+          "D. isinstance(plugin, ExportPlugin) が True になるよう明示的に登録する"
         ],
-        "answer": "D",
-        "concept": "カスタム例外クラス",
-        "topic": "カスタム例外を使う理由"
+        "answer": "B",
+        "concept": "Protocol",
+        "topic": "Protocolを使ったプラグイン設計"
       },
       {
         "id": 18,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nclass Base(Exception):\n    pass\n\nclass Child(Base):\n    pass\n\ntry:\n    raise Child(\"child error\")\nexcept Base:\n    print(\"Base caught\")\nexcept Child:\n    print(\"Child caught\")",
+        "question": "次のコードの出力は何か？\n\nfrom abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    def __init__(self) -> None:\n        self._data: list[str] = []\n\n    @abstractmethod\n    def validate(self, data: object) -> bool:\n        pass\n\n    def output(self) -> tuple[int, str]:\n        item = self._data.pop(0)\n        rank = len(self._data)\n        return (rank, item)\n\nclass TextProcessor(DataProcessor):\n    def validate(self, data: object) -> bool:\n        return isinstance(data, str)\n    def ingest(self, data: str) -> None:\n        self._data.append(data)\n\ntp = TextProcessor()\ntp.ingest(\"hello\")\ntp.ingest(\"world\")\nprint(tp.output())",
         "options": [
-          "A. Child caught",
-          "B. 例外が伝播してクラッシュする",
-          "C. Base caught と Child caught の両方",
-          "D. Base caught"
+          "A. (2, 'hello')",
+          "B. (1, 'hello')",
+          "C. (0, 'hello')",
+          "D. ('hello', 1)"
         ],
-        "answer": "D",
-        "concept": "例外の階層",
-        "topic": "親クラスの except が子クラスの例外を先に捕捉する（落とし穴）"
+        "answer": "B",
+        "concept": "DataProcessorパターン",
+        "topic": "outputメソッドの戻り値（ランクとデータ）"
       },
       {
         "id": 19,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef divide(a, b):\n    if b == 0:\n        raise ZeroDivisionError(\"ゼロ除算\")\n    return a / b\n\ntry:\n    result = divide(10, 0)\nexcept ZeroDivisionError as e:\n    print(f\"Error: {e}\")",
+        "question": "ABCを使った抽象クラスとProtocolの最大の違いとして正しいものはどれか？",
         "options": [
-          "A. 0",
-          "B. None",
-          "C. ZeroDivisionError",
-          "D. Error: ゼロ除算"
+          "A. ABCは継承が必須で実行時チェックを行うが、Protocolは継承不要で静的型チェックに使われる",
+          "B. ABC と Protocol は全く同じ仕組みである",
+          "C. Protocol は @abstractmethod が必須だが、ABC は不要",
+          "D. ABC は型ヒントで使えないが、Protocol は使える"
         ],
-        "answer": "D",
-        "concept": "raise",
-        "topic": "関数内の raise と呼び出し元での捕捉"
+        "answer": "A",
+        "concept": "Protocol",
+        "topic": "ABCとProtocolの違い"
       },
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "except Exception: と except BaseException: の違いとして正しいものはどれか？",
+        "question": "DataStreamクラスでregister_processorメソッドを使ってプロセッサーを登録した後、process_streamを呼び出したとき、いずれのプロセッサーも処理できない要素はどう扱われるか？",
         "options": [
-          "A. 両者は全く同じ",
-          "B. except BaseException: は ValueError しか捕捉しない",
-          "C. except Exception: の方がより多くの例外を捕捉する",
-          "D. except Exception: は SystemExit や KeyboardInterrupt を捕捉しないが、except BaseException: は捕捉する"
+          "A. 例外が発生してプログラムが終了する",
+          "B. その要素は無視されて処理が続く",
+          "C. エラーメッセージが表示されて処理が続く",
+          "D. 最初に登録したプロセッサーが強制的に処理する"
         ],
-        "answer": "D",
-        "concept": "例外の階層",
-        "topic": "Exception と BaseException の違い（応用）"
+        "answer": "C",
+        "concept": "DataProcessorパターン",
+        "topic": "process_streamでの未対応要素の処理"
       }
     ]
   },
