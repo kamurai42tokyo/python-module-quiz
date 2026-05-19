@@ -2288,288 +2288,574 @@
     ]
   },
   {
-    "module": "09",
-    "title": "Module 09: The Matrix - 仮想環境・パッケージ管理・環境変数",
+    "module": "08",
+    "title": "Module 08: The Matrix - 仮想環境・パッケージ管理・環境変数",
     "questions": [
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "Pythonの仮想環境を作成するための標準コマンドはどれか？",
+        "question": "Pythonの仮想環境を作成するコマンドとして正しいのはどれか？",
         "options": [
-          "A. python -m venv myenv",
-          "B. python --create-env myenv",
-          "C. pip create venv myenv",
-          "D. python -m env myenv"
+          "A. python --new venv matrix_env",
+          "B. python -m venv matrix_env",
+          "C. virtualenv create matrix_env",
+          "D. python create venv matrix_env"
         ],
-        "answer": "A",
-        "concept": "仮想環境",
-        "topic": "venvモジュールによる仮想環境の作成コマンド"
+        "answer": "B",
+        "concept": "仮想環境の作成",
+        "topic": "python -m venv コマンド"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "仮想環境が有効化されているかどうかをPythonコード内で確認する方法として正しいものはどれか？",
+        "question": "Unix系システムで仮想環境を有効化するコマンドはどれか？",
         "options": [
-          "A. sys.virtualenv == True",
-          "B. os.getenv('VIRTUAL_ENV') is not None",
-          "C. os.path.exists('.venv')",
-          "D. import venv; venv.is_active()"
+          "A. activate matrix_env",
+          "B. source matrix_env/Scripts/activate",
+          "C. source matrix_env/bin/activate",
+          "D. python -m activate matrix_env"
         ],
-        "answer": "B",
-        "concept": "仮想環境検出",
-        "topic": "VIRTUAL_ENV環境変数による仮想環境の有効化確認"
+        "answer": "C",
+        "concept": "仮想環境の有効化",
+        "topic": "Unix系でのvenv activate"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードの出力として正しいものはどれか？\n\nimport sys\nprint(type(sys.executable))",
+        "question": "Pythonスクリプト内で「現在仮想環境内で動いているか」を正しく判定するコードはどれか？",
         "options": [
-          "A. <class 'module'>",
-          "B. <class 'bytes'>",
-          "C. <class 'str'>",
-          "D. <class 'Path'>"
+          "A. sys.virtual_env is not None",
+          "B. os.environ.get('IN_VENV') == 'true'",
+          "C. sys.prefix != sys.base_prefix",
+          "D. pip.in_virtualenv()"
         ],
         "answer": "C",
-        "concept": "sys.executable",
-        "topic": "sys.executableの型とPythonインタープリタのパス取得"
+        "concept": "仮想環境の検知",
+        "topic": "sys.prefix と sys.base_prefix の比較"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "Unixシステムで仮想環境を有効化するコマンドはどれか？",
+        "question": "construct.pyが仮想環境外で実行されたとき、推奨される動作はどれか？",
         "options": [
-          "A. activate myenv",
-          "B. python -m activate myenv",
-          "C. myenv/Scripts/activate",
-          "D. source myenv/bin/activate"
+          "A. エラーを発生させてプログラムを停止する",
+          "B. グローバル環境での実行を継続する",
+          "C. 仮想環境の作成・有効化手順をユーザーに表示する",
+          "D. 自動的に仮想環境を作成する"
         ],
-        "answer": "D",
-        "concept": "仮想環境の有効化",
-        "topic": "Unix環境での仮想環境有効化コマンド"
+        "answer": "C",
+        "concept": "仮想環境の検知と案内",
+        "topic": "construct.pyの動作設計"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "pipで現在インストールされているパッケージ一覧を確認するコマンドはどれか？",
+        "question": "現在インストールされているパッケージ一覧をrequirements.txtとして出力するコマンドはどれか？",
         "options": [
-          "A. pip show all",
-          "B. pip packages",
-          "C. pip freeze --all",
-          "D. pip list"
+          "A. pip save > requirements.txt",
+          "B. pip export > requirements.txt",
+          "C. pip freeze > requirements.txt",
+          "D. pip list --save > requirements.txt"
         ],
-        "answer": "D",
+        "answer": "C",
         "concept": "pip",
-        "topic": "インストール済みパッケージの一覧表示"
+        "topic": "pip freeze による requirements.txt 生成"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "`requirements.txt` を使ってパッケージをインストールするコマンドはどれか？",
+        "question": "requirements.txtに記載されたパッケージを一括インストールするコマンドはどれか？",
         "options": [
           "A. pip install requirements.txt",
-          "B. pip load -r requirements.txt",
-          "C. pip install -r requirements.txt",
-          "D. pip get requirements.txt"
+          "B. pip install -r requirements.txt",
+          "C. pip load requirements.txt",
+          "D. pip get -f requirements.txt"
         ],
-        "answer": "C",
-        "concept": "requirements.txt",
-        "topic": "requirements.txtからのパッケージ一括インストール"
+        "answer": "B",
+        "concept": "pip",
+        "topic": "pip install -r による一括インストール"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nimport os\nos.environ['MY_VAR'] = 'hello'\nprint(os.environ.get('MY_VAR', 'default'))",
+        "question": "Poetryのプロジェクト設定・依存関係管理ファイルはどれか？",
         "options": [
-          "A. default",
-          "B. hello",
-          "C. None",
-          "D. MY_VAR"
+          "A. poetry.yaml",
+          "B. requirements.toml",
+          "C. pyproject.toml",
+          "D. package.json"
         ],
-        "answer": "B",
-        "concept": "os.environ",
-        "topic": "os.environ.get()による環境変数の読み取り"
+        "answer": "C",
+        "concept": "Poetry",
+        "topic": "pyproject.toml ファイル"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "`.env` ファイルをGitリポジトリにコミットすべきでない主な理由はどれか？",
+        "question": "Poetryで依存関係をインストールするコマンドはどれか？",
         "options": [
-          "A. APIキーや認証情報などの機密情報が含まれることがあるから",
-          "B. .envファイルはPythonが読めないから",
-          "C. .envファイルは圧縮する必要があるから",
-          "D. Gitは隠しファイルを扱えないから"
+          "A. poetry get",
+          "B. poetry install",
+          "C. poetry add --all",
+          "D. poetry setup"
         ],
-        "answer": "A",
-        "concept": "セキュリティ",
-        "topic": ".envファイルのバージョン管理からの除外理由"
+        "answer": "B",
+        "concept": "Poetry",
+        "topic": "poetry install コマンド"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nimport os\nresult = os.environ.get('NON_EXISTENT_VAR', 'fallback')\nprint(result)",
+        "question": "Poetryの仮想環境内でPythonスクリプトを実行するコマンドはどれか？",
         "options": [
-          "A. None",
-          "B. fallback",
-          "C. エラー",
-          "D. NON_EXISTENT_VAR"
+          "A. poetry exec python loading.py",
+          "B. poetry run python loading.py",
+          "C. poetry start loading.py",
+          "D. poetry python loading.py"
         ],
         "answer": "B",
-        "concept": "os.environ.get",
-        "topic": "存在しない環境変数のデフォルト値返却"
+        "concept": "Poetry",
+        "topic": "poetry run コマンド"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "Poetryとpipの違いとして正しいものはどれか？",
+        "question": "loading.pyでMatrixデータを生成する際、仕様として指定されているデータソースはどれか？",
         "options": [
-          "A. Poetryはパッケージのインストールしかできないが、pipは依存関係管理もできる",
-          "B. pipはPython3専用で、PoetryはPython2でも使える",
-          "C. Poetryは依存関係の解決・ロックファイル生成・仮想環境管理を統合的に行える",
-          "D. PoetryはWindowsでのみ使用可能"
+          "A. ハードコードされたリスト",
+          "B. range()関数",
+          "C. numpyによる乱数生成",
+          "D. requestsによるAPI取得（必須）"
         ],
         "answer": "C",
-        "concept": "Poetryとpipの比較",
-        "topic": "Poetry vs pipの機能の違い"
+        "concept": "numpy",
+        "topic": "numpyをデータソースとして使用する要件"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nimport sys\nprint(sys.version_info.major)",
+        "question": ".envファイルをPythonで読み込むために使うサードパーティライブラリはどれか？",
         "options": [
-          "A. 文字列 'Python 3'",
-          "B. タプル (3, 10, 0)",
-          "C. None",
-          "D. 整数 3"
+          "A. env-loader",
+          "B. python-dotenv",
+          "C. dotenv-python",
+          "D. envconfig"
         ],
-        "answer": "D",
-        "concept": "sys.version_info",
-        "topic": "Pythonのバージョン情報の取得方法"
+        "answer": "B",
+        "concept": ".envファイル",
+        "topic": "python-dotenv ライブラリ"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "`pyproject.toml` の主な用途はどれか？",
+        "question": "python-dotenvで.envファイルの内容を環境変数として読み込む関数はどれか？",
         "options": [
-          "A. 仮想環境の設定",
-          "B. 環境変数を定義する",
-          "C. Pythonインタープリタのパスを設定する",
-          "D. Poetryなどのツール向けにプロジェクトのメタデータと依存関係を定義する"
+          "A. dotenv.load()",
+          "B. load_dotenv()",
+          "C. env.read()",
+          "D. dotenv.import_env()"
         ],
-        "answer": "D",
-        "concept": "pyproject.toml",
-        "topic": "pyproject.tomlファイルの役割と用途"
+        "answer": "B",
+        "concept": "python-dotenv",
+        "topic": "load_dotenv() 関数"
       },
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "次のコードでエラーになるのはどれか？\n\nimport os\nprint(os.environ['MISSING_KEY'])",
+        "question": "`os.environ.get('KEY', 'default')` と `os.environ['KEY']` の主な違いはどれか？",
         "options": [
-          "A. None が出力される",
-          "B. ValueError",
-          "C. 空文字列が出力される",
-          "D. KeyError: 'MISSING_KEY'"
+          "A. 違いはない",
+          "B. getはKEYが未定義でもKeyErrorを発生させずデフォルト値を返せる",
+          "C. []の方がデフォルト値を設定できる",
+          "D. getはキャッシュを使うため高速"
         ],
-        "answer": "D",
-        "concept": "環境変数アクセス",
-        "topic": "存在しない環境変数へのブラケットアクセスでのKeyError"
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": "os.environ.get() と os.environ[] の違い"
       },
       {
         "id": 14,
         "type": "multiple_choice",
-        "question": "仮想環境のメリットとして正しいものはどれか？",
+        "question": ".envファイルをGitリポジトリにコミットしてはいけない主な理由はどれか？",
         "options": [
-          "A. Pythonの実行速度が向上する",
-          "B. 仮想環境内ではエラーが発生しない",
-          "C. プロジェクトごとに独立した依存関係を持つことができグローバル環境を汚染しない",
-          "D. グローバルにインストールしたパッケージも自動で使えるようになる"
+          "A. ファイルサイズが大きすぎるため",
+          "B. APIキーや機密情報が含まれる可能性があるため",
+          "C. Gitが.envファイルを解析できないため",
+          "D. poetry installで自動生成されるため"
         ],
-        "answer": "C",
-        "concept": "仮想環境の利点",
-        "topic": "プロジェクト独立性とグローバル環境の保護"
+        "answer": "B",
+        "concept": "セキュリティ",
+        "topic": ".envファイルとGitignore"
       },
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "次のコードで `site` モジュールを使ってパッケージインストール先を確認する正しい方法はどれか？",
+        "question": "oracle.pyのMATRIX_MODE環境変数が想定する値はどれか？",
         "options": [
-          "A. import site; print(site.getsitepackages())",
-          "B. import site; print(site.packages())",
-          "C. import packages; print(packages.location())",
-          "D. import sys; print(sys.packages)"
+          "A. 'on' または 'off'",
+          "B. 'development' または 'production'",
+          "C. 'debug' または 'release'",
+          "D. 'local' または 'remote'"
         ],
-        "answer": "A",
-        "concept": "siteモジュール",
-        "topic": "site.getsitepackages()によるパッケージインストール先の確認"
+        "answer": "B",
+        "concept": "環境変数",
+        "topic": "MATRIX_MODEの値"
       },
       {
         "id": 16,
         "type": "multiple_choice",
-        "question": "開発環境と本番環境で異なる設定を管理する方法として最も適切なものはどれか？",
+        "question": ".env.exampleファイルを作成する主な目的はどれか？",
         "options": [
-          "A. 環境変数や.envファイルを使い、コードから設定値を分離する",
-          "B. コードに直接定数として書く",
-          "C. 設定ファイルをGitリポジトリの隠しブランチに保存する",
-          "D. 設定値をデータベースにハードコードする"
+          "A. アプリケーションがデフォルトで使用する設定値を記載するため",
+          "B. 必要な環境変数の名前と説明を示すテンプレートとして共有するため",
+          "C. .envファイルのバックアップを保存するため",
+          "D. Poetryのパッケージ管理に必要なため"
         ],
-        "answer": "A",
-        "concept": "設定管理",
-        "topic": "環境変数による開発・本番設定の分離"
+        "answer": "B",
+        "concept": ".envファイル",
+        "topic": ".env.example の役割"
       },
       {
         "id": 17,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nimport importlib\nresult = importlib.util.find_spec('os')\nprint(result is not None)",
+        "question": "仮想環境内にインストールしたパッケージはどこに保存されるか？",
         "options": [
-          "A. False",
-          "B. エラー",
-          "C. True",
-          "D. None"
+          "A. /usr/lib/python3.x/site-packages",
+          "B. ~/.local/lib/python3.x/site-packages",
+          "C. matrix_env/lib/python3.x/site-packages",
+          "D. /tmp/python/packages"
         ],
         "answer": "C",
-        "concept": "importlib",
-        "topic": "importlib.util.find_spec()によるモジュールの存在確認"
+        "concept": "仮想環境",
+        "topic": "仮想環境内のsite-packagesの場所"
       },
       {
         "id": 18,
         "type": "multiple_choice",
-        "question": "依存パッケージが見つからない場合に安全に対処するための正しいコードはどれか？",
+        "question": "仮想環境ディレクトリをGitにコミットしてはいけない主な理由はどれか？",
         "options": [
-          "A. import pandas as pd or exit()",
-          "B. if import pandas:\\n    pass",
-          "C. from pandas import *",
-          "D. try:\\n    import pandas as pd\\nexcept ImportError:\\n    print('pandas not installed')"
+          "A. Gitが仮想環境ファイルを認識できないため",
+          "B. 仮想環境はサイズが大きく環境依存のためリポジトリに含めるべきでない",
+          "C. pipが自動的に除外するため",
+          "D. poetry installで必ず再生成されるため不要"
         ],
-        "answer": "D",
-        "concept": "ImportError処理",
-        "topic": "ImportErrorをtry/exceptで捕捉してフォールバック処理"
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "仮想環境をGitignoreに追加する理由"
       },
       {
         "id": 19,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nimport os\nos.environ['MODE'] = 'production'\nval = os.environ.get('MODE', 'development')\nprint(val)",
+        "question": "pipとPoetryの主な違いとして最も適切な説明はどれか？",
         "options": [
-          "A. development",
-          "B. production",
-          "C. None",
-          "D. エラー"
+          "A. pipはPython 3専用でPoetryはPython 2専用",
+          "B. Poetryは依存関係の解決・バージョン固定・仮想環境管理を一体化したツール",
+          "C. pipはサードパーティ用でPoetryは標準ライブラリ用",
+          "D. PoetryはWindowsのみ対応でpipはクロスプラットフォーム"
         ],
         "answer": "B",
-        "concept": "os.environ",
-        "topic": "設定済み環境変数のgetによる取得"
+        "concept": "パッケージ管理",
+        "topic": "pip vs Poetry の違い"
       },
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "グローバルPython環境と仮想環境の `sys.path` の違いとして正しいものはどれか？\n\n# 仮想環境有効化後のsys.pathを想定",
+        "question": "仮想環境を有効化した状態で `pip install pandas` を実行するとパッケージはどこにインストールされるか？",
         "options": [
-          "A. 仮想環境ではsys.pathには仮想環境内のsite-packagesが優先的に含まれる",
-          "B. 仮想環境ではsys.pathは空になる",
-          "C. グローバル環境のsys.pathと仮想環境のsys.pathは常に同一である",
-          "D. 仮想環境ではsys.pathは変更できない"
+          "A. グローバルのsite-packagesに追加される",
+          "B. 仮想環境内のsite-packagesにのみインストールされる",
+          "C. ホームディレクトリの~/.localにインストールされる",
+          "D. /tmpに一時的にインストールされる"
         ],
-        "answer": "A",
-        "concept": "sys.path・仮想環境",
-        "topic": "仮想環境有効化によるsys.pathへの影響"
+        "answer": "B",
+        "concept": "仮想環境",
+        "topic": "仮想環境内でのパッケージインストール先"
+      }
+    ]
+  },
+  {
+    "module": "09",
+    "title": "Module 09: Cosmic Data - Pydanticモデルとデータバリデーション",
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple_choice",
+        "question": "PydanticのBaseModelを継承してクラスを定義する主なメリットはどれか？",
+        "options": [
+          "A. クラスの実行速度が向上する",
+          "B. フィールドの型検証と自動型変換が行われる",
+          "C. 継承階層が自動ドキュメント化される",
+          "D. JSONシリアライズが高速になる"
+        ],
+        "answer": "B",
+        "concept": "BaseModel",
+        "topic": "Pydantic BaseModelの利点"
+      },
+      {
+        "id": 2,
+        "type": "multiple_choice",
+        "question": "Pydantic v2でフィールドに制約（最小値・最大値・長さなど）を追加するために使う関数はどれか？",
+        "options": [
+          "A. Constraint()",
+          "B. Validator()",
+          "C. Field()",
+          "D. Schema()"
+        ],
+        "answer": "C",
+        "concept": "Field",
+        "topic": "Pydantic Field()関数"
+      },
+      {
+        "id": 3,
+        "type": "multiple_choice",
+        "question": "`crew_size: int = Field(ge=1, le=20)` の `ge` と `le` は何を意味するか？",
+        "options": [
+          "A. ge=global enum, le=local enum",
+          "B. ge=generic, le=literal",
+          "C. ge=greater_equal（以上）, le=less_equal（以下）",
+          "D. ge=get, le=let"
+        ],
+        "answer": "C",
+        "concept": "Field制約",
+        "topic": "ge/leパラメータの意味"
+      },
+      {
+        "id": 4,
+        "type": "multiple_choice",
+        "question": "Pydanticモデルで日時フィールドを定義するために使う正しい型はどれか？",
+        "options": [
+          "A. from pydantic import DateTime",
+          "B. from typing import DateTime",
+          "C. from datetime import datetime",
+          "D. str（ISO形式の文字列のまま）"
+        ],
+        "answer": "C",
+        "concept": "DateTime",
+        "topic": "Pydanticでのdatetimeフィールド"
+      },
+      {
+        "id": 5,
+        "type": "multiple_choice",
+        "question": "Pydanticモデルでオプション（省略可能・None許容）なフィールドを正しく定義しているのはどれか？",
+        "options": [
+          "A. notes: str = Optional",
+          "B. notes: Optional[str] = None",
+          "C. notes: str = Field(optional=True)",
+          "D. notes: Nullable[str]"
+        ],
+        "answer": "B",
+        "concept": "Optional",
+        "topic": "Optionalフィールドの定義"
+      },
+      {
+        "id": 6,
+        "type": "multiple_choice",
+        "question": "Pydantic v2でモデル全体を対象とするカスタムバリデーションに使うデコレータはどれか？",
+        "options": [
+          "A. @validator",
+          "B. @field_validator",
+          "C. @model_validator(mode='after')",
+          "D. @custom_validator"
+        ],
+        "answer": "C",
+        "concept": "@model_validator",
+        "topic": "Pydantic v2のモデルバリデータ"
+      },
+      {
+        "id": 7,
+        "type": "multiple_choice",
+        "question": "Pydantic v1で使われていたが、v2では非推奨（deprecated）になったデコレータはどれか？",
+        "options": [
+          "A. @model_validator",
+          "B. @validator",
+          "C. @field_validator",
+          "D. @validate_call"
+        ],
+        "answer": "B",
+        "concept": "Pydantic v1 vs v2",
+        "topic": "@validatorの非推奨化"
+      },
+      {
+        "id": 8,
+        "type": "multiple_choice",
+        "question": "@model_validator(mode='after')で定義したバリデーションメソッドは何を返す必要があるか？",
+        "options": [
+          "A. None",
+          "B. True",
+          "C. self",
+          "D. validated_data dict"
+        ],
+        "answer": "C",
+        "concept": "@model_validator",
+        "topic": "@model_validatorの返り値"
+      },
+      {
+        "id": 9,
+        "type": "multiple_choice",
+        "question": "AlienContactモデルで「signal_strengthが7.0より大きい場合、message_receivedが必須」というルールはどこに実装するか？",
+        "options": [
+          "A. signal_strength: float = Field(gt=7.0, requires='message_received')",
+          "B. @model_validator(mode='after')デコレータのメソッド内",
+          "C. signal_strengthフィールドのdefault_factoryに設定",
+          "D. BaseModelのoverrideメソッド"
+        ],
+        "answer": "B",
+        "concept": "@model_validator",
+        "topic": "複合バリデーションルールの実装"
+      },
+      {
+        "id": 10,
+        "type": "multiple_choice",
+        "question": "Pydanticモデルのバリデーションが失敗した場合に発生する例外はどれか？",
+        "options": [
+          "A. ValueError",
+          "B. TypeError",
+          "C. pydantic.ValidationError",
+          "D. AssertionError"
+        ],
+        "answer": "C",
+        "concept": "ValidationError",
+        "topic": "Pydanticのバリデーションエラー"
+      },
+      {
+        "id": 11,
+        "type": "multiple_choice",
+        "question": "Pydanticモデルで `is_operational: bool = True` と定義した場合、インスタンス化時にこのフィールドを省略すると？",
+        "options": [
+          "A. Noneになる",
+          "B. デフォルト値のTrueが使われる",
+          "C. ValidationErrorになる",
+          "D. Falseになる"
+        ],
+        "answer": "B",
+        "concept": "デフォルト値",
+        "topic": "Pydanticフィールドのデフォルト値"
+      },
+      {
+        "id": 12,
+        "type": "multiple_choice",
+        "question": "SpaceMissionのcrewフィールドを「1〜12個のCrewMemberのリスト」として定義するには？",
+        "options": [
+          "A. crew: list[CrewMember] = Field(min=1, max=12)",
+          "B. crew: list[CrewMember] = Field(min_length=1, max_length=12)",
+          "C. crew: list[CrewMember] = Field(count=range(1, 13))",
+          "D. crew: list[CrewMember] = Field(size=[1, 12])"
+        ],
+        "answer": "B",
+        "concept": "ネストモデル",
+        "topic": "リストフィールドの長さ制約"
+      },
+      {
+        "id": 13,
+        "type": "multiple_choice",
+        "question": "@model_validator(mode='after')を使った場合、メソッド内の`self`は何を参照するか？",
+        "options": [
+          "A. クラスそのもの（未検証）",
+          "B. 検証済みのモデルインスタンス",
+          "C. 生の入力データのdict",
+          "D. Pydanticの設定オブジェクト"
+        ],
+        "answer": "B",
+        "concept": "@model_validator",
+        "topic": "mode='after'でのselfの参照"
+      },
+      {
+        "id": 14,
+        "type": "multiple_choice",
+        "question": "AlienContactモデルで「telepathic contactは少なくとも3人の目撃者が必要」というルールが失敗したとき、@model_validator内での正しい処理はどれか？",
+        "options": [
+          "A. return False",
+          "B. raise ValidationError('メッセージ')",
+          "C. raise ValueError('Telepathic contact requires at least 3 witnesses')",
+          "D. return None"
+        ],
+        "answer": "C",
+        "concept": "@model_validator",
+        "topic": "カスタムバリデーションでのValueError"
+      },
+      {
+        "id": 15,
+        "type": "multiple_choice",
+        "question": "Pydantic v2でモデルインスタンスをdictに変換するメソッドはどれか？",
+        "options": [
+          "A. model.dict()",
+          "B. model.to_dict()",
+          "C. model.model_dump()",
+          "D. model.serialize()"
+        ],
+        "answer": "C",
+        "concept": "BaseModel",
+        "topic": "model_dump()メソッド"
+      },
+      {
+        "id": 16,
+        "type": "multiple_choice",
+        "question": "Pydanticで `station_id: str = Field(min_length=3, max_length=10)` と定義した場合、2文字の文字列を渡すと？",
+        "options": [
+          "A. スペースで埋められて3文字になる",
+          "B. pydantic.ValidationErrorが発生する",
+          "C. TypeErrorが発生する",
+          "D. 警告は出るが動作する"
+        ],
+        "answer": "B",
+        "concept": "Field制約",
+        "topic": "文字列長制約のバリデーション"
+      },
+      {
+        "id": 17,
+        "type": "multiple_choice",
+        "question": "CrewMemberモデルで`age: int = Field(ge=18, le=80)`と定義している。`age=17`を渡すと何が起きるか？",
+        "options": [
+          "A. 18に自動的に丸められる",
+          "B. pydantic.ValidationErrorが発生する",
+          "C. TypeErrorが発生する",
+          "D. 警告は出るが動作する"
+        ],
+        "answer": "B",
+        "concept": "Field制約",
+        "topic": "数値範囲制約のバリデーション"
+      },
+      {
+        "id": 18,
+        "type": "multiple_choice",
+        "question": "SpaceMissionで「ミッションIDは必ず'M'で始まる」というルールを実装する最適な方法はどれか？",
+        "options": [
+          "A. mission_id: str = Field(starts_with='M')",
+          "B. mission_id: str = Field(pattern=r'^M')",
+          "C. @model_validator(mode='after')内でself.mission_idを検証しValueErrorを発生させる",
+          "D. mission_id: str = 'M' + Field(min_length=4)"
+        ],
+        "answer": "C",
+        "concept": "@model_validator",
+        "topic": "プレフィックスバリデーション"
+      },
+      {
+        "id": 19,
+        "type": "multiple_choice",
+        "question": "Pydanticで文字列'2024-01-15T10:30:00'をdatetimeフィールドに渡すとどうなるか？",
+        "options": [
+          "A. ValidationErrorが発生する",
+          "B. そのまま文字列として保存される",
+          "C. Pydanticが自動的にdatetimeオブジェクトに変換する",
+          "D. TypeErrorが発生する"
+        ],
+        "answer": "C",
+        "concept": "型変換",
+        "topic": "Pydanticの自動型変換"
+      },
+      {
+        "id": 20,
+        "type": "multiple_choice",
+        "question": "Pydantic v2でのBaseModelの特徴として正しいのはどれか？",
+        "options": [
+          "A. 全フィールドは自動的にOptionalになる",
+          "B. メソッドは定義できない",
+          "C. 継承は1段階のみ許可される",
+          "D. ネストされたBaseModelも自動的にバリデーションされる"
+        ],
+        "answer": "D",
+        "concept": "ネストモデル",
+        "topic": "ネストされたPydanticモデルのバリデーション"
       }
     ]
   },
@@ -2580,282 +2866,282 @@
       {
         "id": 1,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nf = lambda x, y: x + y\nprint(f(3, 4))",
+        "question": "Pythonのlambda式の正しい構文はどれか？",
         "options": [
-          "A. 7",
-          "B. lambda",
-          "C. (3, 4)",
-          "D. エラー"
+          "A. lambda(x): x * 2",
+          "B. lambda x: x * 2",
+          "C. lambda = x: x * 2",
+          "D. def lambda(x): return x * 2"
         ],
-        "answer": "A",
-        "concept": "lambda式",
-        "topic": "lambda式の基本的な定義と呼び出し"
+        "answer": "B",
+        "concept": "lambda",
+        "topic": "lambda式の構文"
       },
       {
         "id": 2,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nresult = list(map(lambda x: x * 2, [1, 2, 3]))\nprint(result)",
+        "question": "`sorted(artifacts, key=lambda x: x['power'], reverse=True)` の実行結果はどれか？",
         "options": [
-          "A. [1, 2, 3]",
-          "B. [2, 4, 6]",
-          "C. [1, 4, 9]",
-          "D. <map object>"
+          "A. powerの値で昇順にソートされたリスト",
+          "B. powerの値で降順にソートされたリスト",
+          "C. powerの値の合計",
+          "D. 最大powerを持つアーティファクト1つ"
         ],
         "answer": "B",
-        "concept": "map関数",
-        "topic": "mapとlambdaを使ったリストの変換"
+        "concept": "lambda",
+        "topic": "sorted()とlambdaの組み合わせ"
       },
       {
         "id": 3,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nresult = list(filter(lambda x: x > 2, [1, 2, 3, 4]))\nprint(result)",
+        "question": "`list(filter(lambda x: x['power'] >= 50, mages))` の説明として正しいのはどれか？",
         "options": [
-          "A. [3, 4]",
-          "B. [1, 2]",
-          "C. [True, True]",
-          "D. [False, False, True, True]"
+          "A. powerが50以下のmageを残す",
+          "B. powerが50以上のmageのみを含むリストを返す",
+          "C. 全mageのpowerを50に設定する",
+          "D. powerフィールドを新たに追加する"
         ],
-        "answer": "A",
-        "concept": "filter関数",
-        "topic": "filterとlambdaを使ったリストの絞り込み"
+        "answer": "B",
+        "concept": "filter",
+        "topic": "filter()とlambdaの組み合わせ"
       },
       {
         "id": 4,
         "type": "multiple_choice",
-        "question": "高階関数の説明として正しいものはどれか？",
+        "question": "`list(map(lambda s: f'* {s} *', spells))` の実行結果として正しいのはどれか？",
         "options": [
-          "A. 整数の計算のみを行う関数",
-          "B. 再帰的に自分自身を呼び出す関数",
-          "C. 関数を引数として受け取るか、関数を返す関数",
-          "D. グローバル変数にアクセスする関数"
+          "A. スペル名のフィルタリング結果",
+          "B. 各スペル名に'* 'と' *'を追加した新しいリスト",
+          "C. スペルの数を返す整数",
+          "D. スペルを一つの文字列に結合したもの"
         ],
-        "answer": "C",
-        "concept": "高階関数",
-        "topic": "高階関数の定義とファーストクラス関数の概念"
+        "answer": "B",
+        "concept": "map",
+        "topic": "map()とlambdaの組み合わせ"
       },
       {
         "id": 5,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndata = [{'name': 'b', 'val': 2}, {'name': 'a', 'val': 1}]\nsorted_data = sorted(data, key=lambda x: x['name'])\nprint(sorted_data[0]['name'])",
+        "question": "Pythonで「関数が第一級オブジェクト（first-class citizen）」であることの意味はどれか？",
         "options": [
-          "A. b",
-          "B. エラー",
-          "C. 1",
-          "D. a"
+          "A. 関数は最も高速に実行されるオブジェクト",
+          "B. 関数を変数に代入し、引数や返り値として使えるオブジェクト",
+          "C. 関数はクラスより優先的に処理される",
+          "D. 関数は一度しか定義できない"
         ],
-        "answer": "D",
-        "concept": "sorted・lambda",
-        "topic": "sorted()のkey引数にlambdaを使ったソート"
+        "answer": "B",
+        "concept": "第一級関数",
+        "topic": "first-class citizenとしての関数"
       },
       {
         "id": 6,
         "type": "multiple_choice",
-        "question": "クロージャとは何か？正しい説明はどれか？",
+        "question": "次のコードの実行結果はどれか？\n\ndef apply(func, value):\n    return func(value)\nresult = apply(lambda x: x ** 2, 5)",
         "options": [
-          "A. クラスのプライベートメソッド",
-          "B. ファイルを閉じる操作",
-          "C. 例外処理のfinally節",
-          "D. 外側のスコープの変数を参照・保持する内側の関数"
+          "A. 10",
+          "B. 25",
+          "C. エラーが発生する",
+          "D. lambda"
         ],
-        "answer": "D",
-        "concept": "クロージャ",
-        "topic": "クロージャの定義と外側スコープの変数の束縛"
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "関数を引数として渡す"
       },
       {
         "id": 7,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef outer(x):\n    def inner(y):\n        return x + y\n    return inner\nadd5 = outer(5)\nprint(add5(3))",
+        "question": "「関数を引数として受け取ったり、関数を返り値として返す関数」のことを何と呼ぶか？",
         "options": [
-          "A. 5",
-          "B. 3",
-          "C. 8",
-          "D. エラー"
+          "A. クロージャ",
+          "B. 高階関数（higher-order function）",
+          "C. デコレータ",
+          "D. ジェネレータ"
         ],
-        "answer": "C",
-        "concept": "クロージャ",
-        "topic": "クロージャによる外側変数の保持と関数の返却"
+        "answer": "B",
+        "concept": "高階関数",
+        "topic": "高階関数の定義"
       },
       {
         "id": 8,
         "type": "multiple_choice",
-        "question": "次のコードでエラーになるのはどれか？",
+        "question": "Pythonでクロージャ（closure）とは何か？",
         "options": [
-          "A. f = lambda x: x + 1",
-          "B. g = lambda x, y: x * y",
-          "C. h = lambda: 42",
-          "D. k = lambda x: if x > 0: x else -x"
+          "A. ファイルを自動的に閉じる機能",
+          "B. 定義された環境（スコープ）の変数を記憶している関数",
+          "C. try/finallyで実装されるリソース管理パターン",
+          "D. クラスのprivateメソッドの別名"
         ],
-        "answer": "D",
-        "concept": "lambda制約",
-        "topic": "lambda式でif文（ブロック構文）が使えないこと"
+        "answer": "B",
+        "concept": "クロージャ",
+        "topic": "クロージャの定義"
       },
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nfrom functools import reduce\nresult = reduce(lambda x, y: x + y, [1, 2, 3, 4])\nprint(result)",
+        "question": "mage_counter()がクロージャを使ったカウンタを返す場合、counter_a = mage_counter(); counter_b = mage_counter() として counter_a()を2回呼んだ後 counter_b()を呼ぶと何を返すか？",
         "options": [
-          "A. [1, 2, 3, 4]",
-          "B. 10",
-          "C. 4",
-          "D. (1, 2, 3, 4)"
+          "A. 3（counter_aと状態を共有）",
+          "B. 1（独立した状態を持つ）",
+          "C. エラーが発生する",
+          "D. 2（counter_aの最後の値を継承）"
         ],
         "answer": "B",
-        "concept": "reduce関数",
-        "topic": "functools.reduceによるリストの畳み込み"
+        "concept": "クロージャ",
+        "topic": "クロージャの独立した状態"
       },
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "デコレータの基本的な動作として正しいものはどれか？",
+        "question": "`nonlocal`キーワードの用途として正しいのはどれか？",
         "options": [
-          "A. 関数をラップして前後に処理を追加した新しい関数を返す",
-          "B. 関数をクラスに変換する",
-          "C. 関数の引数の型を変換する",
-          "D. 関数をメモリから削除する"
+          "A. グローバル変数を使えないように制限する",
+          "B. 内側の関数から外側スコープの変数を変更できるようにする",
+          "C. クラス外からprivateメソッドを呼び出す",
+          "D. モジュール外の変数にアクセスする"
         ],
-        "answer": "A",
-        "concept": "デコレータ",
-        "topic": "デコレータの基本的な仕組みと用途"
+        "answer": "B",
+        "concept": "nonlocal",
+        "topic": "nonlocal キーワードの用途"
       },
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs) * 2\n    return wrapper\n@decorator\ndef add(a, b): return a + b\nprint(add(3, 4))",
+        "question": "`from functools import reduce; reduce(lambda x, y: x + y, [1, 2, 3, 4])` の結果はどれか？",
         "options": [
-          "A. 7",
-          "B. (7, 7)",
-          "C. エラー",
-          "D. 14"
+          "A. [1, 2, 3, 4]",
+          "B. 10",
+          "C. (1, 2, 3, 4)",
+          "D. エラーが発生する"
         ],
-        "answer": "D",
-        "concept": "デコレータ",
-        "topic": "デコレータで返り値を変換する例"
+        "answer": "B",
+        "concept": "functools.reduce",
+        "topic": "reduce()による累積計算"
       },
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "`functools.wraps` をデコレータ内で使う理由はどれか？",
+        "question": "`functools.partial` の用途として正しいのはどれか？",
         "options": [
-          "A. 関数を高速化するため",
-          "B. ラップされた関数の__name__や__doc__などのメタ情報を保持するため",
-          "C. 関数をスレッドセーフにするため",
-          "D. 関数の引数を型検証するため"
+          "A. 関数を部分的に実行して結果を返す",
+          "B. 関数の引数の一部を事前に固定した新しい関数を作る",
+          "C. 関数の戻り値を部分的にキャッシュする",
+          "D. 関数を非同期に実行する"
         ],
         "answer": "B",
-        "concept": "functools.wraps",
-        "topic": "functools.wrapsによる関数メタデータの保持"
+        "concept": "functools.partial",
+        "topic": "partial()による部分適用"
       },
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef make_multiplier(n):\n    return lambda x: x * n\ndouble = make_multiplier(2)\nprint(double(5))",
+        "question": "`@functools.lru_cache` の主な用途はどれか？",
         "options": [
-          "A. 2",
-          "B. 5",
-          "C. 10",
-          "D. エラー"
+          "A. 関数の実行をログに記録する",
+          "B. 同じ引数での関数呼び出し結果をキャッシュして再計算を避ける",
+          "C. 関数を並列実行する",
+          "D. 関数の引数を自動バリデーションする"
         ],
-        "answer": "C",
-        "concept": "クロージャ・lambda",
-        "topic": "クロージャとlambdaを組み合わせた部分適用"
+        "answer": "B",
+        "concept": "functools.lru_cache",
+        "topic": "lru_cacheによるメモ化"
       },
       {
         "id": 14,
         "type": "multiple_choice",
-        "question": "`functools.partial` の説明として正しいものはどれか？",
+        "question": "デコレータ内で `@functools.wraps(func)` を使う理由はどれか？",
         "options": [
-          "A. 関数の一部の引数を固定して新しい関数を作る",
-          "B. 関数を部分的に実行して途中で止める",
-          "C. 関数を非同期に実行する",
-          "D. 関数のソースコードを部分的に表示する"
+          "A. 元の関数を完全に置き換えるため",
+          "B. ラッパー関数が元の関数の__name__や__doc__を保持するため",
+          "C. 関数の実行速度を向上させるため",
+          "D. デバッグモードを有効にするため"
         ],
-        "answer": "A",
-        "concept": "partial（部分適用）",
-        "topic": "functools.partialによる部分適用の仕組み"
+        "answer": "B",
+        "concept": "functools.wraps",
+        "topic": "@functools.wrapsの目的"
       },
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\nspells = ['fireball', 'heal', 'shield']\nresult = list(map(lambda s: f'* {s} *', spells))\nprint(result[1])",
+        "question": "デコレータ（decorator）の基本的な構造として正しいのはどれか？",
         "options": [
-          "A. heal",
-          "B. * heal *",
-          "C. * fireball *",
-          "D. fireball"
+          "A. 関数を引数として受け取り新しい関数を返す関数",
+          "B. クラスのメソッドを自動的に定義する構文",
+          "C. 変数の型を動的に変更する仕組み",
+          "D. 例外ハンドリングを自動化する機能"
         ],
-        "answer": "B",
-        "concept": "map・lambda",
-        "topic": "mapとlambdaを使った文字列変換の結果"
+        "answer": "A",
+        "concept": "デコレータ",
+        "topic": "デコレータの構造"
       },
       {
         "id": 16,
         "type": "multiple_choice",
-        "question": "`nonlocal` キーワードの説明として正しいものはどれか？",
+        "question": "次のパターンは何と呼ばれるか？\n\ndef power_validator(min_power):\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs): ...\n        return wrapper\n    return decorator",
         "options": [
-          "A. グローバルスコープの変数を参照する",
-          "B. 変数をローカルスコープに限定する",
-          "C. 内側の関数から外側の（非グローバルな）変数に代入するために使う",
-          "D. 変数をイミュータブルにする"
+          "A. 単純なデコレータ",
+          "B. パラメータ付きデコレータ（デコレータファクトリ）",
+          "C. クラスデコレータ",
+          "D. ジェネレータ"
         ],
-        "answer": "C",
-        "concept": "nonlocal",
-        "topic": "nonlocal宣言によるクロージャ内の変数の再代入"
+        "answer": "B",
+        "concept": "デコレータ",
+        "topic": "パラメータ付きデコレータの構造"
       },
       {
         "id": 17,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef counter():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n    return inc\nc = counter()\nprint(c(), c())",
+        "question": "`@staticmethod`デコレータの説明として正しいのはどれか？",
         "options": [
-          "A. 0 0",
-          "B. 1 1",
-          "C. 1 2",
-          "D. エラー"
+          "A. インスタンスもクラスも受け取らず、クラスの名前空間に属する通常の関数",
+          "B. クラス変数のみにアクセスできる特殊なメソッド",
+          "C. 継承されず、定義したクラス内でのみ使えるメソッド",
+          "D. 引数を持てないメソッド"
         ],
-        "answer": "C",
-        "concept": "nonlocal・クロージャ",
-        "topic": "nonlocalを使ったカウンタークロージャ"
+        "answer": "A",
+        "concept": "@staticmethod",
+        "topic": "staticmethodの定義と特徴"
       },
       {
         "id": 18,
         "type": "multiple_choice",
-        "question": "Pythonにおいて「関数はファーストクラスオブジェクト」という意味として正しいものはどれか？",
+        "question": "`functools.singledispatch` の用途として正しいのはどれか？",
         "options": [
-          "A. 関数は他のオブジェクトより高速に処理される",
-          "B. 関数はクラスより優先的に処理される",
-          "C. 関数を変数に代入したり、引数として渡したり、戻り値にすることができる",
-          "D. 関数はグローバルスコープからのみアクセス可能"
+          "A. 関数を一度だけ実行することを保証する",
+          "B. 引数の型によって異なる実装に処理を振り分ける",
+          "C. 複数の関数を一つにまとめる",
+          "D. 関数のシグネチャを動的に変更する"
         ],
-        "answer": "C",
-        "concept": "ファーストクラス関数",
-        "topic": "Pythonにおける関数のファーストクラスオブジェクトとしての性質"
+        "answer": "B",
+        "concept": "functools.singledispatch",
+        "topic": "singledispatchによる型ディスパッチ"
       },
       {
         "id": 19,
         "type": "multiple_choice",
-        "question": "次のコードの出力は何か？\n\ndef apply_twice(f, x):\n    return f(f(x))\nresult = apply_twice(lambda x: x + 3, 1)\nprint(result)",
+        "question": "lambda式でできないことはどれか？",
         "options": [
-          "A. 4",
-          "B. 7",
-          "C. エラー",
-          "D. 1"
+          "A. 引数を受け取ること",
+          "B. 条件式（三項演算子）を使うこと",
+          "C. 複数のステートメントを実行すること",
+          "D. 別の関数を呼び出すこと"
         ],
-        "answer": "B",
-        "concept": "高階関数・lambda",
-        "topic": "高階関数にlambdaを渡して二度適用する例"
+        "answer": "C",
+        "concept": "lambda",
+        "topic": "lambda式の制限"
       },
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "次のコードで `wrapper.__name__` の出力が `'func'` になるために必要なものはどれか？\n\nimport functools\ndef decorator(func):\n    ___  # ここに何かが必要\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper",
+        "question": "次のspell_sequence実装について正しい説明はどれか？\n\ndef spell_sequence(spells):\n    def cast_all(target, power):\n        return [spell(target, power) for spell in spells]\n    return cast_all",
         "options": [
-          "A. @staticmethod",
-          "B. @functools.wraps(func)",
-          "C. wrapper.__name__ = func.__name__",
-          "D. BとCのどちらでも同じ効果が得られる（@functools.wrapsが推奨）"
+          "A. このコードは間違っており動作しない",
+          "B. クロージャを使ってspellsを記憶し全スペルを実行する関数を返す高階関数",
+          "C. 動作するが高階関数ではない",
+          "D. return cast_allの代わりにcast_all()が正しい"
         ],
-        "answer": "D",
-        "concept": "functools.wraps",
-        "topic": "functools.wrapsの効果と手動での__name__コピーの等価性"
+        "answer": "B",
+        "concept": "高階関数・クロージャ",
+        "topic": "高階関数とクロージャの組み合わせ"
       }
     ]
   }
