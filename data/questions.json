@@ -1548,7 +1548,7 @@
       {
         "id": 9,
         "type": "multiple_choice",
-        "question": "DataProcessorパターンにおいて、validateメソッドのシグネチャとして最も適切なものはどれか？",
+        "question": "DataProcessorパターンでは、基底クラス `DataProcessor` の抽象メソッド `validate` は「どんな型のデータが渡されても受け取り、内部で型を検査して処理可能かどうかを判定する」設計とする。この `validate` のシグネチャとして最も適切なものはどれか？",
         "options": [
           "A. def validate(self) -> bool:",
           "B. def validate(self, data: Any) -> bool:",
@@ -1562,7 +1562,7 @@
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "DataProcessorパターンにおいて、ingestメソッドのシグネチャとして最も適切なものはどれか？",
+        "question": "DataProcessorパターンでは、基底クラス `DataProcessor` の `ingest` は「検証済みのデータを受け取って内部に蓄積する」処理であり、呼び出し元に値は返さない。基底クラスでの `ingest` のシグネチャとして最も適切なものはどれか？",
         "options": [
           "A. def ingest(self, data: Any) -> bool:",
           "B. def ingest(self, data: Any) -> str:",
@@ -1576,7 +1576,7 @@
       {
         "id": 11,
         "type": "multiple_choice",
-        "question": "DataProcessorのoutputメソッドの戻り値型として正しいものはどれか？",
+        "question": "`DataProcessor` の `output` メソッドは、蓄積したデータのうち最も古い1件を取り出し、「処理ランク（順番を表す整数）」と「そのデータ（文字列）」を、ランクを先頭にした組にして返す設計である。`output` の戻り値型として正しいものはどれか？",
         "options": [
           "A. tuple[str, int]",
           "B. tuple[int, str]",
@@ -1590,7 +1590,7 @@
       {
         "id": 12,
         "type": "multiple_choice",
-        "question": "NumericProcessorが取り込める（ingestできる）データ型の組み合わせとして正しいものはどれか？",
+        "question": "DataProcessorパターンの具象プロセッサーは扱うデータ型ごとに分かれており、`NumericProcessor` は数値（`int` や `float`、およびそれらを集めたリスト）を専門に扱うプロセッサーである。`NumericProcessor` が取り込める（ingestできる）データ型の組み合わせとして正しいものはどれか？",
         "options": [
           "A. str と bytes",
           "B. int と str",
@@ -1604,7 +1604,7 @@
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "DataStreamクラスにおいて、process_streamメソッドが各要素をどのプロセッサーに送るかを決める仕組みはどれか？",
+        "question": "`DataStream` は型の異なる複数のプロセッサーを登録でき、各プロセッサーは「自分がそのデータを処理できるか」を判定する `validate` メソッドを持つ。`DataStream` の `process_stream` が各要素をどのプロセッサーに送るかを決める仕組みとして正しいものはどれか？",
         "options": [
           "A. 要素のインデックスを使って決定する",
           "B. 各プロセッサーのvalidateメソッドを呼んで、Trueを返すプロセッサーに送る",
@@ -1702,7 +1702,7 @@
       {
         "id": 20,
         "type": "multiple_choice",
-        "question": "DataStreamクラスでregister_processorメソッドを使ってプロセッサーを登録した後、process_streamを呼び出したとき、いずれのプロセッサーも処理できない要素はどう扱われるか？",
+        "question": "`DataStream` の `process_stream` は、想定外のデータが混ざっていてもプログラム全体を止めずに動作し続けるべき堅牢なストリーム処理として設計する。登録したどのプロセッサーも処理できない要素に遭遇したとき、`process_stream` はどう振る舞うのが正しいか？",
         "options": [
           "A. 例外が発生してプログラムが終了する",
           "B. その要素は無視されて処理が続く",
@@ -2176,7 +2176,7 @@
       {
         "id": 13,
         "type": "multiple_choice",
-        "question": "ストラテジーパターンにおいて `is_valid` が `False` を返したとき `act` を呼ぶと何が起きるべきか（正しい設計上の振る舞い）？",
+        "question": "ストラテジーパターンで、各ストラテジーは「その入力（組み合わせ）が有効か」を返す `is_valid` と、実際の処理を行う `act` を持つ。`is_valid` が `False`（無効）を返す状態で `act` を呼んだとき、堅牢な設計上どう振る舞うべきか？",
         "options": [
           "A. Noneを返す",
           "B. 無視して通常通り実行する",
@@ -2420,7 +2420,7 @@
       {
         "id": 10,
         "type": "multiple_choice",
-        "question": "loading.pyでMatrixデータを生成する際、仕様として指定されているデータソースはどれか？",
+        "question": "`loading.py` は大量の数値（Matrix）データを扱う課題で、データはハードコードや `range()` ではなく、数値計算用ライブラリを使って生成することが求められる。このときデータソースとして使うべきものはどれか？",
         "options": [
           "A. ハードコードされたリスト",
           "B. range()関数",
@@ -2490,7 +2490,7 @@
       {
         "id": 15,
         "type": "multiple_choice",
-        "question": "oracle.pyのMATRIX_MODE環境変数が想定する値はどれか？",
+        "question": "`oracle.py` は環境変数 `MATRIX_MODE` でアプリの動作環境（開発用か本番用か）を切り替える。`MATRIX_MODE` に設定する値として、開発環境・本番環境を表す慣習的な組み合わせはどれか？",
         "options": [
           "A. 'on' または 'off'",
           "B. 'development' または 'production'",
